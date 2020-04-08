@@ -1,0 +1,178 @@
+.landing {
+
+    @include list;
+
+    margin-top: 60px;
+
+    padding-bottom: 60px;
+
+    &--header {
+        margin-left: 0;
+    }
+
+    &--item {
+       
+        &__full {
+            @include list-item-full;
+        }
+
+        &__third {
+            @include list-item-third;
+
+            width: calc(33.3333% - 6px);
+
+            border-bottom: 1px solid $grey-1;
+
+            background: rgb(220,220,220);
+            background: linear-gradient(180deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 50%);
+
+            overflow: hidden;
+
+            height: 520px;
+
+    
+
+            &.spaced {
+                margin-right: 9px;
+            }
+
+            @include screen-size('small') {
+                margin: 15px;
+                width: calc(100% - 30px);
+            }
+
+
+            &:hover {
+                background: $grey-1;
+
+                .landing--item__third--text {
+                  &--meta {
+                    &--date {
+                      border: 1px solid $grey-2;
+                    }
+                  }
+                }
+            }
+
+            &__short {
+
+                background: white;
+
+                &:hover {
+                    background: none;
+                }
+                
+                @include screen-size('small') {
+                    display: none;
+                }
+            }
+
+        }
+
+        &__list {
+            @include list-item-small;
+        }
+
+        &__text {
+            @include list-item-small;
+
+            @include font-style-sans-small;
+
+
+            &:hover {
+                background: white;
+            }
+
+            @include screen-size('small') {
+                height: auto;
+            }
+        }
+
+        &__about {
+            @include list-item-small;
+            background: $grey-1;
+            border-radius: 10px;
+            height: auto;
+            border: 0;
+            margin-top: 10px;
+
+            background: rgb(220,220,220);
+            background: linear-gradient(45deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 150%);
+
+            &:hover {
+                background: linear-gradient(45deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 150%);
+            }
+
+            @include font-style-sans-small;
+
+            @include screen-size('small') {
+                height: auto;
+                margin-right: 15px;
+                margin-left: 15px;
+                width: calc(100% - 30px);
+            }
+
+            &__close {
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+            display: block;
+        
+            p {
+                width: 95%;
+            }
+
+            &__active {
+                opacity: 1;
+                transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+            }
+
+            &__gone {
+                display: none;
+            }
+
+            &--button {
+                @include font-style-sans-small;
+
+                display: inline-block;
+                padding: 20px;
+                border: 1px solid $grey-2;
+                margin-bottom: 15px;
+                
+                &:hover {
+                    background: $grey-2;
+                }
+            }
+
+        }
+
+        &__link {
+            @include list-item-link;
+        }
+
+        &__more {
+            @include list-item-more;
+        }
+
+        &__output {
+            background: #7df4b4;
+
+            &:hover {
+                background: #7df4b4;
+            }
+
+            a {
+                border-bottom: 1px solid black;
+
+                &:hover {
+                    border-bottom: 1px solid transparent;
+                }
+
+            }
+
+        }
+    }
+}

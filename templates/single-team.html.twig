@@ -1,0 +1,118 @@
+{% extends 'global/base.html.twig' %}
+
+{% block content %}
+  <main>
+
+    <article class="single-team">
+
+      {# TOP #}
+      <div class="single-team--top">
+
+        {# Text #}
+        <div class='single-team--top--text'>
+          {# Title #}
+          <h1 class='single-team--top--text--title'>{{page.title}}</h1>
+        </div>
+
+        {# Meta #}
+        <div class='single-team--top--image'>
+          {{ page.media[page.header.featured_image].cropResize(900).grayscale().html('', latestNote.title|escape)}}
+        </div>
+
+      </div>
+
+      {# MAIN #}
+      <div class="single-team--main">
+
+        {# CONTENT #}
+        <div class="single-team--main--content">
+          {{ page.content }}
+        </div>
+
+        {# SIDEBAR #}
+        <div class="single-team--main--side">
+
+          <div class='single-team--main--side--header'>Research Project</div>
+
+          <div class="single-team--main--side--subproject">
+            {% set subproject = page.find(page.header.subproject) %}
+            <a href='{{ base_url }}{{ page.header.subproject }}' class="single-team--main--side--subproject--item">
+              <span>{{ subproject.title }}</span>
+            </a>
+          </div>
+
+          <div class='single-team--main--side--header'>Links</div>
+
+          <div class="single-team--main--side--links">
+            {% if page.header.links %}
+              {% for l in page.header.links %}
+                  <a href='{{ l.url }}' class="single-team--main--side--links--item" target=_blank>{{ l.text }}</a>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+        </div>
+
+        {# RELATED NOTES #}
+        {% set notes = [] %}
+        {% for n in page.find('/blog').children.order('date', 'desc') %}
+          {% if n.header.author is iterable %} 
+            {% if '/research-team/' ~ page.slug in n.header.author %}
+              {% set notes = notes|merge([n])%}
+            {% endif %}
+          {% else %}
+            {% if  n.header.author == '/research-team/' ~ page.slug %}
+              {% set notes = notes|merge([n])%}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+        {% if notes|length > 0 %} 
+          <div class="single-team--main--related">
+
+           <div class="single-team--main--related--header">Notes by {{ page.title }}</div>
+
+            {% for note in notes %}
+              <div href='{{note.url}}' class='subproject--main--related--item__list'>
+
+                  <div class='subproject--main--related--item__list--text'>
+
+                      {# Meta #}
+                      <div class='subproject--main--related--item__list--text--meta'>
+                          <div class='subproject--main--related--item__list--text--meta--date'>{{ note.date|date('Y-m-d') }}</div>
+                          {# {% set author = page.find(note.header.author) %} #}
+                          {# <div class='subproject--main--related--item__list--text--meta--author'>{{ author.title }}</div> #}
+                          {% for author in note.header.author %}
+                            <div class='subproject--main--related--item__list--text--meta--author'>{{ page.find(author).title }}</div>
+                          {% endfor %}
+                      </div>
+                      
+                      {# Title #}
+                      <h1 class='subproject--main--related--item__list--text--title'><a href='{{note.url}}'>{{note.title}}</a></h1>
+
+                  </div>
+
+                  {% if note.header.featured_image %}
+                      <div class='subproject--main--related--item__list--image'>
+                          {{ note.media[note.header.featured_image].html('', note.title|escape)}}
+                      </div>              
+                  {% endif %}
+
+                  {# Tags #}
+                  <div class='subproject--main--related--item__list--tags'>
+                      {% for tag in note.taxonomy.tag %}
+                          <a href="{{ base_url }}/filter/tag:{{ tag }}" class="subproject--main--related--item__list--tags--item">{{ tag }}</a>
+                      {% endfor %}
+                  </div>
+                  
+                </div>
+            {% endfor %}      
+          </div>
+        {% endif %}
+      
+      </div>
+    
+    </article>
+
+  </main>
+{% endblock %}

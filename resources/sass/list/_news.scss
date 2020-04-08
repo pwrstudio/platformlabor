@@ -1,0 +1,47 @@
+.news {
+
+    @include list;
+
+    &--item {
+
+        &__list {
+            @include list-item-small;
+
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid $grey-2;;
+
+            &:hover {
+                background: $grey-1;
+                .news--item__list--text {
+                  &--meta {
+                    &--date {
+                      border: 1px solid $grey-2;
+                    }
+                  }
+                }
+            }
+
+        }
+
+        &__compact {
+            @include list-item-compact;  
+            
+            &:hover {
+                background: $grey-1;
+                .news--item__compact--text {
+                  &--meta {
+                    &--date {
+                      border: 1px solid $grey-2;
+                    }
+                  }
+                }
+            }
+
+        }
+
+        &__more {
+            @include list-item-more;
+        }
+
+    }
+}

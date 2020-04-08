@@ -1,0 +1,372 @@
+@mixin single {
+    padding-top: 50px;
+    @include font-style-serif;
+}
+
+@mixin single-top {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: stretch;
+    background: white;
+    color: black;
+    border-bottom: 1px solid $grey-2;
+
+    @include screen-size('small') {
+        flex-wrap: wrap;
+    }
+}
+
+@mixin single-top-text {
+    width: 66.6666%;
+    background: white;
+    padding: 20px 40px 20px 40px;
+
+    @include screen-size('small') {
+        width: 100%;
+        padding: 10px 20px 21px 20px;
+    }
+
+    &--date {
+        @include datebox;
+
+        margin-bottom: 20px;
+
+        @include screen-size('small') {
+            display: none;
+        }
+
+    }
+
+    &--title {
+        @include font-style-sans-large;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    &--author {
+        display: block;
+        padding: 10px;
+        margin-top: 20px;
+        display: inline-block;
+
+        &:hover {
+            background: $grey-1;    
+        }
+
+        &--image {
+            float: left;
+            width: 60px;
+            height: 60px;
+            background: $grey-2;
+            border-radius: 60px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &--name {
+            @include font-style-sans-small;
+
+            float: left;
+            // font-weight: bold;
+            margin-right: 14px;
+            margin-left: 10px;
+            color: black;
+            line-height: 60px;
+        }
+    }
+
+}
+
+
+@mixin single-top-meta {
+    width: 33.3333%;
+    border-left: 1px solid $grey-2;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-left: 20px;
+
+    @include screen-size('small') {
+        width: 100%;
+        border-left: none;
+    }
+
+    &--divider {
+        margin-top: 20px;
+        border-bottom: 1px solid $grey-2;
+        margin-bottom: 20px;
+    }
+
+    &--tags {
+        margin-top: 20px;
+        padding-top: 20px;
+
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+
+        border-top: 1px solid $grey-2;
+        
+        margin-right: 20px;
+        @include tag; 
+    }
+
+    &--subproject {
+        margin-right: 20px;
+
+        &--header {
+            margin-bottom: 20px;
+            @include greybox;
+            padding: 10px;
+            background: white;
+            border: 1px solid $grey-2;
+            margin-right: 7px;
+            margin-bottom: 10px;
+        }
+
+        &--link {
+            @include font-style-sans-small;
+
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid $grey-2;
+
+            &:hover {
+                background: $grey-1;
+            }
+        }
+
+        @include screen-size('small') {
+            display: none;
+        }
+    }
+
+    &--date {
+        @include datebox;  
+
+        display: inline-block;
+        margin-right: 7px;
+
+        @include screen-size('small') {
+            display: none;
+        }
+
+    }
+}
+
+@mixin single-main {
+    width: 100%;
+    min-height: 80vh;
+    height: auto;
+    display: inline-block;
+
+}
+
+@mixin single-main-content {
+    
+    padding-top: 40px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid $grey-2;
+
+    a {
+        border-bottom: 1px solid $black;
+        &:hover  {
+            border-bottom: 1px solid $grey-2;
+        }
+    }
+
+    p, ul, ol, li {
+        @include font-style-serif;
+
+        margin-bottom: 20px;
+        width: 75ch;
+        max-width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    h1, h2, h3, h4 {
+        @include font-style-serif;
+        width: 75ch;
+        max-width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 20px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    li {
+        margin-left: 0em;
+      }
+
+    blockquote {
+        p {
+	        font-size: 17px;
+	        line-height: 1.2em;
+            padding-left: 30px;
+            padding-right: 30px;
+	        margin-right: auto;
+	        margin-left: auto;
+        }
+    }
+}
+
+@mixin single-main-comments {
+    @include font-style-mono;
+
+    float:left;
+    width: 66.6666%;
+    background: white;
+    color: black;
+    padding: 40px;
+    padding-top: 0;
+    border-right: 1px solid $grey-2;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+
+    @include screen-size('small') {
+        width: 100%;
+        padding: 20px;
+    }
+
+    &--header {
+        @include h2-header;
+        margin-left: 0;
+        color: black;
+        display: inline-block;
+        border: 1px solid $grey-2;
+    }
+
+    #isso-thread {
+
+        h4 {
+            background: $grey-1;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .isso-postbox {
+            // margin: 0;
+            margin-top: 0;
+            margin-bottom: 20px;
+            margin-left: 0;
+            margin-right: 0;
+            
+            .form-wrapper {
+
+                .textarea-wrapper {
+
+                    .textarea {
+                      height: 120px;
+                      background: white;
+                      border: 1px solid $grey-2;
+                    }
+
+                }
+
+                .auth-section {
+
+                    .input-wrapper {
+                        display: inline-block;
+                    }
+
+                    .post-action {
+                        display: inline-block;
+                    }
+
+                }
+
+            }
+
+        }
+
+        #isso-root {
+            .isso-comment {
+                // margin: 0;
+                margin-top: 0;
+                margin-bottom: 20px;
+                margin-left: 0;
+                margin-right: 0;
+
+                .avatar {
+                    display: none;
+                }
+
+                .text-wrapper {
+                    .text {
+                        @include font-style-serif;
+                        font-size: 16px;
+                        line-height: 1.5em;
+                        padding-top: 0.75em;
+                        padding-bottom: 0.75em;
+                    }
+                }
+            }
+
+        }
+    }
+} 
+
+@mixin single-main-related {
+    float:left;
+    width:33.3333%;
+    color: black;
+    padding: 20px;
+
+    @include screen-size('small') {
+        width: 100%;
+    }
+
+    &--header {
+        margin-bottom: 20px;
+        @include greybox;
+        padding: 10px;
+        background: white;
+        border: 1px solid $grey-2;
+        margin-right: 7px;
+        margin-bottom: 10px;
+    }
+
+    &--item {
+        width: 100%;
+        height: 300px;
+        margin-right: 40px;
+        float: left;
+        float: left;
+        border-bottom: 1px solid $grey-2;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        padding: 20px;
+
+        &:hover {
+            background: $grey-1;
+        }
+
+        &--title {
+            @include font-style-sans-small;
+            font-weight: bold;
+            height: 50%;
+            margin-top: 10px;
+        }
+
+        &--image {
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

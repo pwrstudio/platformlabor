@@ -1,0 +1,532 @@
+@mixin list {
+    background: white;
+    margin-top: 60px;
+    width: calc(100% - 60px);
+    margin-right: 30px;
+    margin-left: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include screen-size('small') {
+        margin-right: 0px;
+        margin-left: 0px;
+        width: 100%;
+    }
+  
+    &--header {
+      margin-bottom: 40px;
+      padding: 20px;
+      color: $black;
+      border: 1px solid $grey-2;
+      display: inline-block;
+      @include font-style-sans-small;
+
+      @include screen-size('small') {
+        margin-left: 20px
+      }
+
+    }
+  
+  }
+
+  @mixin list-item-third {
+
+    margin-top: 10px;
+  
+    position: relative;
+    height: 450px;
+    width: 33.3333%;
+
+    border-bottom: 1px solid $grey-2;
+    padding: 20px;
+    color: $black;
+
+
+    @include screen-size('small') {
+      width: 100%;
+    }
+
+    &:hover {
+      background: $grey-1; 
+    }
+
+    &__short {
+        height: 100px;
+        border-bottom: 0;
+
+        &:hover {
+            background: none;
+        }
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    &--link {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        cursor: pointer;
+    }
+
+    &--text {
+        width: 100%;
+        z-index: 10;
+        flex-basis: 60%;
+
+        @include screen-size('small') {
+          height: auto;
+          width: 100%;
+        }
+
+        &--header {
+          @include font-style-mono;
+          border-bottom: 1px solid $grey-2;
+          padding-bottom: 10px;
+          padding-left: 10px;
+          margin-bottom: 10px;
+          text-transform: uppercase;
+        }
+
+        &--tags {
+          bottom: 0;
+          float: left;
+          margin-top: 20px;
+          @include tag;
+        }
+
+        &--title {
+            @include font-style-sans-small;
+            float: left;
+            font-weight: bold;
+            letter-spacing: -0.03em;
+            margin-top: 10px;
+        }
+
+        &--meta {
+
+            &--date, &--provider, &--comments  {
+                @include greybox;
+            }
+
+            &--date {
+              @include datebox;
+            }
+
+            &--comments {
+              background: $green;
+              border: 1px solid $green;
+            }
+
+            &--author {
+                @include greybox;
+
+                display: inline-block;
+                margin-right: 7px;
+                margin-bottom:  7px;
+            }
+            
+        }
+
+    }
+
+    &--image {
+        width: 100%;
+        flex-basis: 40%;
+        max-height: 40%;
+
+        @include screen-size('small') {
+            height: auto;
+            float: right;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+        }
+    }
+
+    &--button {
+        @include font-style-sans-small;
+
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        text-align: center;
+        padding: 20px;
+        border: 1px solid $grey-2;
+        &:hover {
+            background: $grey-1;
+        }
+    }
+}
+
+  @mixin list-item-full {
+  
+      position: relative;
+      height: 500px;
+      width: 100%;
+
+      border-bottom: 1px solid $grey-2;
+      padding: 20px;
+      color: $black;
+
+      @include screen-size('small') {
+        // height: 400px;
+      }
+
+      &--link {
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+      }
+
+      &--text {
+          height: 100%;
+          width: 50%;
+          z-index: 10;
+          float: left;
+
+          @include screen-size('small') {
+            height: 40%;
+            width: 100%;
+          }
+  
+          &--tags {
+              bottom: 0;
+              float: left;
+              margin-top: 20px;
+              @include tag;
+          }
+  
+          &--title {
+            @include font-style-sans-large;
+
+            float: left;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-right: 40px;
+
+            @include screen-size('small') {
+              @include font-style-sans-small;
+            }
+
+          }
+  
+          &--meta {
+  
+              &--date, &--provider, &--comments  {
+                  @include greybox;
+              }
+  
+              &--date {
+                @include datebox;
+                margin-bottom: 7px;
+              }
+  
+              &--author {
+                  @include greybox;
+  
+                  display: inline-block;
+                  margin-right: 7px;
+                  margin-bottom: 7px;
+              }
+              
+          }
+  
+      }
+  
+      &--image {
+          float: left;
+          width: 50%;
+          height: calc(100% - 20px);
+  
+          @include screen-size('small') {
+              height: 60%;
+              width: 100%;
+              object-fit: cover;
+              float: right;
+          }
+  
+          img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              opacity: 1;
+          }
+      }
+  }
+  
+  @mixin list-item-small {
+      width: 100%;
+      display: block;
+  
+      border-bottom: 1px solid $grey-2;
+      padding: 20px;
+      // height: 240px;
+      height: auto;
+      margin-bottom: 0;
+      position: relative;
+
+      // background: linear-gradient(180deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 50%);
+
+
+      @include screen-size('small') {
+        width: 100%;
+      }
+  
+      &:hover {
+          background: rgba(230,230,230,1);
+      }
+  
+      &--text {
+          width: calc(100% - 200px);
+          float: left;
+
+          @include screen-size('small') {
+            width: 100%;
+          }
+  
+          &--meta {
+              margin-right: 20px;
+              height: auto;
+              width: 100%;
+              float: left;
+  
+             &--provider {
+                @include greybox;  
+              }
+
+              &--comments {
+                  background: $green;
+                  border: 1px solid $green;
+              }
+  
+              &--date {
+                @include datebox;
+                margin-bottom: 7px;
+              }
+  
+              &--comments  {
+                @include greybox;  
+                background: $green;
+                border: 1px solid $green;
+              }
+  
+              &--author {
+                  @include greybox;
+  
+                  display: inline-block;
+                  margin-right: 7px;
+                  margin-bottom: 7px;
+  
+              }
+  
+          }
+  
+          &--title {
+            @include font-style-sans-small;
+
+            color: $black;
+            float: left;
+            height: auto;
+            max-width: 40ch;
+          }
+      }
+
+      &--tags {
+        @include tag;
+        width: calc(100% - 400px);
+        float: left;
+        z-index: 10;
+
+        @include screen-size('small') {
+            width: 100%;
+        }
+      }
+
+      &--link {
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+      }
+
+  
+      &--image {
+          width: 200px;
+          height: 200px;
+          float: right;
+
+          @include screen-size('small') {
+            display: none;
+          }
+
+          img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              opacity: 1;
+          }
+      }
+  }
+
+  @mixin list-item-link {
+    width: 100%;
+    display: block;
+
+    border-bottom: 1px solid $grey-2;
+    padding: 20px;
+    height: 120px;
+    margin-bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--button {
+        @include font-style-sans-small;
+
+        display: inline-block;
+        padding: 20px;
+        border: 1px solid $grey-2;
+
+        &:hover {
+            background: rgba(230,230,230,1);
+        }
+    }
+
+ }
+
+  @mixin list-item-compact {
+      width: 100%;
+      display: flex;
+      position: relative;
+  
+      border-bottom: 1px solid $grey-2;
+      padding-top: 15px;
+      padding-bottom: 20px;
+      margin-bottom: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+
+  
+      &:hover {
+          background: $grey-1;
+      }
+  
+      &--text {
+          width: 100%;
+  
+          &--meta {
+              position: static;
+              height: auto;
+              float: left;
+              margin-right: 20px;
+              height: auto;
+              width: auto;
+  
+              &--date, &--provider, &--comments  {
+                @include greybox;
+                padding: 5px;
+              }
+  
+              &--date {
+                @include datebox;
+                padding: 5px;
+              }
+  
+              &--comments  {
+                  padding-right: 20px;
+                  padding-left: 20px;
+                  color: black;
+                  background: $green;
+                  border: 1px solid $green;
+              }
+  
+              &--author {
+                  @include greybox;
+  
+                  display: inline-block;
+                  margin-right: 5px;
+                  padding: 5px;
+  
+              }
+  
+          }
+  
+          &--tags {
+              @include tag;
+              float: right;
+
+              &--item {
+                  padding: 2px;
+                  border-radius: 2px;
+                  margin-right: 5px;
+              }
+          }
+  
+          &--title {
+            @include font-style-sans-small;
+
+            color: black;
+            float: left;
+            line-height: 6px;
+            height: auto;
+            width: auto;
+          }
+      }
+  
+      height: auto;
+      margin-bottom: 0;
+  
+  }
+  
+  @mixin list-item-more {
+  
+      width: calc(100vw - 60px);
+      margin-right: 30px;
+      margin-left: 30px;
+      height: 200px;
+      display: block;
+      position: relative;
+  
+      padding-top: 20px;
+  
+    &--button {
+        @include font-style-sans-small;
+
+        display: inline-block;
+        color: black;
+        border: 1px solid $grey-2;
+        padding: 20px 80px;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 0;
+
+        &:hover {
+            background: white;
+            color: black;
+        }
+        
+    }
+  }
+  

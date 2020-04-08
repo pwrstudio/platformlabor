@@ -1,0 +1,98 @@
+{% extends 'global/base.html.twig' %}
+
+{% if uri.param('view') %}
+    {% set view = uri.param('view') %}
+{% endif %}
+
+{% block content %}
+    <div class="feed">
+
+        {# Listbar #}
+        {% include 'navigation/listbar.html.twig' %}
+
+        {# List #}
+        {% if view == 'compact' %}
+
+            {% for p in page.children.order('date', 'desc') %}
+                <div class='feed--item__compact'>
+
+                    <div class='feed--item__compact--text'>
+
+                        {# Meta #}
+                        <div class='feed--item__compact--text--meta'>
+                            <div class='feed--item__compact--text--meta--comments'>
+                                <a href="{{p.url}}#isso-thread"></a>
+                            </div>
+                            <div class='feed--item__compact--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
+                            <div class='feed--item__compact--text--meta--provider'>{{ p.header.provider_name }}</div>
+                        </div>
+                        
+                        {# Title #}
+                        <h1 class='feed--item__compact--text--title'><a href='{{p.url}}'>{{p.title}}</a></h1>
+
+                        {# Tags #}
+                        <div class='feed--item__compact--text--tags'>
+                            {% for tag in p.taxonomy.tag %}
+                                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="feed--item__compact--text--tags--item">{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    
+                </div>
+            {% endfor %}
+
+        {% else %}
+
+             {% for p in page.children.order('date', 'desc') %}
+                <div class='feed--item__list'>
+
+                    <a href='{{p.url}}' class='feed--item__list--link'></a>
+
+                    <div class='feed--item__list--text'>
+
+                        {# Meta #}
+                        <div class='feed--item__list--text--meta'>
+                            <div class='feed--item__list--text--meta--comments'>
+                                <a href="{{p.url}}#isso-thread">0</a>
+                            </div>
+                            <div class='feed--item__list--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
+                            <div class='feed--item__list--text--meta--provider'>{{ p.header.provider_name }}</div>
+                        </div>
+                        
+                        {# Title #}
+                        <h1 class='feed--item__list--text--title'>{{p.title}}</h1>
+
+                    </div>
+
+                    <div class='feed--item__list--image'>
+
+                        {% if p.header.featured_image %}
+                            {{ p.media[p.header.featured_image].cropResize(600).html('', p.title|escape)}}
+                        {% else %}
+                            <img src='{{ p.header.external_image }}'>
+                        {% endif %}
+
+                    </div> 
+
+                    {# Tags #}
+                    <div class='feed--item__list--tags'>
+                        {% for tag in p.taxonomy.tag %}
+                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="feed--item__list--tags--item">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    
+                </div>
+            {% endfor %}
+
+        {% endif %}
+
+
+        <div class='feed--item feed--item__more'>
+            <div class='feed--item__more--button'>Load more</div>
+        </div>
+
+    </div>
+
+    <script src="https://comments.platformlabor.net/js/count.min.js"></script>
+{% endblock %}

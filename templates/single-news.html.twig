@@ -1,0 +1,64 @@
+{% extends 'global/base.html.twig' %}
+
+{% block content %}
+  <main>
+
+    <article class="single-news">
+
+      {# TOP #}
+      <div class="single-news--top">
+
+        {# Text #}
+        <div class='single-news--top--text'>
+          {# Title #}
+          <h1 class='single-news--top--text--title'>{{page.title}}</h1>
+        </div>
+
+        {# Meta #}
+        <div class='single-news--top--meta'>
+
+        {% if page.header.subproject %}
+          <div class='single-news--top--meta--subproject'>
+            <div class='single-news--top--meta--subproject--header'>Research project:</div>
+            <a href='{{ base_url }}{{ page.header.subproject }}' class='single-news--top--meta--subproject--link'>{{ page.find(page.header.subproject).title }}</a>
+          </div>
+        {% endif %}
+
+
+          {# TAGS #}
+          {% if page.taxonomy.tag|length > 0 %}
+            <div class='single-news--top--meta--tags'>
+              {% for tag in page.taxonomy.tag %}
+                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="single-news--top--meta--tags--item">{{ tag }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {# Date #}
+          <div class='single-news--top--text--date'>Published on: {{ page.date|date('Y-m-d') }}</div>
+          
+
+        </div>
+
+      </div>
+
+      {# MAIN #}
+      <div class="single-news--main">
+
+        {# CONTENT #}
+        <div class="single-news--main--content">
+
+          {{ page.content }}
+
+        </div>
+
+        <div class="single-news--main--end">
+
+        </div>
+        
+      </div>
+      
+    </article>
+
+  </main>
+{% endblock %}

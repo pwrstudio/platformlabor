@@ -1,0 +1,158 @@
+{% extends 'global/base.html.twig' %}
+
+{% block content %}
+<div class="about">
+
+  {# TOP #}
+  <div class="about--top">
+
+    {# Text #}
+    <div class='about--top--text'>
+      {# Title #}
+      <h1 class='about--top--text--title'>Platform Labor</h1>
+    </div>
+
+    {# Meta #}
+    <div class='about--top--image'>
+      <img src='{{ page.media[page.header.featured_image].url}}'>
+    </div>
+
+  </div>
+
+  {# SECTION: Main #}
+  <div class='about--section about--section--main'>
+
+    {# NAVIGATION #}
+    <div class='about--section--main--navigation'>
+
+      {# PROJECTS #}
+      <a href='#projects' data-target='projects' class='about--section--main--navigation--item js-page-link'>
+        <div class='arrow arrow__down'>
+          <div class='arrow__down--line'></div>
+          <div class='arrow__down--point'></div>
+        </div>
+        <span>Projects</span>
+      </a>
+
+      {# RESEARCH TEAM #}
+      <a href='#research-team' data-target='research-team' class='about--section--main--navigation--item js-page-link'>
+        <div class='arrow arrow__down'>
+          <div class='arrow__down--line'></div>
+          <div class='arrow__down--point'></div>
+        </div>
+        <span>Research team</span>
+      </a>
+
+      {# CONTACT #}
+      <a href='#contact' data-target='contact' class='about--section--main--navigation--item js-page-link'>
+        <div class='arrow arrow__down'>
+          <div class='arrow__down--line'></div>
+          <div class='arrow__down--point'></div>
+        </div>
+        <span>Contact</span>
+      </a>
+
+      {# UPDATES #}
+      <a href='{{base_url}}/email-notification-form' class='about--section--main--navigation--item'>
+        <span>Sign up for updates</span>
+      </a>
+
+    </div>
+
+    {# DESCRIPTION #}
+    <div class='about--section--main--description'>
+      {{ page.content}}
+    </div>
+
+  </div>
+
+  {# SECTION: Subprojects #}
+  <div id='projects' class='about--section about--section--subprojects'>
+
+    {# Header #}
+    <h2 class='about--section--subprojects--header'>Projects</h2>
+
+    <div class='about--section--subprojects--inner'>
+      {# Links #}
+      {% for p in page.find('/projects').children.order('manual', 'asc') %}
+        <a href='{{p.url}}' class='about--section--subprojects--inner--item'>
+            <div class='about--section--subprojects--inner--item--text'>
+                <h1 class='about--section--subprojects--inner--item--text--title'>{{p.title}}</h1>
+            </div>
+            {% if p.header.featured_image %}
+              <div class='about--section--subprojects--inner--item--image'>
+                {{ p.media[p.header.featured_image].resize(400).html('',page.title|escape)}}
+              </div>
+            {% endif %}
+        </a>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+  {# SECTION: Team #}
+  <div id='research-team' class='about--section about--section--team'>
+
+    {# Header   #}
+    <h2 class='about--section--team--header'>Research team</h2>
+
+    {# Profiles #}
+    <div class='about--section--team--inner'>
+      {% for p in page.find('/research-team').children if p != page %}  
+          <a href='{{p.url}}' class='about--section--team--inner--item{% if not p.header.profile %} about--section--team--inner--item__inactive{% endif %}'>
+              <div class="about--section--team--inner--item--image">
+                  <img src='{{ p.media[p.header.featured_image].cropZoom(400, 400).url}}'>
+              </div>
+              <div class="about--section--team--inner--item__title">
+                {{p.title}}
+                <br/>
+                <span class='about--section--team--inner--item__title__note'>{{p.header.note}}</span>
+              </div>
+          </a>
+      {% endfor %}
+    </div>
+
+  </div>
+
+  {# SECTION: Contact #}
+  <div id='contact' class='about--section about--section--contact'>
+
+    {# Header #}
+    <h2 class='about--section--contact--header'>Contact</h2>
+
+    <div class='about--section--contact--inner'>
+      {# Links #}
+      <a href='mailto:{{page.header.email}}' class='about--section--contact--inner--link'>
+        <span>Send Mail</span>
+        <div class='arrow arrow__right'>
+          <div class='arrow__right--line'></div>
+          <div class='arrow__right--point'></div>
+        </div>
+      </a>
+      <a href='{{base_url}}/email-notification-form' class='about--section--contact--inner--link'>
+        <span>Sign up for updates</span>
+        <div class='arrow arrow__right'>
+          <div class='arrow__right--line'></div>
+          <div class='arrow__right--point'></div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  [].slice.call(document.querySelectorAll('.js-page-link')).forEach(nav => {
+    console.dir(nav)
+    nav.addEventListener('click', (e) => {
+      e.stopPropagation()
+      e.preventDefault()
+      console.log(nav.dataset.target)
+      document.getElementById(nav.dataset.target).scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  })
+</script>
+
+{% endblock %}

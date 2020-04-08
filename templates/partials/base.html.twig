@@ -1,0 +1,19 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getLanguage ?: 'en' }}">
+<head>
+    {% block head %}
+        {% include 'global/head.html.twig' %}
+    {% endblock %}
+</head>
+
+<script src="/instant.js" type="module"></script>
+
+<body>
+
+{% include 'navigation/navbar.html.twig' %}
+{% block content %}{% endblock %}
+{% include 'navigation/footer.html.twig' %}
+
+</body>
+</html>

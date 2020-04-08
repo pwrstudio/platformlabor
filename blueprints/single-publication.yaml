@@ -1,0 +1,81 @@
+title: Publication
+"@extends":
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            featured_image:
+              type: section
+              title: HAYWIRE.FEATURED_IMAGE
+              underline: true
+              fields:
+                header.featured_image:
+                  type: filepicker
+                  label: HAYWIRE.FEATURED_IMAGE
+                  placeholder: HAYWIRE.FEATURED_IMAGE_PLACEHOLDER
+                  folder: "self@"
+                  toggleable: true
+                  preview_images: true
+                  acccept:
+                    - .png
+                    - .jpg
+            author:
+              type: section
+              title: Author
+              underline: true
+              fields:
+                header.authors:
+                  name: authors
+                  type: list
+                  style: vertical
+                  label: Authors
+                  fields:
+                    .internal:
+                      type: pages
+                      label: Author
+                      toggleable: true
+                    .external:
+                      type: text
+                      toggleable: true
+                      label: "External Author"
+            meta:
+              type: section
+              title: Publishing
+              underline: true
+              fields:
+                header.publisher:
+                  type: text
+                  label: Publisher
+                header.forthcoming:
+                  type: toggle
+                  label: Forthcoming
+                  highlight: 0
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+                header.publication_date:
+                  type: date
+                  label: Publication date
+                header.link:
+                  type: text
+                  label: link
+                header.pdf:
+                  type: filepicker
+                  label: "PDF file"
+                  placeholder: "PDF file"
+                  folder: "self@"
+                  toggleable: true
+                  acccept:
+                    - .pdf
+                header.description:
+                  toggleable: true
+                  type: textarea
+                  label: "Short description"

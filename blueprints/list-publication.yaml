@@ -1,0 +1,4 @@
+title: Publication List
+'@extends':
+    type: default
+    context: blueprints://pages

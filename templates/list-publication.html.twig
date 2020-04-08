@@ -1,0 +1,142 @@
+{% extends 'global/base.html.twig' %}
+
+{% if uri.param('view') %}
+    {% set view = uri.param('view') %}
+{% endif %}
+
+{% block content %}
+    <div class="publications">
+
+        {# Listbar #}
+        {% include 'navigation/listbar.html.twig' %}
+
+        {# List #}
+        {% if view == 'compact' %}
+
+            {% for p in page.children.order('date', 'desc') %}
+                <div class='publications--item__compact'>
+
+                    <div class='publications--item__compact--text'>
+
+                        {# Meta #}
+                        <div class='publications--item__compact--text--meta'>
+                            {% if p.header.forthcoming %}
+                                <div class='publications--item__compact--text--meta--date'>Forthcoming</div>
+                            {% else %}
+                                <div class='publications--item__compact--text--meta--date'>{{ p.header.publication_date|date('Y-m-d') }}</div>
+                            {% endif %}
+                            {% if p.header.author %}
+                                <div class='publications--item__compact--text--meta--author'>{{ page.find(p.header.author).title }}</div>
+                            {% endif %}
+                            <div class='publications--item__compact--text--meta--provider'>{{ p.header.publisher}}</div>
+                        </div>
+                        
+                        {# Title #}
+                        <h1 class='publications--item__compact--text--title'><a href='{{p.header.link}}' target=_blank>{{p.title}}</a></h1>
+
+                        {# Tags #}
+                        <div class='publications--item__compact--text--tags'>
+                            {% for tag in p.taxonomy.tag %}
+                                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="publications--item__compact--text--tags--item">{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    
+                </div>
+            {% endfor %}
+
+        {% else %}
+
+             {% for p in page.children.order('date', 'desc') %}
+                <div class='publications--item__list'>
+
+                    <a href='output/{{p.slug}}' class='news--item__list--link'></a>
+
+                    <div class='publications--item__list--text'>
+
+                        {# Meta #}
+                        <div class='publications--item__list--text--meta'>
+                            {# DATE #}
+                            {% if p.header.forthcoming %}
+                                <div class='publications--item__list--text--meta--date'>Forthcoming</div>
+                            {% else %}
+                                <div class='publications--item__list--text--meta--date'>{{ p.header.publication_date|date('Y-m-d') }}</div>
+                            {% endif %}
+                            {# AUTHORS #}
+                            {% if p.header.authors is iterable %}
+                                {% for author in p.header.authors %}
+                                    {% if author.external %}
+                                        <div class='publications--item__list--text--meta--author'>{{ author.external }}</div>
+                                    {% elseif author.internal %}
+                                        <div class='publications--item__list--text--meta--author'>{{ page.find(author.internal).title }}</div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            {# PUBLICATION #}
+                            <div class='publications--item__list--text--meta--provider'>{{ p.header.publisher }}</div>
+                        </div>
+                        
+                        {# Title #}
+                        <div class='publications--item__list--text--title-container'>
+                            <h1 class='publications--item__list--text--title'>{{p.title}}</h1>
+                        </div>
+
+                        {# DESCRIPTION #}
+                        {% if p.header.description %}
+
+                            <div class='description'>
+                                {# <div class='description-toggle'>
+                                    Read more
+                                    <svg xmlns="http://www.w3.org/2000/svg" class='publications--item__list--icon' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </div> #}
+                                <div class='description-inner'>{{p.header.description|truncate(240, true)}}</div>
+                                <div class='description-inner-full'>{{p.header.description}}</div>
+                            </div>
+                        {% endif %}
+
+                        {# LINKS #}
+                        <div>
+                            {% if p.header.link %}
+                                <a href='{{p.header.link}}' target=_blank class='publications--item__list--exit'>
+                                Go to {{ p.header.publisher }}
+                                <svg xmlns="http://www.w3.org/2000/svg" class='publications--item__list--icon' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </a>
+                            {% endif %}
+
+
+                            {% if p.header.pdf %}
+                                <a href='output/{{p.slug}}/{{p.header.pdf}}' target=_blank class='publications--item__list--pdf'>
+                                Open pdf
+                                <svg xmlns="http://www.w3.org/2000/svg" class='publications--item__list--icon' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                </a>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                    {# Image #}
+                    <div class='publications--item__list--image'>
+                        {{ p.media[p.header.featured_image].html('', p.title|escape)}}
+                    </div> 
+
+                    {# Tags #}
+                    <div class='publications--item__list--tags'>
+                        {% for tag in p.taxonomy.tag %}
+                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="publications--item__list--tags--item">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        {% endif %}
+
+
+        <div class='publications--item publications--item__more'>
+            <div class='publications--item__more--button'>Load more</div>
+        </div>
+
+    </div>
+
+{% endblock %}

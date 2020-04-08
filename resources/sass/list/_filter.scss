@@ -1,0 +1,31 @@
+.filter {
+
+    @include list;
+
+    margin-top: 80px;
+
+    &--header {
+        @include h2-header;
+        margin-left: 0;
+
+        @include screen-size('small') {
+            margin-left: 20px;
+        }
+    }
+
+    &--item {
+       
+        &__list {
+            @include list-item-small;
+        }
+
+        &__compact {
+            @include list-item-compact;          
+        }
+
+        &__more {
+            @include list-item-more;
+        }
+
+    }
+}

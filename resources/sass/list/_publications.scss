@@ -1,0 +1,167 @@
+.publications {
+
+    @include list;
+
+    align-content: flex-start;
+
+    &--item {
+
+        &__list {
+            @include list-item-small;
+            border-bottom: 1px solid $grey-2;
+            height: auto;
+            overflow: hidden;
+
+            &:hover {
+                background: #dcdcdc;
+                .publications--item__list--text {
+                  &--meta {
+                    &--date {
+                      border: 1px solid $grey-2;
+                    }
+                  }
+                }
+            }
+
+            &--pdf, &--exit {
+              font-family: space mono,Courier New,Courier,monospace;
+              font-size: 12px;
+              line-height: 52px;
+              height: 52px;
+              margin-right: 10px;
+              color: #000;
+              padding: 10px;
+              border: 1px solid #b4b4b4 !important;
+              z-index: 100;
+              position: relative;
+
+
+              &:hover {
+                background: #b4b4b4;
+              }
+            }
+
+            &--exit {
+              max-width: 80vw;
+              width: 100%;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+            }
+
+            &--icon {
+              position: relative;
+              top: 8px;
+            }
+
+            &--text {
+
+              &--title-container {
+                width: 100%;
+                display: inline-block;
+              }
+
+              &--title {
+                max-width: 60ch;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+
+              &--meta {
+                &--date, &--author {
+                  margin-bottom: 7px;
+                }
+
+                &--provider {
+                  @include screen-size('small') {
+                    display: none;
+                  }
+                }
+              }
+
+            }
+
+        }
+
+        &__text {
+            @include list-item-small;
+
+            @include font-style-sans-small;
+
+
+
+            &:hover {
+                background: white;
+            }
+        }
+
+        &__compact {
+            @include list-item-compact;    
+            
+            &:hover {
+                background: $grey-1;
+                .publications--item__compact--text {
+                  &--meta {
+                    &--date {
+                      border: 1px solid $grey-2;
+                    }
+                  }
+                }
+            }
+        }
+
+        &__more {
+            @include list-item-more;
+        }
+
+    }
+}
+
+.description-inner {
+  font-family: Archivo, sans-serif;
+  font-size: 16px;
+  line-height: 1.2em;
+  color: #000;
+  height: auto;
+  max-width: 80ch;
+  margin-bottom:  1em;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+  user-select: none;
+}
+
+.description-inner-full {
+  font-family: Archivo, sans-serif;
+  font-size: 16px;
+  line-height: 1.2em;
+  color: #000;
+  height: auto;
+  max-width: 80ch;
+  margin-bottom:  1em;
+  overflow: hidden;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+}
+
+.description.full .description-inner {
+  display: none;
+}
+
+.description.full .description-inner-full {
+  display: block;
+}
+
+.description.full .description-inner {
+  display: none;
+}
+
+.description.full .description-inner-full {
+  display: block;
+}
+
+.output-link {
+  background: red;
+}

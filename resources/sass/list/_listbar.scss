@@ -1,0 +1,60 @@
+.listbar {
+    width: 100%;
+    border-bottom: 1px solid $grey-2;
+    // margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include screen-size('small') {
+        display: none;
+    }
+
+    &--description {
+        @include font-style-mono;
+        line-height: 28px;
+
+        float: left;
+        color: black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 90%;
+    }
+
+    &--view {
+        float: right;
+
+        &--item {
+            float: right;
+            padding: 5px;
+            margin-top: 7px;
+
+            svg {
+                height: 30px;
+                width: 30px;
+                padding: 5px;
+                stroke: black;
+                line, circle {
+                    stroke: black;
+                }
+            }
+
+            &:hover {
+                svg {
+                    background: $grey-1;
+                    stroke: black;
+                    line, circle {
+                        stroke: black;
+                    }
+                }
+
+            }
+
+            &.active {
+                svg {
+                    background: $grey-2;
+                }
+            }
+        }
+    }
+}

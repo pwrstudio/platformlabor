@@ -1,0 +1,52 @@
+.pl-form {
+    @include single-main;
+
+
+    padding: 30px;
+    padding-top: 60px;
+
+    @include font-style-sans-small;
+
+
+    h1, h2 {
+        @include font-style-sans-small;
+    }
+    
+    p {
+        @include font-style-sans-small;
+    }
+
+    .email-field {
+        outline: 0;
+        @include font-style-sans-small;
+        border: 1px solid black;
+        padding: 10px;
+        width: 500px;
+        max-width: 95vw;
+    }
+    
+    .submit-button {
+        outline: 0;
+        @include font-style-sans-small;
+        border: 1px solid black;
+        margin-top: 5px;
+        cursor: pointer;
+        padding: 10px;
+
+
+        &:hover {
+            background: $grey-1; 
+        }
+    }
+    
+    label {
+        @include font-style-sans-small;        
+    }
+
+    .form-field {
+        margin-bottom: 1em;
+    }
+}
+
+
+

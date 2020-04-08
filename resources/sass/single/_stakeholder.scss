@@ -1,0 +1,51 @@
+.single-stakeholder {
+    @include single;
+
+    &--top {
+
+        @include single-top;
+
+        &--text {
+            @include single-top-text;
+            &--title {
+                font-size:  32px;
+                line-height: 32px;
+
+            }
+        }
+
+        &--image {
+            @include single-top-meta;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+    &--main {
+        @include single-main;
+
+        &--content {
+            @include single-main-content;
+        }
+
+        &--end {
+            width: 100%;
+            display: flex;
+
+            &--comments {
+                @include single-main-comments;
+            }
+
+            &--related {
+                @include single-main-related;
+            }
+
+        }
+
+    }
+}

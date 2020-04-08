@@ -1,0 +1,202 @@
+.navbar {
+    @include font-style-sans-small;
+
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 10000;
+    opacity: 1;
+    height: 61px;
+    border-bottom: 1px solid $grey-2;
+    background: white;
+    box-shadow: 0 0 20px white;
+
+    &--burger {
+        display: none;
+        height: 60px;
+        width: 71px;
+        margin-right: 10px;
+        float: right;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        div {
+            display: block;
+            background-color: black;
+            height: 2px;
+            width: 100%;
+            &:nth-child(1) {
+                margin-top: 18px;
+            }
+            &:nth-child(2) {
+                margin-top: 10px;
+            }
+            &:nth-child(3) {
+                margin-top: 10px;
+            }
+        }
+
+        &:hover {
+            background: $grey-1;
+        }
+
+        @include screen-size('small') {
+            display: block;
+        }
+    }
+
+    &--item {
+        float: left;
+        height: 60px;
+        padding-right: 15px;
+        padding-left: 15px;
+        line-height: 60px;
+        color: black;
+        text-decoration: none !important;
+
+        &:hover {
+            background: $grey-1;
+            color: $black;
+            svg {
+                path {
+                    fill: $black;
+                }
+            }
+        }
+
+        &__active {
+            background: $grey-2;
+            color: $black;
+            svg {
+                path {
+                    fill: $black;
+                }
+            }
+        }
+
+        &--search {
+            float: right;
+            margin-right: 30px;
+            padding-right: 30px;
+            padding-left: 30px;
+            // background: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                // margin-top: 4px;
+                // background: red;
+                circle, line {
+                    stroke: black;
+                }
+            } 
+
+            &:hover {
+                background: $grey-1;
+            }
+        }
+
+        &--desktop {
+            @include screen-size('small') {
+                display: none;
+            }
+        }
+    }
+
+    &--logo {
+        margin-left: 15px;
+        font-family: 'Archivo Black', sans-serif;
+
+        @include screen-size('small') {
+            margin-left: 10px;
+        }
+    }
+
+}
+
+.mobile-menu {
+    position: fixed;
+    padding-top: 61px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    z-index: 10;
+    user-select: none;
+
+    &--close {
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        display: block;
+        height: 60px;
+        width: 71px;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // background: red;
+
+        svg {
+                height: 40px;
+                width: 40px;
+                line {
+                    stroke: black;
+                }
+            }
+
+
+        div {
+            display: block;
+            background-color: black;
+            height: 2px;
+            width: 100%;
+            &:nth-child(1) {
+                margin-top: 18px;
+            }
+            &:nth-child(2) {
+                margin-top: 10px;
+            }
+            &:nth-child(3) {
+                margin-top: 10px;
+            }
+        }
+
+        &:hover {
+            background: $grey-1;
+        }
+
+    }
+
+    &--logo {
+        font-family: 'Archivo Black', sans-serif;
+    }
+
+    &--item {
+        @include font-style-sans-small;
+
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: black;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        &:hover, &:active {
+            color: $black;
+            background: $grey-1;
+            cursor: pointer;
+        }
+    }
+    overflow-y: scroll;
+    overflow-x: hidden;
+    @include hide-scroll;
+    display: none;
+    &.open {
+        display: block;
+    }
+}

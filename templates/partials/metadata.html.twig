@@ -1,0 +1,28 @@
+<!--  Essential META Tags -->
+{% if page.template == 'list-landing' %}
+    <meta property="og:title" content="Platform Labor">
+{% else %}
+    <meta property="og:title" content="{{header.title|e('html')}}">
+{% endif %}
+
+{% set deftxt = "Platform Labor is a ERC-funded research project that aims to determine how digital platforms are transforming the organization of labor, livelihood, and governance in cities marked by eroding welfare systems." %}
+
+{% if page.template == 'list-landing' or page.template == 'list-filter' or page.template == 'list-filter' or page.template == 'list-notes' or page.template == 'list-publication' or page.template == 'list-news' or page.template == 'list-feed' %}
+    <meta property="description" content="{{ deftxt }}">
+    <meta property="og:description" content="{{ deftxt }}">
+{% else %}
+    <meta property="description" content="{% if page.header.intro %}{{ page.header.intro|safe_truncate(240)|striptags }}{% else %}{{ page.summary(240)|striptags }}{% endif %}">
+    <meta property="og:description" content="{% if page.header.intro %}{{ page.header.intro|safe_truncate(240)|striptags }}{% else %}{{ page.summary(240)|striptags }}{% endif %}">
+{% endif %}
+
+<meta property="og:image" content="{% if page.header.featured_image %}https://platformlabor.net{{ page.media[page.header.featured_image].url}}{% else %}https://platformlabor.net/default.jpg{% endif %}">
+
+{# <meta property="og:url" content="https://platformlabor.net{{page.url}}"> #}
+<meta name="twitter:card" content="summary_large_image">
+
+
+<!--  Non-Essential, But Recommended -->
+<meta property="og:site_name" content="Platform Labor">
+<meta name="twitter:image:alt" content="Platform Labor">
+
+{{ page.template }}

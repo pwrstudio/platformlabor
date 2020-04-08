@@ -1,0 +1,41 @@
+//
+// Colors
+//
+$white: rgba(255,255,255,1);
+$black: rgba(0, 0, 0, 1);
+
+$off-white: rgba(240,240,240,1);
+$grey-1: rgba(220,220,220,1);
+$grey-2: rgba(180,180,180,1);
+
+$yellow: rgba(255, 255, 119, 1);
+$dark-yellow: rgb(255, 255, 16);
+$green: rgb(125, 244, 180);
+
+$border-style: 0px solid $primary-text-color;
+
+//
+// Space
+//
+$general-size: 100px;
+
+//
+//  Breakpoints
+//
+$breakpoints: (
+    'small': (
+        max-width: 700px
+    ),
+    'medium': (
+        max-width: 1088px
+    ),
+    'sm': (
+        max-width: 920px
+    ),
+    'large': (
+        min-width: 1400px
+    ),
+    'short': (
+        max-height: 600px
+    )
+);

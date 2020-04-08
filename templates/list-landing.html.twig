@@ -1,0 +1,194 @@
+{% extends 'global/base.html.twig' %}
+
+{% block content %}
+<div id='landing' class="landing">
+
+    {# ABOUT #}
+    <div id='landing--item__about' class='landing--item__about landing--item__about__active'>
+
+        {% set about = page.find('/about') %}
+        <p>{{ about.header.short }}</p>
+        <a href='{{base_url}}/email-notification-form' class='landing--item__about--button'>
+            <span>Sign up for updates</span>
+            <div class='arrow arrow__right'>
+                <div class='arrow__right--line'></div>
+                <div class='arrow__right--point'></div>
+            </div>
+        </a>
+        <a href='{{base_url}}/about' class='landing--item__about--button'>
+            <span>More about the project</span>
+            <div class='arrow arrow__right'>
+                <div class='arrow__right--line'></div>
+                <div class='arrow__right--point'></div>
+            </div>
+        </a>
+    </div> 
+
+    {# NOTE #}
+    {% set latestNote = page.find('/blog').collection.first %}
+    <div  class='landing--item__third spaced'>
+
+        <a href='{{latestNote.url}}' class='landing--item__third--link'></a>
+
+        <div class='landing--item__third--text'>
+
+            <div class='landing--item__third--text--header'>Blog</div>
+
+            {# Meta #}
+            <div class='landing--item__third--text--meta'>
+                <div class='landing--item__third--text--meta--date'>{{ latestNote.date|date('Y-m-d') }}</div>
+                
+                {# Author #}
+                {% if latestNote.header.author %}
+                    {% for author in latestNote.header.author %}
+                        <div class='landing--item__third--text--meta--author'>{{ page.find(author).title }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+            {# Title #}
+            <a href='{{latestNote.url}}' class='landing--item__third--text--title'>{{latestNote.title}}</a>
+
+            {# Tags #}
+            <div class='landing--item__third--text--tags'>
+                {% for tag in latestNote.taxonomy.tag|slice(0,4) %}
+                    <a href="{{ base_url }}/filter/tag:{{ tag }}" class="landing--item__third--text--tags--item">{{ tag }}</a>
+                {% endfor %}
+            </div>
+
+        </div>
+
+        {# Image #}
+        {% if latestNote.header.featured_image %}
+            <div class='landing--item__third--image'>
+                {{ latestNote.media[latestNote.header.featured_image].cropResize(600, 400).html('', latestNote.title|escape)}}
+            </div>
+        {% endif %}
+        
+    </div>
+
+    {# FEED #}
+    {% set latestFeed = page.find('/feed').children.order('date', 'desc').first %}
+    <div class='landing--item__third spaced'>
+
+        <a class='landing--item__third--link' href='{{latestFeed.url}}'></a>
+
+        <div class='landing--item__third--text'>
+
+            <div class='landing--item__third--text--header'>Feed</div>
+
+            {# Meta #}
+            <div class='landing--item__third--text--meta'>
+                <div class='landing--item__third--text--meta--comments'>
+                    <a href="{{latestFeed.url}}#isso-thread">0</a>
+                </div>
+                <div class='landing--item__third--text--meta--date'>{{ latestFeed.date|date('Y-m-d') }}</div>
+                <div class='landing--item__third--text--meta--provider'>{{ latestFeed.header.provider_name }}</div>
+            </div>
+            
+            {# Title #}
+            <h1 class='landing--item__third--text--title'>{{ latestFeed.title }}</h1>
+
+        </div>
+
+        {# Tags #}
+        <div class='landing--item__third--tags'>
+            {% for tag in latestFeed.taxonomy.tag %}
+                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="landing--item__third--text--tags--item">{{ tag }}</a>
+            {% endfor %}
+        </div>
+
+        <div class='landing--item__third--image'>
+            {% if latestFeed.header.featured_image %}
+                {{ latestFeed.media[latestFeed.header.featured_image].cropResize(600, 400).html('', p.title|escape)}}
+            {% else %}
+                <img src='{{ latestFeed.header.external_image }}'>
+            {% endif %}
+        </div> 
+
+
+    
+    </div>
+
+    {# NEWS #}        
+    {% set latestNews = page.find('/announcements').collection.first %}
+    <div class='landing--item__third'>
+
+        <a class='landing--item__third--link' href='{{latestNews.url}}'></a>
+
+        <div class='landing--item__third--text'>
+
+            <div class='landing--item__third--text--header'>Announcements</div>
+
+            {# Meta #}
+            <div class='landing--item__third--text--meta'>
+                {# <div class='landing--item__third--text--meta--comments'>
+                    <a href="{{latestNews.url}}#isso-thread">Comments</a>
+                </div> #}
+                <div class='landing--item__third--text--meta--date'>{{ latestNews.date|date('Y-m-d') }}</div>
+            </div>
+            
+            {# Title #}
+            <h1 class='landing--item__third--text--title'>{{ latestNews.title }}</h1>
+
+        </div>
+
+        <div class='landing--item__third--image'>
+            {{ latestNews.media[latestNews.header.featured_image].cropResize(600, 400).html('', latestNews.title|escape)}}
+        </div> 
+
+        {# Tags #}
+        <div class='landing--item__third--tags'>
+            {% for tag in latestNews.taxonomy.tag %}
+                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="landing--item__third--tags--item">{{ tag }}</a>
+            {% endfor %}
+        </div>
+        
+    </div>
+
+    {# MORE NOTE #}
+    <div class='landing--item__third landing--item__third__short'>
+        <a href='{{base_url}}/blog' class='landing--item__third--button'>
+            <span>More blog posts</span>
+            <div class='arrow arrow__right'>
+                <div class='arrow__right--line'></div>
+                <div class='arrow__right--point'></div>
+            </div>
+        </a>
+    </div>
+
+    {# MORE FEED #}
+    <div class='landing--item__third landing--item__third__short'>
+        <a href='{{base_url}}/feed' class='landing--item__third--button'>
+            <span>More feed</span>
+            <div class='arrow arrow__right'>
+                <div class='arrow__right--line'></div>
+                <div class='arrow__right--point'></div>
+            </div>
+        </a>
+    </div>
+
+    {# MORE NEWS #}
+    <div class='landing--item__third landing--item__third__short'>
+        <a href='{{base_url}}/announcements' class='landing--item__third--button'>
+            <span>More anouncements</span>
+            <div class='arrow arrow__right'>
+                <div class='arrow__right--line'></div>
+                <div class='arrow__right--point'></div>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+<script src="https://comments.platformlabor.net/js/count.min.js"></script>
+
+<script>
+    /* document.getElementById('landing--item__about__close').addEventListener('click', function() {
+        document.getElementById('landing--item__about').classList.remove('landing--item__about__active')
+        window.setTimeout(function() {
+            document.getElementById('landing--item__about').classList.add('landing--item__about__gone')
+        }, 400)
+    })*/
+</script>
+{% endblock %}

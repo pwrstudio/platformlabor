@@ -1,0 +1,56 @@
+title: Team
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            featured_image:
+              type: section
+              title: HAYWIRE.FEATURED_IMAGE
+              underline: true
+              fields:
+                header.featured_image:
+                  type: filepicker
+                  label: HAYWIRE.FEATURED_IMAGE
+                  placeholder: HAYWIRE.FEATURED_IMAGE_PLACEHOLDER
+                  folder: 'self@'
+                  toggleable: true
+                  preview_images: true
+                  acccept:
+                    - .png
+                    - .jpg
+            header.note:
+              type: text
+              label: Note
+            header.subproject:
+              type: pages
+              label: Subproject
+              toggleable: true
+            header.profile:
+              type: toggle
+              label: Enable profile
+              highlight: 1
+              help: PLUGIN_ADMIN.ENABLED_HELP
+              options:
+                  1: PLUGIN_ADMIN.YES
+                  0: PLUGIN_ADMIN.NO
+              validate:
+                  type: bool
+            header.links:
+              name: links
+              type: list
+              style: vertical
+              label: Links
+              fields:
+                .text:
+                  type: text
+                  label: Text
+                .url:
+                  type: text
+                  label: URL
+

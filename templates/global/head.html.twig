@@ -1,0 +1,27 @@
+<meta charset="utf-8" />
+<title>{% if page.template == 'list-landing' %}{{ site.title|e('html') }}{% elseif header.title %}{{ header.title|e('html') }}{% endif %} | {{ site.title|e('html') }}</title>
+<meta name="theme-color" content="#000">
+
+{% include 'global/metadata.html.twig' %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+<link rel="icon" type="image/png" href="{{ url('theme://images/favicon/favicon.png') }}" />
+
+<link href="https://fonts.googleapis.com/css?family=Archivo:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+
+{{ assets.css() }}
+
+{{ assets.js() }}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39005519-14"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-39005519-14');
+</script>

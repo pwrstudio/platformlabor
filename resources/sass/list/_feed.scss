@@ -1,0 +1,44 @@
+.feed {
+
+    @include list;
+
+    align-content: flex-start;
+
+    &--item {
+
+        &__list {
+            @include list-item-small;    
+            
+            &:hover {
+                background: $grey-1;
+                .feed--item__list--text {
+                  &--meta {
+                    &--date {
+                      border: 1px solid $grey-2;
+                    }
+                  }
+                }
+            }
+        }
+
+        &__compact {
+            @include list-item-compact; 
+            
+            &:hover {
+                background: $grey-1;
+                .feed--item__compact--text {
+                  &--meta {
+                    &--date {
+                      border: 1px solid $grey-2;
+                    }
+                  }
+                }
+            }
+        }
+
+        &__more {
+            @include list-item-more;
+        }
+
+    }
+}

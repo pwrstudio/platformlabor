@@ -1,0 +1,70 @@
+{% extends 'global/base.html.twig' %}
+
+{% block content %}
+  <main>
+
+    <article class="single-feed">
+
+      {# TOP #}
+      <div class="single-feed--top">
+
+        {# Text #}
+        <div class='single-feed--top--text'>
+          
+          {# Title #}
+          <h1 class='single-feed--top--text--title'>{{page.title}}</h1>
+          
+          {# Excerpt #}
+          <div class='single-feed--top--text--excerpt'>{{ page.content }}</div>
+          
+          {# Link #}
+          <a href='{{ page.header.feedlink }}' class='single-feed--top--text--link' target=_blank>
+            <span>Go to source</span>
+            <div class='arrow arrow__right'>
+              <div class='arrow__right--line'></div>
+              <div class='arrow__right--point'></div>
+            </div>
+          </a>
+        </div>
+
+        {# Meta #}
+        <div class='single-feed--top--meta'>
+
+          {# Date #}
+          <div class='single-feed--top--text--date'>Published on: {{ page.date|date('Y-m-d') }}</div>
+
+          {# Provider #}
+          <div class='single-feed--top--text--provider'>From {{ page.header.provider_name }}</div>
+
+          {# TAGS #}
+          {% if page.taxonomy.tag|length > 0 %}
+            <div class='single-feed--top--meta--tags'>
+              {% for tag in page.taxonomy.tag %}
+                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="single-feed--top--meta--tags--item">{{ tag }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+          
+        </div>
+
+      </div>
+
+      {# MAIN #}
+      <div class="single-feed--main">
+
+        <div class="single-feed--main--end">
+
+          {# COMMENTS #}
+          <div class="single-feed--main--end--comments">
+            <div class='single-feed--main--end--comments--header'>Discussion</div>
+            {% include 'global/comments.html.twig' %}
+          </div>
+
+        </div>
+        
+      </div>
+      
+    </article>
+
+  </main>
+{% endblock %}

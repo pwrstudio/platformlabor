@@ -1,0 +1,144 @@
+{% extends 'global/base.html.twig' %}
+
+{% if uri.param('view') %}
+    {% set view = uri.param('view') %}
+{% endif %}
+
+{% block content %}
+<div class="notes">
+
+    <div id="landing--item__about" class="landing--item__about landing--item__output landing--item__about__active">
+        <p>Do you want to contribute or have an idea for a blog post? <a href="mailto:N.A.J.M.vanDoorn@uva.nl">Get in touch!</a></p>
+        {# <a href="mailto:N.A.J.M.vanDoorn@uva.nl" class="landing--item__about--button">
+            <span>Get in touch</span>
+            <div class="arrow arrow__right">
+                <div class="arrow__right--line"></div>
+                <div class="arrow__right--point"></div>
+            </div>
+        </a> #}
+    </div>
+
+
+    {# Listbar #}
+    {% include 'navigation/listbar.html.twig' %}
+
+    {% if view == 'compact' %}
+
+        {% for p in page.collection %}
+            <div class='notes--item__compact'>
+
+                <div class='notes--item__compact--text'>
+
+                    {# Meta #}
+                    <div class='notes--item__compact--text--meta'>
+                        <div class='notes--item__compact--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
+                        {# {% if p.header.author %}
+                            {% for author in p.header.author %}
+                                <div class='notes--item__compact--text--meta--author'>{{ page.find(author).title }}</div>
+                            {% endfor %}
+                        {% endif %} #}
+                    </div>
+                    
+                    {# Title #}
+                    <h1 class='notes--item__compact--text--title'><a href='{{p.url}}'>{{p.title}}</a></h1>
+
+                    {# Tags #}
+                    <div class='notes--item__compact--text--tags'>
+                        {% for tag in p.taxonomy.tag %}
+                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="notes--item__compact--text--tags--item">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+
+                </div>
+                
+            </div>
+        {% endfor %}
+
+    {% else %}
+    
+        {# POST 1: FULL #}
+        {% set latestNote = page.collection.first %}
+        <div  class='notes--item__full'>
+
+            <a href='{{latestNote.url}}' class='notes--item__full--link'></a>
+
+            <div class='notes--item__full--text'>
+
+                {# Meta #}
+                <div class='notes--item__full--text--meta'>
+                    <div class='notes--item__full--text--meta--date'>{{ latestNote.date|date('Y-m-d') }}</div>
+
+                    {% if latestNote.header.author %}
+                        {% for author in latestNote.header.author %}
+                            <div class='notes--item__full--text--meta--author'>{{ page.find(author).title }}</div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+                {# Title #}
+                <a href='{{latestNote.url}}' class='notes--item__full--text--title'>{{latestNote.title}}</a>
+
+                {# Tags #}
+                <div class='notes--item__full--text--tags'>
+                    {% for tag in latestNote.taxonomy.tag %}
+                        <a href="{{ base_url }}/filter/tag:{{ tag }}" class="notes--item__full--text--tags--item">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            {# Image #}
+            {% if latestNote.header.featured_image %}
+                <div class='notes--item__full--image'>
+                    {{ latestNote.media[latestNote.header.featured_image].cropResize(900).html('', latestNote.title|escape)}}
+                </div>
+            {% endif %}
+            
+        </div>
+
+
+        {# POST 2 ... n: SMALL #}
+        {% for p in page.collection.slice(1,100) %}
+            <div class='notes--item__list'>
+
+                <a href='{{p.url}}' class='notes--item__list--link'></a>
+
+                <div class='notes--item__list--text'>
+
+                    {# Meta #}
+                    <div class='notes--item__list--text--meta'>
+                        <div class='notes--item__list--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
+                        {% if p.header.author %}
+                            {% for author in p.header.author %}
+                                <div class='notes--item__list--text--meta--author'>{{ page.find(author).title }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    
+                    {# Title #}
+                    <h1 class='notes--item__list--text--title'>{{p.title}}</h1>
+
+                </div>
+
+                <div class='notes--item__list--image'>
+                    {{ p.media[p.header.featured_image].html('', p.title|escape)}}
+                </div> 
+
+                {# Tags #}
+                <div class='notes--item__list--tags'>
+                    {% for tag in p.taxonomy.tag %}
+                        <a href="{{ base_url }}/filter/tag:{{ tag }}" class="notes--item__list--tags--item">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+                
+            </div>
+        {% endfor %}
+
+    {% endif %}
+
+    <div class='notes--item notes--item__more'>
+        <div class='notes--item__more--button'>Load more</div>
+    </div>
+
+</div>
+{% endblock %}

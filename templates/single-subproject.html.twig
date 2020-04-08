@@ -1,0 +1,120 @@
+{% extends 'global/base.html.twig' %}
+
+{% block content %}
+  <main>
+
+    <article class="single-team">
+
+      {# TOP #}
+      <div class="subproject--top">
+
+        {# Text #}
+        <div class='subproject--top--text'>
+          {# Title #}
+          <h1 class='subproject--top--text--title'>{{page.title}}</h1>
+        </div>
+
+        {# Meta #}
+        <div class='subproject--top--image'>
+            {{ page.media[page.header.featured_image].cropResize(900).html('', latestNote.title|escape)}}
+        </div>
+
+      </div>
+
+      {# MAIN #}
+      <div class="subproject--main">
+
+        {# CONTENT #}
+        <div class="subproject--main--content">
+          {{ page.content }}
+        </div>
+
+        {# SIDEBAR #}
+        <div class="subproject--main--side">
+        
+          <div class='subproject--main--side--header'>Research Team</div>
+            
+          {# RESEARCH TEAM #}
+          <div class="subproject--main--side--team">
+              
+              {% set team = []%}
+              {% for t in page.find('/research-team').children.order('date', 'desc') %}
+                  {% if t.header.subproject == '/projects/' ~ page.slug %}
+                    <a href='{{ t.url }}' class='single-note--top--text--author'>
+                      <div class='single-note--top--text--author--image'>
+                        {{ t.media[t.header.featured_image].grayscale().html('', t.title|escape)}}
+                      </div>   
+                      <div class='single-note--top--text--author--name'>
+                        {{ t.title }}
+                      </div>
+                    </a>
+                  {% endif %}
+              {% endfor %}
+
+          </div>
+
+          <div class='subproject--main--side--header'>Related tags</div>
+
+          {# RELATED TAGS #}
+          <div class="subproject--main--side--tags">
+              {% for tag in page.taxonomy.tag %}
+                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="subproject--main--side--tags--item">{{ tag }}</a>
+              {% endfor %}
+          </div>
+        </div>
+
+        {# RELATED NOTES #}
+        {% set notes = []%}
+        {% for n in page.find('/blog').children.order('date', 'desc') %}
+          {% if n.header.subproject == '/projects/' ~ page.slug %}
+            {% set notes = notes|merge([n])%}
+          {% endif %}
+        {% endfor %}
+
+        {% if notes|length > 0 %} 
+          <div class="subproject--main--related">
+
+           <div class="subproject--main--related--header">Related notes</div>
+
+            {% for note in notes %}
+              <div href='{{note.url}}' class='subproject--main--related--item__list'>
+
+                  <div class='subproject--main--related--item__list--text'>
+
+                      {# Meta #}
+                      <div class='subproject--main--related--item__list--text--meta'>
+                          <div class='subproject--main--related--item__list--text--meta--date'>{{ note.date|date('Y-m-d') }}</div>
+                          {% for author in note.header.author %}
+                            <div class='subproject--main--related--item__list--text--meta--author'>{{ page.find(author).title }}</div>
+                          {% endfor %}
+                      </div>
+                      
+                      {# Title #}
+                      <h1 class='subproject--main--related--item__list--text--title'><a href='{{note.url}}'>{{note.title}}</a></h1>
+
+                  </div>
+
+                  {% if note.header.featured_image %}
+                      <div class='subproject--main--related--item__list--image'>
+                          {{ note.media[note.header.featured_image].cropResize(300).html('', note.title|escape)}}
+                      </div>              
+                  {% endif %}
+
+                  {# Tags #}
+                  <div class='subproject--main--related--item__list--tags'>
+                      {% for tag in note.taxonomy.tag %}
+                          <a href="{{ base_url }}/filter/tag:{{ tag }}" class="subproject--main--related--item__list--tags--item">{{ tag }}</a>
+                      {% endfor %}
+                  </div>
+                  
+                </div>
+            {% endfor %}      
+          </div>
+        {% endif %}
+      
+      </div>
+    
+    </article>
+
+  </main>
+{% endblock %}

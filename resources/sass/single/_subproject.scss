@@ -1,0 +1,123 @@
+.subproject {
+    @include single;
+
+    &--top {
+
+        @include single-top;
+
+        &--text {
+            @include single-top-text;
+        }
+
+        &--image {
+            @include single-top-meta;
+
+            margin-right: 20px;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+    &--main {
+        @include single-main;
+
+        &--content {
+            @include single-main-content;
+
+            width: 66.6666%;
+            float: left;
+            padding-bottom: 0px;
+            border-right: 1px solid $grey-2;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-top: 0px;
+
+            border-bottom: none;
+
+            @include screen-size('small') {
+                width: 100%;
+                border-right: none;
+            }  
+
+        }
+
+        &--side {
+            width: 33.3333%;
+            float: left;
+            padding: 20px;
+            margin-top: 20px;
+
+            @include screen-size('small') {
+                width: 100%;
+                border-top: 1px solid $grey-2;
+            }     
+
+            &--header {
+                border: 1px solid $grey-2;
+                margin-bottom: 20px;
+                @include greybox;
+                padding: 10px;
+                background: white;
+                border: 1px solid $grey-2;
+                margin-right: 7px;
+                margin-bottom: 10px;
+            }
+
+            &--tags {
+                @include tag;
+            }
+
+            &--team {
+                display: block;
+                margin-bottom: 20px;
+                &--item {
+                    @include font-style-sans-small;
+
+                    padding: 10px;
+                    display: inline-block;
+
+                    &:hover {
+                        background: $grey-1;
+                    }
+                }
+            }
+
+        }
+
+        &--related {
+            float: left;
+            width: 100%;
+            padding-bottom: 200px;
+
+            @include list;
+
+            margin-top: 0;
+
+            &--item {
+                &__list {
+                    @include list-item-small;
+
+                    &--text {
+                        &--title {
+                            @include font-style-sans-small;
+                        }
+                    }
+                }
+            }
+
+            &--header {
+                @include h2-header;
+                display: inline-block;
+                margin-top: 40px;
+                margin-bottom: 40px; 
+                margin-left: 20px;
+            }
+        }
+
+    }
+}

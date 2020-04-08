@@ -1,0 +1,93 @@
+{% extends 'global/base.html.twig' %}
+
+{% block content %}
+  <main>
+
+    <article class="single-news">
+
+      {# TOP #}
+      <div class="single-news--top">
+
+        {# Text #}
+        <div class='single-news--top--text'>
+          {# Title #}
+          <h1 class='single-news--top--text--title'>{{page.title}}</h1>
+
+          {# AUTHORS #}
+          {% if page.header.authors is iterable %}
+              {% for author in page.header.authors %}
+                  {% if author.external %}
+                    <div class='single-note--top--text--author'>
+                      <div class='single-note--top--text--author--image'>
+                      </div>   
+                      <div class='single-note--top--text--author--name'>
+                        {{ author.external }}
+                      </div>
+                    </div>
+                  {% elseif author.internal %}
+                    {% set authorPost = page.find(author.internal) %}
+                    <a href='{{ base_url }}{{ author.internal }}' class='single-note--top--text--author'>
+                      <div class='single-note--top--text--author--image'>
+                        {{ authorPost.media[authorPost.header.featured_image].cropResize(300).grayscale().html('', p.title|escape)}}
+                      </div>   
+                      <div class='single-note--top--text--author--name'>
+                        {{ authorPost.title }}
+                      </div>
+                    </a>
+                  {% endif %}
+              {% endfor %}
+          {% endif %}
+
+        </div>
+
+        {# Meta #}
+        <div class='single-news--top--meta'>
+
+          {# Date #}
+          <div class='single-news--top--text--date'>{{ page.date|date('Y-m-d') }}</div>
+          <div class='single-news--top--text--date'>{{ page.header.publisher }}</div>
+
+        </div>
+
+
+      </div>
+
+      {# MAIN #}
+      <div class="single-news--main">
+
+        {# CONTENT #}
+        <div class="single-news--main--content">
+
+          {# LINKS #}
+          <p>
+            {% if page.header.link %}
+              <a href='{{page.header.link}}' target=_blank class='publications--item__list--exit'>
+              Go to {{ page.header.publisher }}
+              <svg xmlns="http://www.w3.org/2000/svg" class='publications--item__list--icon' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            {% endif %}
+
+
+            {% if page.header.pdf %}
+              <a href='/output/{{page.slug}}/{{page.header.pdf}}' target=_blank class='publications--item__list--pdf'>
+              Open pdf
+              <svg xmlns="http://www.w3.org/2000/svg" class='publications--item__list--icon' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              </a>
+            {% endif %}
+          </p>
+
+          {# DESCRIPTION #}
+          <p>{{page.header.description}}</p>
+          
+        </div>
+
+        <div class="single-news--main--end">
+
+        </div>
+        
+      </div>
+      
+    </article>
+
+  </main>
+{% endblock %}

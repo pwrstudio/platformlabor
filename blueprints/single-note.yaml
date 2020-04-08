@@ -1,0 +1,87 @@
+title: About
+"@extends":
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            featured_image:
+              type: section
+              title: HAYWIRE.FEATURED_IMAGE
+              underline: true
+              fields:
+                header.featured_image:
+                  type: filepicker
+                  label: HAYWIRE.FEATURED_IMAGE
+                  placeholder: HAYWIRE.FEATURED_IMAGE_PLACEHOLDER
+                  folder: "self@"
+                  toggleable: true
+                  preview_images: true
+                  acccept:
+                    - .png
+                    - .jpg
+            author:
+              type: section
+              title: Author
+              underline: true
+              fields:
+                header.author:
+                  type: pages
+                  label: Author
+                  toggleable: true
+                  multiple: true
+                  validate:
+                    type: array
+            subproject:
+              type: section
+              title: Subproject
+              underline: true
+              fields:
+                header.subproject:
+                  type: pages
+                  label: Subproject
+                  toggleable: true
+                  multiple: false
+            # taxonomy:
+            #   replace@: true
+            #   type: section
+            #   title: Taxonomy
+            #   underline: true
+            #   fields:
+            #     header.taxonomy:
+            #       type: taxonomy
+            #       multiple: true
+            #       validate:
+            #         type: array
+            related:
+              type: section
+              title: Related notes
+              underline: true
+              fields:
+                header.related:
+                  type: pages
+                  label: Related
+                  multiple: true
+                  validate:
+                    type: array
+                  classes: fancy
+        # options:
+        #   type: tab
+        #   title: PLUGIN_ADMIN.OPTIONS
+        #   fields:
+        #     taxonomies:
+        #       type: section
+        #       title: PLUGIN_ADMIN.TAXONOMIES
+        #       underline: true
+        #       fields:
+        #         header.taxonomy:
+        #           unset@: true
+        #           type: taxonomy
+        #           label: XXXXXX
+        #           multiple: true
+        #           validate:
+        #             type: array

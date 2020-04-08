@@ -1,0 +1,79 @@
+{% extends 'global/base.html.twig' %}
+
+{% block content %}
+    <div class="search-list">
+
+        {% set count = search_results ? search_results.count : 0 %}
+        <div class='search-list--header'>
+            Search: {{  query }} ({{  count }})
+        </div>
+
+        {% for p in search_results %}
+            <div href='{{p.url}}' class='search-list--item__list'>
+
+                <a href='{{p.url}}' class='search-list--item__list--link'></a>
+
+                <div class='search-list--item__list--text'>
+
+                    {# Meta #}
+                    <div class='search-list--item__list--text--meta'>
+                        
+                        {% if p.template == 'single-feed' %}
+                            <div class='feed--item__list--text--meta--comments'>
+                                <a href="{{p.url}}#isso-thread">Comments</a>
+                            </div>
+                        {% endif %}
+
+                        {# Date #}
+                        <div class='search-list--item__list--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
+            
+                        {# Author #}
+                        {% if p.header.author and p.header.author|length > 0 %}
+                            {% for author in p.header.author %}
+                                <div class='notes--item__compact--text--meta--author'>{{ page.find(author).title }}</div>
+                            {% endfor %}
+                        {% endif %}
+
+                        {# Provider #}
+                        {% if p.header.provider_name %}
+                            <div class='feed--item__list--text--meta--provider'>{{ p.header.provider_name }}</div>
+                        {% endif %}
+
+                    </div>
+                    
+                    {# Title #}
+                    <h1 class='search-list--item__list--text--title'>{{p.title}}</h1>
+
+                </div>
+
+                <div class='search-list--item__list--image'>
+                    {% if p.template == 'single-feed' %}
+                        {% if p.header.featured_image %}
+                            {{ p.media[p.header.featured_image].html('', p.title|escape)}}
+                        {% else %}
+                            <img src='{{ p.header.external_image }}'>
+                        {% endif %}
+                    {% else %}
+                        {{ p.media[p.header.featured_image].html('', p.title|escape)}}
+                    {% endif %}
+                </div>   
+
+                {# Tags #}
+                <div class='search-list--item__list--tags'>
+                    {% for tag in p.taxonomy.tag %}
+                        <a href="{{ base_url }}/filter/tag:{{ tag }}" class="search-list--item__list--tags--item">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+                
+            </div>
+        {% endfor %}
+
+        <div class='filter--item__more'>
+            <div class='filter--item__more--button'>Load more</div>
+        </div>
+
+    </div>
+
+    <script src="//comments.platformlabor.net/js/count.min.js"></script>
+
+{% endblock %}

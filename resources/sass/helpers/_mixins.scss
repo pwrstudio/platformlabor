@@ -1,0 +1,177 @@
+/// Helper to clear inner floats
+/// @author Nicolas Gallagher
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+
+///
+/// Helper to handle overflowing text
+/// Values of text-overflow are: clip, ellipsis, or a string
+///
+
+@mixin truncate-text($overflow: ellipsis) {
+  overflow: hidden;
+  text-overflow: $overflow; //
+  white-space: nowrap;
+}
+
+
+///
+/// Helper to set height and width
+///
+
+@mixin size($width, $height: $width) {
+  height: $height;
+  width: $width;
+}
+
+
+///
+/// Helper to center element vertically and horizontally in parent
+///
+
+@mixin center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+///
+/// Helper to center element vertically in parent
+///
+
+@mixin center-vertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+///
+/// Helper to center element horizontally in parent
+///
+
+@mixin center-horizontal {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+@mixin hide-scroll {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+}
+
+///
+/// Platform Labor specifics
+///
+
+@mixin longread {
+
+  p, ul, ol, li {
+    @include font-style-serif;
+    margin-bottom: 20px;
+    width: 75ch;
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  li {
+    margin-left: 0em;
+  }
+}
+
+@mixin h2-header {
+  @include font-style-sans-small;
+
+  color: black;
+  padding: 20px;
+  border: 1px solid $grey-2;
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+@mixin greybox {
+    @include font-style-mono;
+
+    padding: 7px;
+    display: inline-block;
+    margin-right: 7px;
+    color: black;
+    padding: 10px;
+    border: 1px solid $grey-2;
+}
+
+@mixin datebox {
+  @include font-style-mono;
+
+  padding: 7px;
+  display: inline-block;
+  margin-right: 7px;
+  color: black;
+  padding: 10px;
+  border: 1px solid $grey-1;
+  background: $grey-1;
+}
+
+@mixin tag {
+    &--item {
+        @include font-style-mono;
+
+        padding: 7px;
+        border-radius: 5px;
+        margin-right: 7px;
+        margin-bottom: 7px; 
+        display: inline-block;
+        z-index: 10;
+        position: relative;
+        
+        text-decoration: none !important; 
+
+        color: black;
+
+        border: 1px solid transparent;
+        background: $yellow;
+
+        &:hover {
+            background: $dark-yellow;
+            border: 1px solid $grey-2;
+        }
+    }
+}
+
+@mixin font-style-mono {
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em; 
+}
+
+@mixin font-style-sans-small {
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  line-height: 1.2em; 
+}
+
+@mixin font-style-sans-large {
+  font-family: 'Archivo', sans-serif;
+  font-size: 46px;
+  line-height: 1em; 
+  font-weight: bold;
+}
+
+@mixin font-style-serif {
+  font-family: 'Noto Serif', serif;
+  font-size: 18px;
+  line-height: 26px;
+}
