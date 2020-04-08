@@ -4,12 +4,6 @@
 
 @charset 'utf-8';
 
-// Import Bulma
-// @import '~bulma';
-
-// @import 'assets/fonts/GillSansStd/styles';
-// @import 'assets/fonts/GillSansStd-Bold/styles';
-// @import 'assets/fonts/GillSansStd-ExtraBold/styles';
 
 //
 // Themes
@@ -59,6 +53,7 @@
 @import 'helpers/list-mixins';
 @import 'list/listbar';
 @import 'list/notes';
+@import 'list/profiles';
 @import 'list/news';
 @import 'list/publications';
 @import 'list/feed';
@@ -71,6 +66,7 @@
 @import 'helpers/single-mixins';
 @import 'single/about';
 @import 'single/note';
+@import 'single/profile';
 @import 'single/feed';
 @import 'single/news';
 @import 'single/publication';

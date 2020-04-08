@@ -1,0 +1,58 @@
+.single-profile {
+    @include single;
+
+    &--top {
+        @include single-top;
+
+        &--text {
+            @include single-top-text;
+
+            &--author {
+                @include screen-size('small') {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &--meta {
+            @include single-top-meta;
+
+            &--image {
+                width: calc(100% - 20px);
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+    }
+
+    &--main {
+        @include single-main;
+
+        &--content {
+            @include single-main-content;
+        }
+
+        &--end {
+            width: 100%;
+            display: flex;
+
+            @include screen-size('small') {
+                flex-wrap: wrap;
+            }
+
+            &--comments {
+                @include single-main-comments;
+            }
+
+            &--related {
+                @include single-main-related;
+            }
+
+        }
+
+    }
+}

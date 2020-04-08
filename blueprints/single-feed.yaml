@@ -1,7 +1,7 @@
 title: Single feed
-'@extends':
-    type: default
-    context: blueprints://pages
+"@extends":
+  type: default
+  context: blueprints://pages
 
 form:
   fields:
@@ -11,14 +11,13 @@ form:
           fields:
             featured_image:
               type: section
-              title: HAYWIRE.FEATURED_IMAGE
+              title: "Featured Image"
               underline: true
               fields:
                 header.featured_image:
                   type: filepicker
-                  label: HAYWIRE.FEATURED_IMAGE
-                  placeholder: HAYWIRE.FEATURED_IMAGE_PLACEHOLDER
-                  folder: 'self@'
+                  label: "Featured Image"
+                  folder: "self@"
                   toggleable: true
                   preview_images: true
                   acccept:
@@ -44,14 +43,14 @@ form:
                   highlight: 1
                   default: 0
                   options:
-                      1: PLUGIN_ADMIN.YES
-                      0: PLUGIN_ADMIN.NO
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
                   validate:
-                      type: bool
+                    type: bool
             # taxonomy:
             #   type: section
             #   title: Taxonomy
-            #   underline: true              
+            #   underline: true
             #   fields:
             #     header.taxonomy:
             #       type: taxonomy

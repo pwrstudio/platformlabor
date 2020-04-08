@@ -1,16 +1,15 @@
 {
   "name": "platformlabor",
-  "version": "0.0.1",
-  "homepage": "https://github.com/robbinfellow/haywire-grav#readme",
+  "version": "2.0",
+  "homepage": "https://github.com/pwrstudio/platformlabor.net/issues#readme",
   "author": "PWR <cell@pwr.site>",
   "license": "MIT",
-  "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/robbinfellow/haywire-grav.git"
+    "url": "git+https://github.com/pwrstudio/platformlabor.net"
   },
   "bugs": {
-    "url": "https://github.com/robbinfellow/haywire-grav/issues"
+    "url": "https://github.com/pwrstudio/platformlabor.net/issues"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -20,12 +19,7 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "babel-polyfill": "^6.26.0",
-    "bulma": "^0.8.1",
-    "cross-env": "^5.1.4",
-    "laravel-mix": "^2.1.11"
-  },
-  "dependencies": {
-    "babel-preset-env": "^1.7.0"
+    "cross-env": "^7.0.2",
+    "laravel-mix": "^5.0.4"
   }
 }

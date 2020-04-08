@@ -1,7 +1,7 @@
 title: Stakeholder
-'@extends':
-    type: default
-    context: blueprints://pages
+"@extends":
+  type: default
+  context: blueprints://pages
 
 form:
   fields:
@@ -11,14 +11,13 @@ form:
           fields:
             featured_image:
               type: section
-              title: HAYWIRE.FEATURED_IMAGE
+              title: "Featured Image"
               underline: true
               fields:
                 header.featured_image:
                   type: filepicker
-                  label: HAYWIRE.FEATURED_IMAGE
-                  placeholder: HAYWIRE.FEATURED_IMAGE_PLACEHOLDER
-                  folder: 'self@'
+                  label: "Featured Image"
+                  folder: "self@"
                   toggleable: true
                   preview_images: true
                   acccept:

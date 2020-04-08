@@ -1,13 +1,12 @@
 name: Platform Labor
-version: 0.1
+version: 2.0
 description: Theme for platformlabor.net
 icon: empire
 author:
-  name: PWR 
+  name: PWR
   email: cell@pwr.site
   url: https://github.com/pwrstudio
-homepage: https://github.com/pwrstudio/platformlabor.net
-keywords: grav, boilerplate, starter-theme, vuejs, laravel-mix, bulma
-bugs: https://github.com/pwrstudio/platformlabor.net/issues
-docs: https://github.com/pwrstudio/platformlabor.net#readme
+homepage: https://github.com/pwrstudio/platformlabor
+bugs: https://github.com/pwrstudio/platformlabor/issues
+docs: https://github.com/pwrstudio/platformlabor#readme
 license: MIT

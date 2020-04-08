@@ -1,0 +1,62 @@
+{% extends 'global/base.html.twig' %}
+
+{% block content %}
+  <main>
+
+    <article class="single-profile">
+
+      {# TOP #}
+      <div class="single-profile--top">
+
+        {# Text #}
+        <div class='single-profile--top--text'>
+        
+          {# Title #}
+          <h1 class='single-profile--top--text--title'>{{page.header.quote}}<div>– {{page.title}}</div></h1>
+        </div>
+
+        {# Meta #}
+        <div class='single-profile--top--meta'>
+
+            <div class='single-profile--top--meta--image'>
+                {{ page.media[page.header.featured_image].html('', page.title|escape)}}
+            </div> 
+
+          {# DATE #}
+          {# <div class='single-profile--top--text--date'>Published on: {{ page.date|date('Y-m-d') }}</div> #}
+
+          {# RESEARCH PROJECT #}
+          {# {% if page.header.subproject %} #}
+            {# <div class='single-profile--top--meta--subproject'>
+              <div class='single-profile--top--meta--subproject--header'>Research project:</div>
+              <a href='{{ base_url }}{{ page.header.subproject }}' class='single-profile--top--meta--subproject--link'>{{ page.find(page.header.subproject).title }}</a>
+            </div> #}
+          {# {% endif %} #}
+
+          {# TAGS #}
+          {# {% if page.taxonomy.tag %} #}
+            {# <div class='single-profile--top--meta--tags'>
+              {% for tag in page.taxonomy.tag %}
+                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="single-profile--top--meta--tags--item">{{ tag }}</a>
+              {% endfor %}
+            </div> #}
+          {# {% endif %} #}
+          
+        </div>
+
+      </div>
+
+      {# MAIN #}
+      <div class="single-profile--main">
+
+        {# CONTENT #}
+        <div class="single-profile--main--content">
+          {{ page.content }}
+        </div>
+        
+      </div>
+      
+    </article>
+
+  </main>
+{% endblock %}

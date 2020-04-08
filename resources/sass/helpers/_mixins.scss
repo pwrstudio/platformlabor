@@ -105,7 +105,6 @@
 @mixin greybox {
     @include font-style-mono;
 
-    padding: 7px;
     display: inline-block;
     margin-right: 7px;
     color: black;
@@ -118,7 +117,6 @@
 
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid $grey-1;

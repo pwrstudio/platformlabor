@@ -681,7 +681,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -695,7 +694,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -707,7 +705,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -804,7 +801,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -823,7 +819,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -835,7 +830,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -849,7 +843,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -979,7 +972,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -994,7 +986,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -1014,7 +1005,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1110,6 +1100,316 @@ footer {
   color: black;
 }
 
+.profiles {
+  background: white;
+  margin-top: 60px;
+  width: calc(100% - 60px);
+  margin-right: 30px;
+  margin-left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: unset;
+  margin-top: 80px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+  .profiles {
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+  }
+}
+
+.profiles--header {
+  margin-bottom: 40px;
+  padding: 20px;
+  color: black;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  line-height: 1.2em;
+}
+
+@media (max-width: 700px) {
+  .profiles--header {
+    margin-left: 20px;
+  }
+}
+
+.profiles--item__list {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #b4b4b4;
+  padding: 20px;
+  height: auto;
+  margin-bottom: 0;
+  position: relative;
+  width: 50%;
+  height: 500px;
+  border-bottom: none;
+  background: #ffff77;
+}
+
+@media (max-width: 700px) {
+  .profiles--item__list {
+    width: 100%;
+  }
+}
+
+.profiles--item__list:hover {
+  background: #e6e6e6;
+}
+
+.profiles--item__list--text {
+  width: calc(100% - 200px);
+  float: left;
+}
+
+@media (max-width: 700px) {
+  .profiles--item__list--text {
+    width: 100%;
+  }
+}
+
+.profiles--item__list--text--meta {
+  margin-right: 20px;
+  height: auto;
+  width: 100%;
+  float: left;
+}
+
+.profiles--item__list--text--meta--provider {
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  display: inline-block;
+  margin-right: 7px;
+  color: black;
+  padding: 10px;
+  border: 1px solid #b4b4b4;
+}
+
+.profiles--item__list--text--meta--comments {
+  background: #7df4b4;
+  border: 1px solid #7df4b4;
+}
+
+.profiles--item__list--text--meta--date {
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  padding: 7px;
+  display: inline-block;
+  color: black;
+  padding: 10px;
+  border: 1px solid gainsboro;
+  background: gainsboro;
+  margin-bottom: 7px;
+}
+
+.profiles--item__list--text--meta--comments {
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  display: inline-block;
+  margin-right: 7px;
+  color: black;
+  padding: 10px;
+  border: 1px solid #b4b4b4;
+  background: #7df4b4;
+  border: 1px solid #7df4b4;
+}
+
+.profiles--item__list--text--meta--author {
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  display: inline-block;
+  margin-right: 7px;
+  color: black;
+  padding: 10px;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+
+.profiles--item__list--text--title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  line-height: 1.2em;
+  color: black;
+  float: left;
+  height: auto;
+  max-width: 40ch;
+}
+
+.profiles--item__list--tags {
+  width: calc(100% - 400px);
+  float: left;
+  z-index: 10;
+}
+
+.profiles--item__list--tags--item {
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  padding: 7px;
+  border-radius: 5px;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  display: inline-block;
+  z-index: 10;
+  position: relative;
+  text-decoration: none !important;
+  color: black;
+  border: 1px solid transparent;
+  background: #ffff77;
+}
+
+.profiles--item__list--tags--item:hover {
+  background: #ffff10;
+  border: 1px solid #b4b4b4;
+}
+
+@media (max-width: 700px) {
+  .profiles--item__list--tags {
+    width: 100%;
+  }
+}
+
+.profiles--item__list--link {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.profiles--item__list--image {
+  width: 200px;
+  height: 200px;
+  float: right;
+}
+
+@media (max-width: 700px) {
+  .profiles--item__list--image {
+    display: none;
+  }
+}
+
+.profiles--item__list--image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 1;
+}
+
+.profiles--item__list:hover .notes--item__list--text--meta--date {
+  border: 1px solid #b4b4b4;
+}
+
+.profiles--item__list--category {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  display: inline-block;
+  color: black;
+  padding: 10px;
+}
+
+.profiles--item__list--image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 700px) {
+  .profiles--item__list--image {
+    display: block;
+  }
+}
+
+.profiles--item__list--image:hover {
+  -webkit-filter: unset;
+          filter: unset;
+}
+
+.profiles--item__list--link {
+  z-index: 100;
+}
+
+.profiles--item__list--quote {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 5px;
+  width: calc(100% - 40px);
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 10;
+  color: black;
+  font-family: 'Archivo', sans-serif;
+  font-size: 46px;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+.profiles--item__list:hover .profiles--item__list--image {
+  mix-blend-mode: multiply;
+}
+
+.profiles--item__more {
+  width: calc(100vw - 60px);
+  margin-right: 30px;
+  margin-left: 30px;
+  height: 200px;
+  display: block;
+  position: relative;
+  padding-top: 20px;
+}
+
+.profiles--item__more--button {
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  line-height: 1.2em;
+  display: inline-block;
+  color: black;
+  border: 1px solid #b4b4b4;
+  padding: 20px 80px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  opacity: 0;
+}
+
+.profiles--item__more--button:hover {
+  background: white;
+  color: black;
+}
+
 .news {
   background: white;
   margin-top: 60px;
@@ -1192,7 +1492,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1211,7 +1510,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -1223,7 +1521,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1237,7 +1534,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1367,7 +1663,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1382,7 +1677,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -1402,7 +1696,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1583,7 +1876,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1602,7 +1894,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -1614,7 +1905,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1628,7 +1918,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1819,7 +2108,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1838,7 +2126,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -1850,7 +2137,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1864,7 +2150,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -1990,7 +2275,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -2005,7 +2289,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -2025,7 +2308,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -2257,7 +2539,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -2276,7 +2557,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -2288,7 +2568,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -2302,7 +2581,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -2432,7 +2710,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -2447,7 +2724,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -2467,7 +2743,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -2662,7 +2937,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -2681,7 +2955,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -2693,7 +2966,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -2707,7 +2979,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -2829,7 +3100,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -2844,7 +3114,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -2864,7 +3133,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3080,7 +3348,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3094,7 +3361,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -3106,7 +3372,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3262,7 +3527,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3276,7 +3540,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -3292,7 +3555,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3416,7 +3678,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3435,7 +3696,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -3447,7 +3707,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3461,7 +3720,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3591,7 +3849,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3610,7 +3867,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -3622,7 +3878,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3636,7 +3891,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3789,7 +4043,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3808,7 +4061,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -3820,7 +4072,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -3834,7 +4085,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -4141,7 +4391,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -4160,7 +4409,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -4172,7 +4420,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -4186,7 +4433,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -4308,7 +4554,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -4323,7 +4568,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -4343,7 +4587,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -4480,7 +4723,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -4603,7 +4845,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -4644,7 +4885,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -4930,7 +5170,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -4944,7 +5183,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -4960,7 +5198,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -5240,7 +5477,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -5368,7 +5604,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -5409,7 +5644,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -5599,7 +5833,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -5644,6 +5877,470 @@ footer {
 }
 
 .single-note--main--end--related--item--image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.single-profile {
+  padding-top: 50px;
+  font-family: 'Noto Serif', serif;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.single-profile--top {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  background: white;
+  color: black;
+  border-bottom: 1px solid #b4b4b4;
+}
+
+@media (max-width: 700px) {
+  .single-profile--top {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.single-profile--top--text {
+  width: 66.6666%;
+  background: white;
+  padding: 20px 40px 20px 40px;
+}
+
+@media (max-width: 700px) {
+  .single-profile--top--text {
+    width: 100%;
+    padding: 10px 20px 21px 20px;
+  }
+}
+
+.single-profile--top--text--date {
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  padding: 7px;
+  display: inline-block;
+  color: black;
+  padding: 10px;
+  border: 1px solid gainsboro;
+  background: gainsboro;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+  .single-profile--top--text--date {
+    display: none;
+  }
+}
+
+.single-profile--top--text--title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 46px;
+  line-height: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.single-profile--top--text--author {
+  display: block;
+  padding: 10px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.single-profile--top--text--author:hover {
+  background: gainsboro;
+}
+
+.single-profile--top--text--author--image {
+  float: left;
+  width: 60px;
+  height: 60px;
+  background: #b4b4b4;
+  border-radius: 60px;
+  overflow: hidden;
+}
+
+.single-profile--top--text--author--image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.single-profile--top--text--author--name {
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  line-height: 1.2em;
+  float: left;
+  margin-right: 14px;
+  margin-left: 10px;
+  color: black;
+  line-height: 60px;
+}
+
+@media (max-width: 700px) {
+  .single-profile--top--text--author {
+    margin-top: 0;
+  }
+}
+
+.single-profile--top--meta {
+  width: 33.3333%;
+  border-left: 1px solid #b4b4b4;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+@media (max-width: 700px) {
+  .single-profile--top--meta {
+    width: 100%;
+    border-left: none;
+  }
+}
+
+.single-profile--top--meta--divider {
+  margin-top: 20px;
+  border-bottom: 1px solid #b4b4b4;
+  margin-bottom: 20px;
+}
+
+.single-profile--top--meta--tags {
+  margin-top: 20px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #b4b4b4;
+  margin-right: 20px;
+}
+
+.single-profile--top--meta--tags--item {
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  padding: 7px;
+  border-radius: 5px;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  display: inline-block;
+  z-index: 10;
+  position: relative;
+  text-decoration: none !important;
+  color: black;
+  border: 1px solid transparent;
+  background: #ffff77;
+}
+
+.single-profile--top--meta--tags--item:hover {
+  background: #ffff10;
+  border: 1px solid #b4b4b4;
+}
+
+.single-profile--top--meta--subproject {
+  margin-right: 20px;
+}
+
+.single-profile--top--meta--subproject--header {
+  margin-bottom: 20px;
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  display: inline-block;
+  margin-right: 7px;
+  color: black;
+  padding: 10px;
+  border: 1px solid #b4b4b4;
+  padding: 10px;
+  background: white;
+  border: 1px solid #b4b4b4;
+  margin-right: 7px;
+  margin-bottom: 10px;
+}
+
+.single-profile--top--meta--subproject--link {
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  line-height: 1.2em;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #b4b4b4;
+}
+
+.single-profile--top--meta--subproject--link:hover {
+  background: gainsboro;
+}
+
+@media (max-width: 700px) {
+  .single-profile--top--meta--subproject {
+    display: none;
+  }
+}
+
+.single-profile--top--meta--date {
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  padding: 7px;
+  display: inline-block;
+  color: black;
+  padding: 10px;
+  border: 1px solid gainsboro;
+  background: gainsboro;
+  display: inline-block;
+  margin-right: 7px;
+}
+
+@media (max-width: 700px) {
+  .single-profile--top--meta--date {
+    display: none;
+  }
+}
+
+.single-profile--top--meta--image {
+  width: calc(100% - 20px);
+}
+
+.single-profile--top--meta--image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.single-profile--main {
+  width: 100%;
+  min-height: 80vh;
+  height: auto;
+  display: inline-block;
+}
+
+.single-profile--main--content {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #b4b4b4;
+}
+
+.single-profile--main--content a {
+  border-bottom: 1px solid black;
+}
+
+.single-profile--main--content a:hover {
+  border-bottom: 1px solid #b4b4b4;
+}
+
+.single-profile--main--content p, .single-profile--main--content ul, .single-profile--main--content ol, .single-profile--main--content li {
+  font-family: 'Noto Serif', serif;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 20px;
+  width: 75ch;
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.single-profile--main--content h1, .single-profile--main--content h2, .single-profile--main--content h3, .single-profile--main--content h4 {
+  font-family: 'Noto Serif', serif;
+  font-size: 18px;
+  line-height: 26px;
+  width: 75ch;
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.single-profile--main--content li {
+  margin-left: 0em;
+}
+
+.single-profile--main--content blockquote p {
+  font-size: 17px;
+  line-height: 1.2em;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.single-profile--main--end {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 700px) {
+  .single-profile--main--end {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.single-profile--main--end--comments {
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  float: left;
+  width: 66.6666%;
+  background: white;
+  color: black;
+  padding: 40px;
+  padding-top: 0;
+  border-right: 1px solid #b4b4b4;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+  .single-profile--main--end--comments {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+.single-profile--main--end--comments--header {
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  line-height: 1.2em;
+  color: black;
+  padding: 20px;
+  border: 1px solid #b4b4b4;
+  margin-left: 30px;
+  font-weight: bold;
+  margin-left: 0;
+  color: black;
+  display: inline-block;
+  border: 1px solid #b4b4b4;
+}
+
+.single-profile--main--end--comments #isso-thread h4 {
+  background: gainsboro;
+  padding: 10px;
+  display: inline-block;
+}
+
+.single-profile--main--end--comments #isso-thread .isso-postbox {
+  margin-top: 0;
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.single-profile--main--end--comments #isso-thread .isso-postbox .form-wrapper .textarea-wrapper .textarea {
+  height: 120px;
+  background: white;
+  border: 1px solid #b4b4b4;
+}
+
+.single-profile--main--end--comments #isso-thread .isso-postbox .form-wrapper .auth-section .input-wrapper {
+  display: inline-block;
+}
+
+.single-profile--main--end--comments #isso-thread .isso-postbox .form-wrapper .auth-section .post-action {
+  display: inline-block;
+}
+
+.single-profile--main--end--comments #isso-thread #isso-root .isso-comment {
+  margin-top: 0;
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.single-profile--main--end--comments #isso-thread #isso-root .isso-comment .avatar {
+  display: none;
+}
+
+.single-profile--main--end--comments #isso-thread #isso-root .isso-comment .text-wrapper .text {
+  font-family: 'Noto Serif', serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-size: 16px;
+  line-height: 1.5em;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+}
+
+.single-profile--main--end--related {
+  float: left;
+  width: 33.3333%;
+  color: black;
+  padding: 20px;
+}
+
+@media (max-width: 700px) {
+  .single-profile--main--end--related {
+    width: 100%;
+  }
+}
+
+.single-profile--main--end--related--header {
+  margin-bottom: 20px;
+  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2em;
+  display: inline-block;
+  margin-right: 7px;
+  color: black;
+  padding: 10px;
+  border: 1px solid #b4b4b4;
+  padding: 10px;
+  background: white;
+  border: 1px solid #b4b4b4;
+  margin-right: 7px;
+  margin-bottom: 10px;
+}
+
+.single-profile--main--end--related--item {
+  width: 100%;
+  height: 300px;
+  margin-right: 40px;
+  float: left;
+  float: left;
+  border-bottom: 1px solid #b4b4b4;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  padding: 20px;
+}
+
+.single-profile--main--end--related--item:hover {
+  background: gainsboro;
+}
+
+.single-profile--main--end--related--item--title {
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  line-height: 1.2em;
+  font-weight: bold;
+  height: 50%;
+  margin-top: 10px;
+}
+
+.single-profile--main--end--related--item--image {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.single-profile--main--end--related--item--image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -5697,7 +6394,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -5768,7 +6464,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -5863,7 +6558,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -5904,7 +6598,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -6143,7 +6836,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -6275,7 +6967,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -6316,7 +7007,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -6507,7 +7197,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -6605,7 +7294,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -6728,7 +7416,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -6769,7 +7456,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -6884,7 +7570,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -7023,7 +7708,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -7042,7 +7726,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -7054,7 +7737,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -7068,7 +7750,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -7221,7 +7902,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -7344,7 +8024,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -7385,7 +8064,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -7500,7 +8178,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -7636,7 +8313,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -7655,7 +8331,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -7667,7 +8342,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -7681,7 +8355,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -7834,7 +8507,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -7961,7 +8633,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;
@@ -8002,7 +8673,6 @@ footer {
   line-height: 1.2em;
   padding: 7px;
   display: inline-block;
-  margin-right: 7px;
   color: black;
   padding: 10px;
   border: 1px solid gainsboro;
@@ -8192,7 +8862,6 @@ footer {
   font-family: 'space mono', 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
-  padding: 7px;
   display: inline-block;
   margin-right: 7px;
   color: black;

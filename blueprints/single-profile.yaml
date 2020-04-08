@@ -1,4 +1,4 @@
-title: Landing
+title: About
 "@extends":
   type: default
   context: blueprints://pages
@@ -9,6 +9,22 @@ form:
       fields:
         content:
           fields:
+            category:
+              type: section
+              title: Category
+              underline: true
+              fields:
+                header.category:
+                  type: text
+                  label: "Category"
+            quote:
+              type: section
+              title: Quote
+              underline: true
+              fields:
+                header.quote:
+                  type: textarea
+                  label: "Quote"
             featured_image:
               type: section
               title: "Featured Image"
@@ -23,16 +39,3 @@ form:
                   acccept:
                     - .png
                     - .jpg
-            logo:
-              type: section
-              title: Logo
-              underline: true
-              fields:
-                header.logo:
-                  type: filepicker
-                  label: "Logo"
-                  placeholder: HAYWIRE.LOGO_PLACEHOLDER
-                  folder: "self@"
-                  preview_images: true
-                  acccept:
-                    - .svg
