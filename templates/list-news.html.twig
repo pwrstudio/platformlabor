@@ -69,7 +69,7 @@
                 </div>
 
                 <a href='{{p.url}}' class='news--item__list--image'>
-                    {{ p.media[p.header.featured_image].html('', p.title|escape)}}
+                    {{ p.media[p.header.featured_image].cropZoom(200, 200).html('', p.title|escape)}}
                 </a>              
                 
             </div>

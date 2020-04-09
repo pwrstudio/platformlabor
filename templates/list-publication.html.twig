@@ -117,7 +117,7 @@
 
                     {# Image #}
                     <div class='publications--item__list--image'>
-                        {{ p.media[p.header.featured_image].html('', p.title|escape)}}
+                        {{ p.media[p.header.featured_image].cropResize(200, 200).html('', p.title|escape)}}
                     </div> 
 
                     {# Tags #}

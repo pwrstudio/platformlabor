@@ -13,7 +13,7 @@
             <div class='profiles--item__list--quote'>“{{p.header.quote}}”<div class='credit'>– {{p.title}}</div></div>
 
             <div class='profiles--item__list--image'>
-                {{ p.media[p.header.featured_image].html('', p.title|escape)}}
+                {{ p.media[p.header.featured_image].cropResize(900).html('', p.title|escape)}}
             </div> 
             
         </div>

@@ -23,7 +23,7 @@
                 {% set authorPost = page.find(author) %}
                 <a href='{{ base_url }}{{ author }}' class='single-note--top--text--author'>
                   <div class='single-note--top--text--author--image'>
-                    {{ authorPost.media[authorPost.header.featured_image].cropResize(300).grayscale().html('', p.title|escape)}}
+                    {{ authorPost.media[authorPost.header.featured_image].cropZoom(100,100).grayscale().html('', p.title|escape)}}
                   </div>   
                   <div class='single-note--top--text--author--name'>
                     {{ authorPost.title }}
@@ -36,7 +36,7 @@
               {% set authorPost = page.find(page.header.author) %}
               <a href='{{ base_url }}{{ page.header.author }}' class='single-note--top--text--author'>
                 <div class='single-note--top--text--author--image'>
-                  {{ authorPost.media[authorPost.header.featured_image].cropResize(300).grayscale().html('', p.title|escape)}}
+                  {{ authorPost.media[authorPost.header.featured_image].cropZoom(100,100).grayscale().html('', p.title|escape)}}
                 </div>   
                 <div class='single-note--top--text--author--name'>
                   {{ authorPost.title }}

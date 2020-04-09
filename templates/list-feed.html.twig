@@ -62,7 +62,7 @@
                     <div class='feed--item__list--image'>
 
                         {% if p.header.featured_image %}
-                            {{ p.media[p.header.featured_image].cropResize(600).html('', p.title|escape)}}
+                            {{ p.media[p.header.featured_image].cropZoom('', p.title|escape)}}
                         {% else %}
                             <img src='{{ p.header.external_image }}'>
                         {% endif %}

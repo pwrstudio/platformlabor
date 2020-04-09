@@ -49,12 +49,12 @@
                 <div class='search-list--item__list--image'>
                     {% if p.template == 'single-feed' %}
                         {% if p.header.featured_image %}
-                            {{ p.media[p.header.featured_image].html('', p.title|escape)}}
+                            {{ p.media[p.header.featured_image].cropZoom(200, 200).html('', p.title|escape)}}
                         {% else %}
                             <img src='{{ p.header.external_image }}'>
                         {% endif %}
                     {% else %}
-                        {{ p.media[p.header.featured_image].html('', p.title|escape)}}
+                        {{ p.media[p.header.featured_image].cropZoom(200, 200).html('', p.title|escape)}}
                     {% endif %}
                 </div>   
 
