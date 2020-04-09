@@ -56,6 +56,16 @@ form:
             #       multiple: true
             #       validate:
             #         type: array
+            # reply:
+            #   type: section
+            #   title: "In reply to"
+            #   underline: true
+            #   fields:
+            #     header.reply:
+            #       toggleable: true
+            #       type: pages
+            #       label: "In reply to"
+            #       classes: fancy
             related:
               type: section
               title: Related notes

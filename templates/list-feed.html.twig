@@ -20,9 +20,6 @@
 
                         {# Meta #}
                         <div class='feed--item__compact--text--meta'>
-                            <div class='feed--item__compact--text--meta--comments'>
-                                <a href="{{p.url}}#isso-thread"></a>
-                            </div>
                             <div class='feed--item__compact--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
                             <div class='feed--item__compact--text--meta--provider'>{{ p.header.provider_name }}</div>
                         </div>
@@ -53,9 +50,6 @@
 
                         {# Meta #}
                         <div class='feed--item__list--text--meta'>
-                            <div class='feed--item__list--text--meta--comments'>
-                                <a href="{{p.url}}#isso-thread">0</a>
-                            </div>
                             <div class='feed--item__list--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
                             <div class='feed--item__list--text--meta--provider'>{{ p.header.provider_name }}</div>
                         </div>
@@ -93,6 +87,4 @@
         </div>
 
     </div>
-
-    <script src="https://comments.platformlabor.net/js/count.min.js"></script>
 {% endblock %}

@@ -79,9 +79,6 @@
 
             {# Meta #}
             <div class='landing--item__third--text--meta'>
-                <div class='landing--item__third--text--meta--comments'>
-                    <a href="{{latestFeed.url}}#isso-thread">0</a>
-                </div>
                 <div class='landing--item__third--text--meta--date'>{{ latestFeed.date|date('Y-m-d') }}</div>
                 <div class='landing--item__third--text--meta--provider'>{{ latestFeed.header.provider_name }}</div>
             </div>
@@ -122,9 +119,6 @@
 
             {# Meta #}
             <div class='landing--item__third--text--meta'>
-                {# <div class='landing--item__third--text--meta--comments'>
-                    <a href="{{latestNews.url}}#isso-thread">Comments</a>
-                </div> #}
                 <div class='landing--item__third--text--meta--date'>{{ latestNews.date|date('Y-m-d') }}</div>
             </div>
             
@@ -180,15 +174,4 @@
     </div>
 
 </div>
-
-<script src="https://comments.platformlabor.net/js/count.min.js"></script>
-
-<script>
-    /* document.getElementById('landing--item__about__close').addEventListener('click', function() {
-        document.getElementById('landing--item__about').classList.remove('landing--item__about__active')
-        window.setTimeout(function() {
-            document.getElementById('landing--item__about').classList.add('landing--item__about__gone')
-        }, 400)
-    })*/
-</script>
 {% endblock %}

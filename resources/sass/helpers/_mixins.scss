@@ -94,7 +94,7 @@
 
 @mixin h2-header {
   @include font-style-sans-small;
-
+  
   color: black;
   padding: 20px;
   border: 1px solid $grey-2;
@@ -121,32 +121,32 @@
   padding: 10px;
   border: 1px solid $grey-1;
   background: $grey-1;
-}
+  }
 
 @mixin tag {
-    &--item {
-        @include font-style-mono;
+  &--item {
+    @include font-style-mono;
 
-        padding: 7px;
-        border-radius: 5px;
-        margin-right: 7px;
-        margin-bottom: 7px; 
-        display: inline-block;
-        z-index: 10;
-        position: relative;
-        
-        text-decoration: none !important; 
+    padding: 7px;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px; 
+    display: inline-block;
+    z-index: 10;
+    position: relative;
+    
+    text-decoration: none !important; 
 
-        color: black;
+    color: black;
 
-        border: 1px solid transparent;
-        background: $yellow;
+    // border: 1px solid transparent;
+    background: $yellow;
 
-        &:hover {
-            background: $dark-yellow;
-            border: 1px solid $grey-2;
-        }
+    &:hover {
+        background: $dark-yellow;
+        // border: 1px solid $grey-2;
     }
+  }
 }
 
 @mixin font-style-mono {

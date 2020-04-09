@@ -24,12 +24,6 @@
 
                 {# Meta #}
                 <div class='filter--item__list--text--meta'>
-                    
-                    {% if p.template == 'single-feed' %}
-                        <div class='feed--item__list--text--meta--comments'>
-                            <a href="{{p.url}}#isso-thread">Comments</a>
-                        </div>
-                    {% endif %}
 
                     {# Date #}
                     <div class='filter--item__list--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>

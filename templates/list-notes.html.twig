@@ -4,6 +4,7 @@
     {% set view = uri.param('view') %}
 {% endif %}
 
+
 {% block content %}
 <div class="notes">
 
@@ -62,9 +63,11 @@
                     <div class='notes--item__full--text--meta--date'>{{ latestNote.date|date('Y-m-d') }}</div>
 
                     {% if latestNote.header.author %}
-                        {% for author in latestNote.header.author %}
-                            <div class='notes--item__full--text--meta--author'>{{ page.find(author).title }}</div>
-                        {% endfor %}
+                        <div class='notes--item__full--text--meta--author'>
+                            {% for author in latestNote.header.author %}
+                                {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
+                            {% endfor %}
+                        </div>
                     {% endif %}
                 </div>
 
@@ -89,7 +92,6 @@
             
         </div>
 
-
         {# POST 2 ... n: SMALL #}
         {% for p in page.collection.slice(1,100) %}
             <div class='notes--item__list'>
@@ -101,10 +103,13 @@
                     {# Meta #}
                     <div class='notes--item__list--text--meta'>
                         <div class='notes--item__list--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
+                        
                         {% if p.header.author %}
+                         <div class='notes--item__list--text--meta--author'>
                             {% for author in p.header.author %}
-                                <div class='notes--item__list--text--meta--author'>{{ page.find(author).title }}</div>
+                                {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
                             {% endfor %}
+                            </div>
                         {% endif %}
                     </div>
                     
@@ -125,6 +130,55 @@
                 </div>
                 
             </div>
+
+            {# Replies #}
+            {% for r in p.children %}
+                {# Reply #}
+                <div class='notes--item__reply'>
+
+                    <a href='{{r.url}}' class='notes--item__list--link'></a>
+
+                    {# Icon #}
+                    <div class='icon'>
+                        <div>
+                            {# <div>In reply</div> #}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-down-right">
+                                <polyline points="15 10 20 15 15 20"></polyline>
+                                <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class='inner-reply'>
+
+                        {# Text #}
+                        <div class='text'>
+                        
+                            {# Date #}
+                            <div class='date'>{{ r.date|date('Y-m-d') }}</div>
+
+                            {# Author #}
+                            {% if r.header.author %}
+                                <div class='author'>
+                                    {% for author in r.header.author %}
+                                        {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            {# Title #}
+                            <div class='title'>{{r.title}}</div>
+                        </div>
+
+                        <div class='image'>
+                            {{ r.media[r.header.featured_image].html('', r.title|escape)}}
+                        </div> 
+                                    
+                    </div>
+
+                </div>
+            {% endfor %}
+
         {% endfor %}
 
     {% endif %}
