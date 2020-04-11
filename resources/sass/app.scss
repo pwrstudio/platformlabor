@@ -47,7 +47,6 @@
 @import 'navigation/navbar';
 @import 'navigation/footer';
 @import 'navigation/search';
-// @import 'partials/comments';
 
 ////// Lists
 @import 'helpers/list-mixins';
@@ -60,7 +59,6 @@
 @import 'list/filter';
 @import 'list/landing';
 @import 'list/search';
-// @import 'partials/lists/stakeholder-list';
 
 ////// Single views
 @import 'helpers/single-mixins';
@@ -72,5 +70,4 @@
 @import 'single/publication';
 @import 'single/team';
 @import 'single/subproject';
-@import 'single/stakeholder';
 @import 'single/form';
