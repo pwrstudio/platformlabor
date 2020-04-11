@@ -12,7 +12,8 @@
     "url": "https://github.com/pwrstudio/platformlabor.net/issues"
   },
   "scripts": {
-    "watch": "node-sass --watch resources/sass -o dist/css --output-style compressed"
+    "watch": "node-sass --watch resources/sass -o dist/css",
+    "build": "node-sass resources/sass -o dist/css --output-style compressed"
   },
   "dependencies": {
     "node-sass": "^4.13.1"
