@@ -47,10 +47,6 @@
             width: 100%;
             display: flex;
 
-            &--comments {
-                @include single-main-comments;
-            }
-
             &--related {
                 @include single-main-related;
             }

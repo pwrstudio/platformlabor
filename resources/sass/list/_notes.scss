@@ -55,8 +55,6 @@
           display: flex;
           position: relative;
 
-  
-
         .icon {
             height: 100%;
             width: 140px;
@@ -88,6 +86,14 @@
             .date {
               @include datebox;
               margin-bottom: 10px;
+            }
+
+            .author {
+              @include greybox;
+  
+              display: inline-block;
+              margin-right: 5px;
+              padding: 10px;
             }
             
             .title {

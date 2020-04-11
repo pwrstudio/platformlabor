@@ -85,12 +85,6 @@
         &--end {
             width: 100%;
 
-            &--comments {
-                @include single-main-comments;
-                width: 66.6666%;
-                border-right: none;
-            }
-
             // &--related {
             //     @include single-main-related;
             // }

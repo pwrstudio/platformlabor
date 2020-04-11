@@ -10,7 +10,26 @@
 
         {# Text #}
         <div class='single-note--top--text'>
+
+          {# DATE #}
+          <div class='single-note--top--text--date'>{{ page.date|date('Y-m-d') }}</div>
+
+          {# SUBPROJECT #}
+          {% if page.header.subproject %}
+            <div class='single-note--top--meta--subproject'>
+              <a href='{{ base_url }}{{ page.header.subproject }}' class='single-note--top--meta--subproject--link'>{{ page.find(page.header.subproject).title }}</a>
+            </div>
+          {% endif %}
         
+          {# TAGS #}
+          {% if page.taxonomy.tag %}
+            <div class='single-note--top--meta--tags'>
+              {% for tag in page.taxonomy.tag %}
+                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="single-note--top--meta--tags--item">{{ tag }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+
           {# Title #}
           <h1 class='single-note--top--text--title'>{{page.title}}</h1>
 
@@ -46,32 +65,82 @@
             {% endif %}
 
           {% endif %}
+
+
         </div>
 
         {# Meta #}
         <div class='single-note--top--meta'>
+          {# REPLIES #}
+          {% if  page.children|length > 0 %}
+            <div class='single-note--main--end--related replies'>
+              <div class='single-note--main--end--related--header'>In reply to this post</div>
+              {% for replyPost in page.children %}
+                <a href='{{replyPost.url}}' class='single-note--main--end--related--item'>
 
-          {# DATE #}
-          <div class='single-note--top--text--date'>Published on: {{ page.date|date('Y-m-d') }}</div>
+                  {# IMAGE #}
+                  <div class='single-note--main--end--related--item--image'>
+                    {{ replyPost.media[replyPost.header.featured_image].resize(400).html('', replyPost.title|escape)}}
+                  </div>
 
-          {# RESEARCH PROJECT #}
-          {% if page.header.subproject %}
-            <div class='single-note--top--meta--subproject'>
-              <div class='single-note--top--meta--subproject--header'>Research project:</div>
-              <a href='{{ base_url }}{{ page.header.subproject }}' class='single-note--top--meta--subproject--link'>{{ page.find(page.header.subproject).title }}</a>
-            </div>
-          {% endif %}
+                  {# TITlE #}
+                  <div class='single-note--main--end--related--item--title'>{{ replyPost.title }}</div>
+                  
+                  {# AUTHOR #}
+                  {% if replyPost.header.author is iterable %}
 
-          {# TAGS #}
-          {% if page.taxonomy.tag %}
-            <div class='single-note--top--meta--tags'>
-              {% for tag in page.taxonomy.tag %}
-                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="single-note--top--meta--tags--item">{{ tag }}</a>
+                    {% for author in replyPost.header.author %}
+                      {% set authorPost = page.find(author) %}
+                      <div class='single-note--related--author'>
+                        <div class='single-note--related--author--image'>
+                          {{ authorPost.media[authorPost.header.featured_image].cropZoom(100,100).grayscale().html('', p.title|escape)}}
+                        </div>   
+                        <div class='single-note--related--author--name'>
+                          {{ authorPost.title }}
+                        </div>
+                      </div>
+                    {% endfor %}
+
+                  {% endif %}
+
+                </a>
               {% endfor %}
             </div>
+            {% elseif page.parent.slug != 'blog' %}
+              <div class='single-note--main--end--related replies'>
+                <div class='single-note--main--end--related--header'>Replies to this post</div>
+                <a href='{{page.parent.url}}' class='single-note--main--end--related--item'>
+
+                    {# IMAGE #}
+                    <div class='single-note--main--end--related--item--image'>
+                      {{ page.parent.media[page.parent.header.featured_image].resize(400).html('', page.parent.title|escape)}}
+                    </div>
+
+                    {# TITlE #}
+                    <div class='single-note--main--end--related--item--title'>{{ page.parent.title }}</div>
+                    
+                    {# AUTHOR #}
+                    {% if page.parent.header.author is iterable %}
+
+                      {% for author in page.parent.header.author %}
+                        {% set authorPost = page.find(author) %}
+                        <div class='single-note--related--author'>
+                          <div class='single-note--related--author--image'>
+                            {{ authorPost.media[authorPost.header.featured_image].cropZoom(100,100).grayscale().html('', p.title|escape)}}
+                          </div>   
+                          <div class='single-note--related--author--name'>
+                            {{ authorPost.title }}
+                          </div>
+                        </div>
+                      {% endfor %}
+
+                    {% endif %}
+
+                  </a>
+                </div>
           {% endif %}
-          
         </div>
+        
 
       </div>
 
@@ -83,38 +152,38 @@
           {{ page.content }}
         </div>
 
-        <div class="single-note--main--end">
-
-          {# COMMENTS #}
-          <div class="single-note--main--end--comments">
-            <div class="single-note--main--end--comments--header">Discussion</div>
-            {% include 'global/comments.html.twig' %}
-          </div>
+        <div class="single-note--main--sidebar">
 
           {# RELATED #}
-          <div class='single-note--main--end--related'>
-            {% if page.header.related %}
-              <div class='single-note--main--end--related--header'>Related notes</div>
-              {% for related in page.header.related %}
-                {% set relatedPost = page.find(related) %}
-                <a href='{{relatedPost.url}}' class='single-note--main--end--related--item'>
-                  <div class='single-note--main--end--related--item--image'>
-                    {{ relatedPost.media[relatedPost.header.featured_image].resize(400).html('', relatedPost.title|escape)}}
-                  </div>
-                  <div class='single-note--main--end--related--item--title'>{{ relatedPost.title }}</div>
-                </a>
-              {% endfor %}
-            {% else %}
-              <div class='single-note--main--end--related--header'>Next note</div>
-                {% set nextPost = page.prevSibling() %}
-                <a href='{{ nextPost.url }}' class='single-note--main--end--related--item'>
-                  <div class='single-note--main--end--related--item--image'>
-                    {{ nextPost.media[nextPost.header.featured_image].resize(400).html('', nextPost.title|escape)}}
-                  </div>
-                  <div class='single-note--main--end--related--item--title'>{{ nextPost.title }}</div>
-                </a>
-            {% endif %}
-          </div>
+          {% if page.header.related %}
+            <div class='single-note--main--end--related related'>
+                <div class='single-note--main--end--related--header'>Related blog posts</div>
+                {% for related in page.header.related %}
+                  {% set relatedPost = page.find(related) %}
+                  <a href='{{relatedPost.url}}' class='single-note--main--end--related--item'>
+                    <div class='single-note--main--end--related--item--image'>
+                      {{ relatedPost.media[relatedPost.header.featured_image].resize(400).html('', relatedPost.title|escape)}}
+                    </div>
+                    <div class='single-note--main--end--related--item--title'>{{ relatedPost.title }}</div>
+
+                    {# AUTHOR #}
+                    {% if relatedPost.header.author is iterable %}
+                      {% for author in relatedPost.header.author %}
+                        {% set authorPost = page.find(author) %}
+                        <div class='single-note--related--author'>
+                          <div class='single-note--related--author--image'>
+                            {{ authorPost.media[authorPost.header.featured_image].cropZoom(100,100).grayscale().html('', p.title|escape)}}
+                          </div>   
+                          <div class='single-note--related--author--name'>
+                            {{ authorPost.title }}
+                          </div>
+                        </div>
+                      {% endfor %}
+                    {% endif %}
+                  </a>
+                {% endfor %}
+            </div>
+          {% endif %}
 
         </div>
         

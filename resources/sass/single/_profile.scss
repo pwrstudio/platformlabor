@@ -43,11 +43,7 @@
             @include screen-size('small') {
                 flex-wrap: wrap;
             }
-
-            &--comments {
-                @include single-main-comments;
-            }
-
+            
             &--related {
                 @include single-main-related;
             }
