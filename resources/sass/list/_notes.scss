@@ -12,6 +12,48 @@
     margin-left: 0;
     width: 100%;
   }
+  
+  .banner {
+    @include font-style-sans-small;
+    width: 100%;
+
+    padding: 20px;
+    margin-bottom: 0;
+    position: relative;
+
+    border-radius: 10px;
+    height: auto;
+    border: 0;
+    margin-top: 10px;
+
+    opacity: 1;
+    display: block;
+
+    background: $green;
+
+
+    @include screen-size('small') {
+        height: auto;
+        margin-right: 15px;
+        margin-left: 15px;
+        width: calc(100% - 30px);
+    }
+
+
+    p {
+        width: 95%;
+    }
+
+    a {
+      border-bottom: 1px solid $black;
+
+      &:hover {
+        border-bottom: 1px solid transparent;
+
+      }
+    }
+
+  }
 
   &--item {
     color: $black;
@@ -20,7 +62,7 @@
 
        
     &.full {
-      height: 500px;
+      height: auto;
       padding: 20px;
       border-bottom:none;
 
@@ -172,7 +214,7 @@
       height: auto;
       margin-bottom: 0;
       border-bottom:none;
-      border-top: 1px solid #b4b4b4;
+      border-top: 1px solid $grey-2;
 
       @include screen-size('small') {
         width: 100%;

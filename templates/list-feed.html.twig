@@ -14,23 +14,23 @@
         {% if view == 'compact' %}
 
             {% for p in page.children.order('date', 'desc') %}
-                <div class='feed--item__compact'>
+                <div class='item compact'>
 
-                    <div class='feed--item__compact--text'>
+                    <div class='text'>
 
                         {# Meta #}
-                        <div class='feed--item__compact--text--meta'>
-                            <div class='feed--item__compact--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
-                            <div class='feed--item__compact--text--meta--provider'>{{ p.header.provider_name }}</div>
+                        <div class='meta'>
+                            <div class='date'>{{ p.date|date('Y-m-d') }}</div>
+                            <div class='provider'>{{ p.header.provider_name }}</div>
                         </div>
                         
                         {# Title #}
-                        <h1 class='feed--item__compact--text--title'><a href='{{p.url}}'>{{p.title}}</a></h1>
+                        <h1 class='title'><a href='{{p.url}}'>{{p.title}}</a></h1>
 
                         {# Tags #}
-                        <div class='feed--item__compact--text--tags'>
+                        <div class='tags'>
                             {% for tag in p.taxonomy.tag %}
-                                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="feed--item__compact--text--tags--item">{{ tag }}</a>
+                                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                             {% endfor %}
                         </div>
 
@@ -42,37 +42,35 @@
         {% else %}
 
              {% for p in page.children.order('date', 'desc') %}
-                <div class='feed--item__list'>
+                <div class='item small'>
 
-                    <a href='{{p.url}}' class='feed--item__list--link'></a>
+                    <a href='{{p.url}}' class='link'></a>
 
-                    <div class='feed--item__list--text'>
+                    <div class='text'>
 
                         {# Meta #}
-                        <div class='feed--item__list--text--meta'>
-                            <div class='feed--item__list--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
-                            <div class='feed--item__list--text--meta--provider'>{{ p.header.provider_name }}</div>
+                        <div class='meta'>
+                            <div class='date'>{{ p.date|date('Y-m-d') }}</div>
+                            <div class='provider'>{{ p.header.provider_name }}</div>
                         </div>
                         
                         {# Title #}
-                        <h1 class='feed--item__list--text--title'>{{p.title}}</h1>
+                        <h1 class='title'>{{p.title}}</h1>
 
                     </div>
 
-                    <div class='feed--item__list--image'>
-
+                    <div class='image'>
                         {% if p.header.featured_image %}
-                            {{ p.media[p.header.featured_image].cropZoom('', p.title|escape)}}
+                            {{ p.media[p.header.featured_image].cropZoom(200, 200).html('', p.title|escape)}}
                         {% else %}
                             <img src='{{ p.header.external_image }}'>
                         {% endif %}
-
                     </div> 
 
                     {# Tags #}
-                    <div class='feed--item__list--tags'>
+                    <div class='tags'>
                         {% for tag in p.taxonomy.tag %}
-                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="feed--item__list--tags--item">{{ tag }}</a>
+                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                         {% endfor %}
                     </div>
                     
@@ -80,11 +78,6 @@
             {% endfor %}
 
         {% endif %}
-
-
-        <div class='feed--item feed--item__more'>
-            <div class='feed--item__more--button'>Load more</div>
-        </div>
 
     </div>
 {% endblock %}

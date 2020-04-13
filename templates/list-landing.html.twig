@@ -4,63 +4,121 @@
 <div id='landing' class="landing">
 
     {# ABOUT #}
-    <div id='landing--item__about' class='landing--item__about landing--item__about__active'>
+    <div class='item about active'>
 
         {% set about = page.find('/about') %}
+
+        {# TEXT :: ABOUT #}
         <p>{{ about.header.short }}</p>
-        <a href='{{base_url}}/email-notification-form' class='landing--item__about--button'>
+        
+        {# NEWSLETTER :: ABOUT #}
+        <a href='{{base_url}}/email-notification-form' class='button'>
             <span>Sign up for updates</span>
-            <div class='arrow arrow__right'>
-                <div class='arrow__right--line'></div>
-                <div class='arrow__right--point'></div>
+            <div class='arrow right'>
+                <div class='line'></div>
+                <div class='point'></div>
             </div>
         </a>
-        <a href='{{base_url}}/about' class='landing--item__about--button'>
+
+        {# MORE :: ABOUT #}
+        <a href='{{base_url}}/about' class='button'>
             <span>More about the project</span>
-            <div class='arrow arrow__right'>
-                <div class='arrow__right--line'></div>
-                <div class='arrow__right--point'></div>
+            <div class='arrow right'>
+                <div class='line'></div>
+                <div class='point'></div>
             </div>
         </a>
     </div> 
+    
+
+    {# NEWS #}        
+    {% set latestNews = page.find('/announcements').collection.first %}
+    <div class='item third spaced'>
+
+        {# LINK OVERLAY :: NEWS #}
+        <a class='link' href='{{latestNews.url}}'></a>
+
+
+        {# TEXT :: NEWS #}
+        <div class='text'>
+
+            {# HEADER :: NEWS  #}
+            <div class='header'>
+                <div class='section'>Announcements</div>
+                <div class='date'>{{ latestNews.date|date('Y-m-d') }}</div>
+            </div>
+
+            {# META :: NEWS #}
+            <div class='meta'>
+                {# DATE :: NEWS #}
+                {# <div class='date'>{{ latestNews.date|date('Y-m-d') }}</div> #}
+            </div>
+            
+            {# TITLE :: NEWS #}
+            <h1 class='title'>{{ latestNews.title }}</h1>
+
+        </div>
+
+        {# IMAGE :: NEWS #}
+        <div class='image'>
+            {{ latestNews.media[latestNews.header.featured_image].cropResize(600, 400).html('', latestNews.title|escape)}}
+        </div> 
+
+        {# TAGS :: NEWS #}
+        <div class='tags'>
+            {% for tag in latestNews.taxonomy.tag %}
+                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
+            {% endfor %}
+        </div>
+        
+    </div>
 
     {# NOTE #}
     {% set latestNote = page.find('/blog').collection.first %}
-    <div  class='landing--item__third spaced'>
+    <div  class='item third spaced'>
 
-        <a href='{{latestNote.url}}' class='landing--item__third--link'></a>
+        {# LINK OVERLAY :: NOTE #}
+        <a href='{{latestNote.url}}' class='link'></a>
 
-        <div class='landing--item__third--text'>
+        {# TEXT :: NOTE #}
+        <div class='text'>
 
-            <div class='landing--item__third--text--header'>Blog</div>
+            {# HEADER :: NOTE #}
+            <div class='header'>
+                <div class='section'>Blog</div>
+                <div class='date'>{{ latestNote.date|date('Y-m-d') }}</div>
+            </div>
 
-            {# Meta #}
-            <div class='landing--item__third--text--meta'>
-                <div class='landing--item__third--text--meta--date'>{{ latestNote.date|date('Y-m-d') }}</div>
+            {# META :: NOTE #}
+            <div class='meta'>
+                {# DATE :: NOTE #}
+                {# <div class='date'>{{ latestNote.date|date('Y-m-d') }}</div> #}
                 
-                {# Author #}
+                {# AUTHOR :: NOTE #}
                 {% if latestNote.header.author %}
-                    {% for author in latestNote.header.author %}
-                        <div class='landing--item__third--text--meta--author'>{{ page.find(author).title }}</div>
-                    {% endfor %}
+                    <div class='author'>
+                        {% for author in latestNote.header.author %}
+                            {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
+                        {% endfor %}
+                    </div>
                 {% endif %}
             </div>
 
-            {# Title #}
-            <a href='{{latestNote.url}}' class='landing--item__third--text--title'>{{latestNote.title}}</a>
+            {# TITLE :: NOTE #}
+            <a href='{{latestNote.url}}' class='title'>{{latestNote.title}}</a>
 
-            {# Tags #}
-            <div class='landing--item__third--text--tags'>
+            {# TAGS :: NOTE #}
+            <div class='tags'>
                 {% for tag in latestNote.taxonomy.tag|slice(0,4) %}
-                    <a href="{{ base_url }}/filter/tag:{{ tag }}" class="landing--item__third--text--tags--item">{{ tag }}</a>
+                    <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                 {% endfor %}
             </div>
 
         </div>
 
-        {# Image #}
+        {# IMAGE :: NOTE #}
         {% if latestNote.header.featured_image %}
-            <div class='landing--item__third--image'>
+            <div class='image'>
                 {{ latestNote.media[latestNote.header.featured_image].cropResize(600, 400).html('', latestNote.title|escape)}}
             </div>
         {% endif %}
@@ -69,33 +127,43 @@
 
     {# FEED #}
     {% set latestFeed = page.find('/feed').children.order('date', 'desc').first %}
-    <div class='landing--item__third spaced'>
+    <div class='item third'>
 
-        <a class='landing--item__third--link' href='{{latestFeed.url}}'></a>
+        {# LINK OVERLAY :: FEED #}
+        <a class='link' href='{{latestFeed.url}}'></a>
 
-        <div class='landing--item__third--text'>
+        {# TEXT :: FEED #}
+        <div class='text'>
 
-            <div class='landing--item__third--text--header'>Feed</div>
+            {# HEADER :: FEED #}
+            <div class='header'>
+                <div class='section'>Feed</div>
+                <div class='date'>{{ latestFeed.date|date('Y-m-d') }}</div>
+            </div>
 
-            {# Meta #}
-            <div class='landing--item__third--text--meta'>
-                <div class='landing--item__third--text--meta--date'>{{ latestFeed.date|date('Y-m-d') }}</div>
-                <div class='landing--item__third--text--meta--provider'>{{ latestFeed.header.provider_name }}</div>
+            {# META :: FEED #}
+            <div class='meta'>
+                {# DATE :: FEED #}
+                {# <div class='date'>{{ latestFeed.date|date('Y-m-d') }}</div> #}
+                
+                {# PROVIDER :: FEED #}
+                <div class='provider'>{{ latestFeed.header.provider_name }}</div>
             </div>
             
-            {# Title #}
-            <h1 class='landing--item__third--text--title'>{{ latestFeed.title }}</h1>
+            {# TITLE :: FEED #}
+            <h1 class='title'>{{ latestFeed.title }}</h1>
 
         </div>
 
-        {# Tags #}
-        <div class='landing--item__third--tags'>
+        {# TAGS :: FEED #}
+        <div class='tags'>
             {% for tag in latestFeed.taxonomy.tag %}
-                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="landing--item__third--text--tags--item">{{ tag }}</a>
+                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
             {% endfor %}
         </div>
 
-        <div class='landing--item__third--image'>
+        {# IMAGE :: FEED  #}
+        <div class='image'>
             {% if latestFeed.header.featured_image %}
                 {{ latestFeed.media[latestFeed.header.featured_image].cropResize(600, 400).html('', p.title|escape)}}
             {% else %}
@@ -103,72 +171,37 @@
             {% endif %}
         </div> 
 
-
-    
     </div>
 
-    {# NEWS #}        
-    {% set latestNews = page.find('/announcements').collection.first %}
-    <div class='landing--item__third'>
-
-        <a class='landing--item__third--link' href='{{latestNews.url}}'></a>
-
-        <div class='landing--item__third--text'>
-
-            <div class='landing--item__third--text--header'>Announcements</div>
-
-            {# Meta #}
-            <div class='landing--item__third--text--meta'>
-                <div class='landing--item__third--text--meta--date'>{{ latestNews.date|date('Y-m-d') }}</div>
+    {# MORE NEWS #}
+    <div class='item third short'>
+        <a href='{{base_url}}/announcements' class='button'>
+            <span>More anouncements</span>
+            <div class='arrow right'>
+                <div class='line'></div>
+                <div class='point'></div>
             </div>
-            
-            {# Title #}
-            <h1 class='landing--item__third--text--title'>{{ latestNews.title }}</h1>
-
-        </div>
-
-        <div class='landing--item__third--image'>
-            {{ latestNews.media[latestNews.header.featured_image].cropResize(600, 400).html('', latestNews.title|escape)}}
-        </div> 
-
-        {# Tags #}
-        <div class='landing--item__third--tags'>
-            {% for tag in latestNews.taxonomy.tag %}
-                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="landing--item__third--tags--item">{{ tag }}</a>
-            {% endfor %}
-        </div>
-        
+        </a>
     </div>
 
     {# MORE NOTE #}
-    <div class='landing--item__third landing--item__third__short'>
-        <a href='{{base_url}}/blog' class='landing--item__third--button'>
+    <div class='item third short'>
+        <a href='{{base_url}}/blog' class='button'>
             <span>More blog posts</span>
-            <div class='arrow arrow__right'>
-                <div class='arrow__right--line'></div>
-                <div class='arrow__right--point'></div>
+            <div class='arrow right'>
+                <div class='line'></div>
+                <div class='point'></div>
             </div>
         </a>
     </div>
 
     {# MORE FEED #}
-    <div class='landing--item__third landing--item__third__short'>
-        <a href='{{base_url}}/feed' class='landing--item__third--button'>
+    <div class='item third short'>
+        <a href='{{base_url}}/feed' class='button'>
             <span>More feed</span>
-            <div class='arrow arrow__right'>
-                <div class='arrow__right--line'></div>
-                <div class='arrow__right--point'></div>
-            </div>
-        </a>
-    </div>
-
-    {# MORE NEWS #}
-    <div class='landing--item__third landing--item__third__short'>
-        <a href='{{base_url}}/announcements' class='landing--item__third--button'>
-            <span>More anouncements</span>
-            <div class='arrow arrow__right'>
-                <div class='arrow__right--line'></div>
-                <div class='arrow__right--point'></div>
+            <div class='arrow right'>
+                <div class='line'></div>
+                <div class='point'></div>
             </div>
         </a>
     </div>

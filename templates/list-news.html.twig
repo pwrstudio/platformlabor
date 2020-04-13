@@ -14,24 +14,24 @@
     {% if view == 'compact' %}
 
         {% for p in page.children.order('date', 'desc') %}
-            <div class='news--item__compact'>
+            <div class='item compact'>
 
-                <a href='{{p.url}}' class='news--item__compact--link'></a>
+                <a href='{{p.url}}' class='link'></a>
 
-                <div class='news--item__compact--text'>
+                <div class='text'>
 
                     {# Meta #}
-                    <div class='news--item__compact--text--meta'>
-                        <div class='news--item__compact--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
+                    <div class='meta'>
+                        <div class='date'>{{ p.date|date('Y-m-d') }}</div>
                     </div>
                     
                     {# Title #}
-                    <h1 class='news--item__compact--text--title'><a href='{{p.url}}'>{{p.title}}</a></h1>
+                    <h1 class='title'><a href='{{p.url}}'>{{p.title}}</a></h1>
 
                     {# Tags #}
-                    <div class='news--item__compact--text--tags'>
+                    <div class='tags'>
                         {% for tag in p.taxonomy.tag %}
-                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="news--item__compact--text--tags--item">{{ tag }}</a>
+                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                         {% endfor %}
                     </div>
 
@@ -43,32 +43,32 @@
     {% else %}
 
         {% for p in page.children.order('date', 'desc') %}
-            <div class='news--item__list'>
+            <div class='item small'>
 
-                <a href='{{p.url}}' class='news--item__list--link'></a>
+                <a href='{{p.url}}' class='link'></a>
 
-                <div class='news--item__list--text'>
+                <div class='text'>
 
                     {# Meta #}
-                    <div class='news--item__list--text--meta'>
-                        <div class='news--item__list--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
+                    <div class='meta'>
+                        <div class='date'>{{ p.date|date('Y-m-d') }}</div>
                     </div>
                     
                     {# Title #}
-                    <h1 class='news--item__list--text--title'>
+                    <h1 class='title'>
                         <a href='{{p.url}}'>{{p.title}}</a>
                     </h1>
 
                     {# Tags #}
-                    <div class='news--item__list--text--tags'>
+                    <div class='tags'>
                         {% for tag in p.taxonomy.tag %}
-                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="taxonomy--tag taxonomy--tag__general">{{ tag }}</a>
+                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                         {% endfor %}
                     </div>
 
                 </div>
 
-                <a href='{{p.url}}' class='news--item__list--image'>
+                <a href='{{p.url}}' class='image'>
                     {{ p.media[p.header.featured_image].cropZoom(200, 200).html('', p.title|escape)}}
                 </a>              
                 
@@ -76,10 +76,6 @@
         {% endfor %}
     
     {% endif %}
-
-    <div class='news--item__more'>
-        <div class='news--item__more--button'>Load more</div>
-    </div>
 
 </div>
 {% endblock %}

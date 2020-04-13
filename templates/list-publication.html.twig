@@ -7,37 +7,43 @@
 {% block content %}
     <div class="publications">
 
-        {# Listbar #}
+        {# LISTBAR #}
         {% include 'navigation/listbar.html.twig' %}
 
-        {# List #}
+        {# COMPACT #}
         {% if view == 'compact' %}
 
             {% for p in page.children.order('date', 'desc') %}
-                <div class='publications--item__compact'>
+                <div class='item compact'>
 
-                    <div class='publications--item__compact--text'>
+                    {# TEXT :: COMPACT #}
+                    <div class='text'>
 
-                        {# Meta #}
-                        <div class='publications--item__compact--text--meta'>
+                        {# META :: COMPACT #}
+                        <div class='meta'>
+                            {# DATE :: COMPACT #}
                             {% if p.header.forthcoming %}
-                                <div class='publications--item__compact--text--meta--date'>Forthcoming</div>
+                                <div class='date'>Forthcoming</div>
                             {% else %}
-                                <div class='publications--item__compact--text--meta--date'>{{ p.header.publication_date|date('Y-m-d') }}</div>
+                                <div class='date'>{{ p.header.publication_date|date('Y-m-d') }}</div>
                             {% endif %}
+
+                            {# AUTHOR :: COMPACT #}
                             {% if p.header.author %}
-                                <div class='publications--item__compact--text--meta--author'>{{ page.find(p.header.author).title }}</div>
+                                <div class='author'>{{ page.find(p.header.author).title }}</div>
                             {% endif %}
-                            <div class='publications--item__compact--text--meta--provider'>{{ p.header.publisher}}</div>
+
+                            {# PROVIDER :: COMPACT #}
+                            <div class='provider'>{{ p.header.publisher}}</div>
                         </div>
                         
-                        {# Title #}
-                        <h1 class='publications--item__compact--text--title'><a href='{{p.header.link}}' target=_blank>{{p.title}}</a></h1>
+                        {# TITLE :: COMPACT #}
+                        <h1 class='title'><a href='{{p.header.link}}' target=_blank>{{p.title}}</a></h1>
 
-                        {# Tags #}
-                        <div class='publications--item__compact--text--tags'>
+                        {# TAGS:: COMPACT #}
+                        <div class='tags'>
                             {% for tag in p.taxonomy.tag %}
-                                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="publications--item__compact--text--tags--item">{{ tag }}</a>
+                                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                             {% endfor %}
                         </div>
 
@@ -49,81 +55,83 @@
         {% else %}
 
              {% for p in page.children.order('date', 'desc') %}
-                <div class='publications--item__list'>
+                <div class='item small'>
 
-                    <a href='output/{{p.slug}}' class='news--item__list--link'></a>
+                    {# LINK OVERLAY :: SMALL #}
+                    <a href='output/{{p.slug}}' class='link'></a>
 
-                    <div class='publications--item__list--text'>
+                    {# TEXT :: SMALL #}
+                    <div class='text'>
 
-                        {# Meta #}
-                        <div class='publications--item__list--text--meta'>
-                            {# DATE #}
+                        {# META :: SMALL #}
+                        <div class='meta'>
+
+                            {# DATE :: SMALL #}
                             {% if p.header.forthcoming %}
-                                <div class='publications--item__list--text--meta--date'>Forthcoming</div>
+                                <div class='date'>Forthcoming</div>
                             {% else %}
-                                <div class='publications--item__list--text--meta--date'>{{ p.header.publication_date|date('Y-m-d') }}</div>
+                                <div class='date'>{{ p.header.publication_date|date('Y-m-d') }}</div>
                             {% endif %}
-                            {# AUTHORS #}
+
+                            {# AUTHORS :: SMALL #}
                             {% if p.header.authors is iterable %}
                                 {% for author in p.header.authors %}
                                     {% if author.external %}
-                                        <div class='publications--item__list--text--meta--author'>{{ author.external }}</div>
+                                        <div class='author'>{{ author.external }}</div>
                                     {% elseif author.internal %}
-                                        <div class='publications--item__list--text--meta--author'>{{ page.find(author.internal).title }}</div>
+                                        <div class='author'>{{ page.find(author.internal).title }}</div>
                                     {% endif %}
                                 {% endfor %}
                             {% endif %}
-                            {# PUBLICATION #}
-                            <div class='publications--item__list--text--meta--provider'>{{ p.header.publisher }}</div>
+
+                            {# PROVIDER :: SMALL #}
+                            <div class='provider'>{{ p.header.publisher }}</div>
                         </div>
                         
-                        {# Title #}
-                        <div class='publications--item__list--text--title-container'>
-                            <h1 class='publications--item__list--text--title'>{{p.title}}</h1>
+                        {# TITLE :: SMALL #}
+                        <div class='title-container'>
+                            <h1 class='title'>{{p.title}}</h1>
                         </div>
 
-                        {# DESCRIPTION #}
+                        {# DESCRIPTION :: SMALL #}
                         {% if p.header.description %}
-
                             <div class='description'>
-                                {# <div class='description-toggle'>
-                                    Read more
-                                    <svg xmlns="http://www.w3.org/2000/svg" class='publications--item__list--icon' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                                </div> #}
-                                <div class='description-inner'>{{p.header.description|truncate(240, true)}}</div>
-                                <div class='description-inner-full'>{{p.header.description}}</div>
+                                <div class='inner'>{{p.header.description|truncate(240, true)}}</div>
+                                <div class='inner-full'>{{p.header.description}}</div>
                             </div>
                         {% endif %}
 
-                        {# LINKS #}
+                        {# LINKS :: SMALL #}
                         <div>
+
+                            {# EXTERNAL LINK :: SMALL #}
                             {% if p.header.link %}
-                                <a href='{{p.header.link}}' target=_blank class='publications--item__list--exit'>
+                                <a href='{{p.header.link}}' target=_blank class='exit'>
                                 Go to {{ p.header.publisher }}
-                                <svg xmlns="http://www.w3.org/2000/svg" class='publications--item__list--icon' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class='icon' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                 </a>
                             {% endif %}
 
-
+                            {# PDF DOWNLOAD :: SMALL #}
                             {% if p.header.pdf %}
-                                <a href='output/{{p.slug}}/{{p.header.pdf}}' target=_blank class='publications--item__list--pdf'>
+                                <a href='output/{{p.slug}}/{{p.header.pdf}}' target=_blank class='pdf'>
                                 Open pdf
-                                <svg xmlns="http://www.w3.org/2000/svg" class='publications--item__list--icon' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class='icon' width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                                 </a>
                             {% endif %}
                         </div>
 
                     </div>
 
-                    {# Image #}
-                    <div class='publications--item__list--image'>
+                    {# IMAGE :: SMALL #}
+                    <div class='image'>
                         {{ p.media[p.header.featured_image].cropResize(200, 200).html('', p.title|escape)}}
                     </div> 
 
-                    {# Tags #}
-                    <div class='publications--item__list--tags'>
+                    {# TAGS :: SMALL #}
+                    <div class='tags'>
                         {% for tag in p.taxonomy.tag %}
-                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="publications--item__list--tags--item">{{ tag }}</a>
+                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                         {% endfor %}
                     </div>
 
@@ -131,11 +139,6 @@
             {% endfor %}
 
         {% endif %}
-
-
-        <div class='publications--item publications--item__more'>
-            <div class='publications--item__more--button'>Load more</div>
-        </div>
 
     </div>
 

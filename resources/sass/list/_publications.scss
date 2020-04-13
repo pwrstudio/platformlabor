@@ -1,10 +1,13 @@
 .publications {
+  margin-top: 60px;
+  width: calc(100% - 40px);
+  margin-right: $main-margin;
+  margin-left: $main-margin;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 140px;
 
-    @include list;
-
-    align-content: flex-start;
-
-    &--item {
+    .item {
 
         &__list {
             @include list-item-small;
@@ -13,7 +16,7 @@
             overflow: hidden;
 
             &:hover {
-                background: #dcdcdc;
+                background: $grey-1;
                 .publications--item__list--text {
                   &--meta {
                     &--date {
@@ -31,13 +34,13 @@
               margin-right: 10px;
               color: #000;
               padding: 10px;
-              border: 1px solid #b4b4b4 !important;
+              border: 1px solid $grey-2 !important;
               z-index: 100;
               position: relative;
 
 
               &:hover {
-                background: #b4b4b4;
+                background: $grey-2;
               }
             }
 
@@ -84,68 +87,286 @@
 
         }
 
-        &__text {
-            @include list-item-small;
-
-            @include font-style-sans-small;
-
-
-
-            &:hover {
-                background: white;
+        &.small {
+          display: block;
+          padding: 20px;
+          height: auto;
+          margin-bottom: 0;
+          border-bottom:none;
+          border-top: 1px solid $grey-2;
+          width: 100%;
+          position: relative;
+    
+          @include screen-size('small') {
+            width: 100%;
+          }
+    
+          .link {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+          }
+      
+          .text {
+            width: calc(100% - 200px);
+            float: left;
+    
+            @include screen-size('small') {
+              width: 100%;
             }
-        }
+    
+            .meta {
+              margin-right: 20px;
+              height: auto;
+              width: 100%;
+              float: left;
+    
+              .date {
+                @include datebox;
+    
+                margin-bottom: 7px;
+              }
+    
+              .author {
+                @include greybox;
+    
+                display: inline-block;
+                margin-right: 7px;
+                margin-bottom: 7px;
+              }
+    
+            }
 
-        &__compact {
-            @include list-item-compact;    
-            
+            .title-container {
+              width: 100%;
+              display: inline-block;
+            }
+      
+            .title {
+              @include font-style-sans-small;
+    
+              float: left;
+              height: auto;
+              max-width: 60ch;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+    
+          .tags {
+            width: calc(100% - 400px);
+            float: left;
+            z-index: 10;
+    
+            .tag {
+              @include font-style-mono;
+    
+              padding: 7px;
+              border-radius: 5px;
+              margin-right: 4px;
+              margin-bottom: 6px; 
+              display: inline-block;
+              z-index: 10;
+              position: relative;
+              text-decoration: none !important; 
+              color: black;
+          
+              background: $yellow;
+          
+              &:hover {
+                background: $dark-yellow;
+                transition: background 0.3s $easing;
+              }
+    
+              @include screen-size('small') {
+                padding: 5px;
+              }
+    
+            }
+    
+            @include screen-size('small') {
+                width: 100%;
+            }
+          }
+    
+          .image {
+            width: 200px;
+            height: 200px;
+            float: right;
+    
+            @include screen-size('small') {
+              display: none;
+            }
+    
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 1;
+            }
+          }
+
+          .pdf, .exit {
+            font-family: space mono,Courier New,Courier,monospace;
+            font-size: 12px;
+            line-height: 52px;
+            height: 52px;
+            margin-right: 10px;
+            color: #000;
+            padding: 10px;
+            border: 1px solid $grey-2 !important;
+            z-index: 100;
+            position: relative;
+
+
             &:hover {
-                background: $grey-1;
-                .publications--item__compact--text {
-                  &--meta {
-                    &--date {
-                      border: 1px solid $grey-2;
-                    }
-                  }
+              background: $grey-2;
+            }
+          }
+
+          .exit {
+            max-width: 80vw;
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+
+          .icon {
+            position: relative;
+            top: 8px;
+          }
+    
+          &:hover {
+            background: $grey-1;
+            transition: background 0.3s $easing;
+    
+            .text {
+              .meta {
+                .date, .author {
+                  border: 1px solid $grey-2;
                 }
+              }
             }
+          }
         }
-
-        &__more {
-            @include list-item-more;
+    
+        &.compact {
+          display: flex;
+          height: auto;
+          border-bottom: 1px solid $grey-2;
+          padding: 20px;
+    
+          .link {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+          }
+      
+          .text {
+            width: 100%;
+      
+            .meta {
+              float: left;
+              margin-right: 10px;
+              margin-bottom: 5px;
+              height: 30px;
+              width: auto;
+    
+              .date {
+                @include datebox;
+    
+                float: left;
+                padding-left: 5px;
+                padding-right: 5px;
+                height: 30px;
+                line-height: 10px;
+              }
+      
+              .author {
+                @include greybox;
+    
+                float: left;
+                margin: 0;
+                margin-left: 10px;
+                padding-left: 5px;
+                padding-right: 5px;
+                height: 30px;
+                line-height: 10px;
+              }
+      
+            }
+      
+            .tags {
+              float: left;
+              display: block;
+    
+              .tag {
+                @include font-style-mono;
+    
+                padding: 2px;
+                border-radius: 2px;
+                margin-right: 5px;
+                margin-bottom: 5px; 
+                display: inline-block;
+                z-index: 10;
+                position: relative;
+                
+                text-decoration: none !important; 
+            
+                color: black;
+            
+                background: $yellow;
+            
+                &:hover {
+                  background: $dark-yellow;
+                  transition: background 0.3s $easing;
+                }
+    
+    
+              }
+            }
+      
+            .title {
+              @include font-style-sans-smaller;
+    
+              color: black;
+              height: 30px;
+              line-height: 30px;
+              width: 100%;
+              margin: 0;
+    
+              @include truncate-text;
+            }
+          }
+          
+          &:hover {
+            background: $grey-1;
+            transition: background 0.3s $easing;
+    
+            .text {
+              .meta {
+                .date, .author {
+                  border: 1px solid $grey-2;
+                }
+              }
+            }
+          }
         }
 
     }
 }
 
-.description-inner {
-  font-family: Archivo, sans-serif;
-  font-size: 16px;
-  line-height: 1.2em;
-  color: #000;
-  height: auto;
-  max-width: 80ch;
-  margin-bottom:  1em;
-  overflow: hidden;
-  cursor: pointer;
-  display: block;
-  user-select: none;
-}
-
-.description-inner-full {
-  font-family: Archivo, sans-serif;
-  font-size: 16px;
-  line-height: 1.2em;
-  color: #000;
-  height: auto;
-  max-width: 80ch;
-  margin-bottom:  1em;
-  overflow: hidden;
-  cursor: pointer;
-  display: none;
-  user-select: none;
-}
-
 .description.full .description-inner {
   display: none;
 }
@@ -160,8 +381,4 @@
 
 .description.full .description-inner-full {
   display: block;
-}
-
-.output-link {
-  background: red;
 }

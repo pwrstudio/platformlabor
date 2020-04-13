@@ -3,51 +3,49 @@
 {% block content %}
 
 {# Construct Query object #}
-
 {% set query = {} %}
-
 {% if uri.param('tag') %}
     {% set query = uri.param('tag')|split('&') %}
 {% endif %}
             
 <div class="filter">
 
-    <div class='filter--header'>Tag: {{query|join(',')}} ({{ taxonomy.findTaxonomy({tag: query})|length }})</div>
+    <div class='header'>Tag: {{query|join(',')}} ({{ taxonomy.findTaxonomy({tag: query})|length }})</div>
 
     {# LIST #}
     {% for p in taxonomy.findTaxonomy({tag: query}) %}
-        <div href='{{p.url}}' class='filter--item__list'>
+        <div href='{{p.url}}' class='item small'>
 
-            <a href='{{p.url}}' class='filter--item__list--link'></a>
+            <a href='{{p.url}}' class='link'></a>
 
-            <div class='filter--item__list--text'>
+            <div class='text'>
 
                 {# Meta #}
-                <div class='filter--item__list--text--meta'>
+                <div class='meta'>
 
                     {# Date #}
-                    <div class='filter--item__list--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
+                    <div class='date'>{{ p.date|date('Y-m-d') }}</div>
                     
                     {# Author #}
                     {% if p.header.author %}
                         {% for author in p.header.author %}
-                            <div class='notes--item__compact--text--meta--author'>{{ page.find(author).title }}</div>
+                            <div class='author'>{{ page.find(author).title }}</div>
                         {% endfor %}
                     {% endif %}
 
                     {# Provider #}
                     {% if p.header.provider_name %}
-                        <div class='feed--item__list--text--meta--provider'>{{ p.header.provider_name }}</div>
+                        <div class='provider'>{{ p.header.provider_name }}</div>
                     {% endif %}
 
                 </div>
                 
                 {# Title #}
-                <h1 class='filter--item__list--text--title'>{{p.title}}</h1>
+                <h1 class='title'>{{p.title}}</h1>
 
             </div>
 
-            <div class='filter--item__list--image'>
+            <div class='image'>
                 {% if p.template == 'single-feed' %}
                     {% if p.header.featured_image %}
                         {{ p.media[p.header.featured_image].cropZoom(200, 200).html('', p.title|escape)}}
@@ -60,22 +58,16 @@
             </div>   
 
             {# Tags #}
-            <div class='filter--item__list--tags'>
+            <div class='tags'>
                 {% for tag in p.taxonomy.tag %}
-                    <a href="{{ base_url }}/filter/tag:{{ tag }}" class="filter--item__list--tags--item">{{ tag }}</a>
+                    <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                 {% endfor %}
             </div>
             
         </div>
     {% endfor %}
-
-    <div class='filter--item__more'>
-        <div class='filter--item__more--button'>Load more</div>
-    </div>
-
 </div>
 
-<script src="//comments.platformlabor.net/js/count.min.js"></script>
 
 {% endblock %}
 

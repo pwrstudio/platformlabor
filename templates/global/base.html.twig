@@ -1,34 +1,33 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 <!DOCTYPE html>
+
 <html lang="{{ grav.language.getLanguage ?: 'en' }}">
-<head>
-    {% block head %}
-        {% include 'global/head.html.twig' %}
-    {% endblock %}
-</head>
 
-<script src="/instant.js" type="module"></script>
+    <head>
+        {% block head %}
+            {% include 'global/head.html.twig' %}
+        {% endblock %}
+    </head>
 
-<body>
+    <body>
 
-{% include 'navigation/navbar.html.twig' %}
-{% block content %}{% endblock %}
-{% include 'navigation/footer.html.twig' %}
+        {% include 'navigation/navbar.html.twig' %}
+        {% block content %}{% endblock %}
+        {% include 'navigation/footer.html.twig' %}
 
-{# {{ assets.js() }} #}
+        <script>
+            var descriptions = document.querySelectorAll('.description')
 
-<script>
-    var descriptions = document.querySelectorAll('.description')
+            if(descriptions.length > 0) {
+                descriptions.forEach(function(d) {
+                    console.dir(d)
+                    d.addEventListener('click', function(e) {
+                        d.classList.toggle('full')
+                    })
+                });
+            }
+        </script>
 
-    if(descriptions.length > 0) {
-        descriptions.forEach(function(d) {
-            console.dir(d)
-            d.addEventListener('click', function(e) {
-                d.classList.toggle('full')
-            })
-        });
-    }
-</script>
-
-</body>
+    </body>
+    
 </html>

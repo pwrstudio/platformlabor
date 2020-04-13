@@ -3,50 +3,48 @@
 {% block content %}
     <div class="search-list">
 
+        {# HEADER :: SEARCH #}
         {% set count = search_results ? search_results.count : 0 %}
-        <div class='search-list--header'>
+        <div class='header'>
             Search: {{  query }} ({{  count }})
         </div>
 
         {% for p in search_results %}
-            <div href='{{p.url}}' class='search-list--item__list'>
+            <div href='{{p.url}}' class='item small'>
 
-                <a href='{{p.url}}' class='search-list--item__list--link'></a>
+                {# LINK OVERLAY :: SEARCH #}
+                <a href='{{p.url}}' class='link'></a>
 
-                <div class='search-list--item__list--text'>
+                {# TEXT :: SEARCH #}
+                <div class='text'>
 
-                    {# Meta #}
-                    <div class='search-list--item__list--text--meta'>
-                        
-                        {% if p.template == 'single-feed' %}
-                            <div class='feed--item__list--text--meta--comments'>
-                                <a href="{{p.url}}#isso-thread">Comments</a>
-                            </div>
-                        {% endif %}
+                    {# META :: SEARCH #}
+                    <div class='meta'>
 
-                        {# Date #}
-                        <div class='search-list--item__list--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
+                        {# DATE :: SEARCH #}
+                        <div class='date'>{{ p.date|date('Y-m-d') }}</div>
             
-                        {# Author #}
+                        {# AUTHOR :: SEARCH #}
                         {% if p.header.author and p.header.author|length > 0 %}
                             {% for author in p.header.author %}
-                                <div class='notes--item__compact--text--meta--author'>{{ page.find(author).title }}</div>
+                                <div class='author'>{{ page.find(author).title }}</div>
                             {% endfor %}
                         {% endif %}
 
-                        {# Provider #}
+                        {# PROVIDER :: SEARCH #}
                         {% if p.header.provider_name %}
-                            <div class='feed--item__list--text--meta--provider'>{{ p.header.provider_name }}</div>
+                            <div class='provider'>{{ p.header.provider_name }}</div>
                         {% endif %}
 
                     </div>
                     
-                    {# Title #}
-                    <h1 class='search-list--item__list--text--title'>{{p.title}}</h1>
+                    {# TITLE :: SEARCH #}
+                    <h1 class='title'>{{p.title}}</h1>
 
                 </div>
 
-                <div class='search-list--item__list--image'>
+                {# IMAGE :: SEARCH #}
+                <div class='image'>
                     {% if p.template == 'single-feed' %}
                         {% if p.header.featured_image %}
                             {{ p.media[p.header.featured_image].cropZoom(200, 200).html('', p.title|escape)}}
@@ -58,22 +56,16 @@
                     {% endif %}
                 </div>   
 
-                {# Tags #}
-                <div class='search-list--item__list--tags'>
+                {# TAGS :: SEARCH #}
+                <div class='tags'>
                     {% for tag in p.taxonomy.tag %}
-                        <a href="{{ base_url }}/filter/tag:{{ tag }}" class="search-list--item__list--tags--item">{{ tag }}</a>
+                        <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                     {% endfor %}
                 </div>
                 
             </div>
         {% endfor %}
 
-        <div class='filter--item__more'>
-            <div class='filter--item__more--button'>Load more</div>
-        </div>
-
     </div>
-
-    <script src="//comments.platformlabor.net/js/count.min.js"></script>
 
 {% endblock %}

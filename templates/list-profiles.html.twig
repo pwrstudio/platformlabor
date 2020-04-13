@@ -4,15 +4,15 @@
 <div class="profiles">
 
     {% for p in page.collection %}
-        <div class='profiles--item__list'>
+        <div class='item'>
 
-            <a href='{{p.url}}' class='profiles--item__list--link'></a>
+            <a href='{{p.url}}' class='link'></a>
 
-            <div class='profiles--item__list--category'>{{p.header.category}}</div>
+            <div class='category'>{{p.header.category}}</div>
 
-            <div class='profiles--item__list--quote'>“{{p.header.quote}}”<div class='credit'>– {{p.title}}</div></div>
+            <div class='quote'>“{{p.header.quote}}”<div class='credit'>– {{p.title}}</div></div>
 
-            <div class='profiles--item__list--image'>
+            <div class='image'>
                 {{ p.media[p.header.featured_image].cropResize(900).html('', p.title|escape)}}
             </div> 
             

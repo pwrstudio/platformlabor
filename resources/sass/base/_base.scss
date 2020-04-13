@@ -37,8 +37,7 @@ textarea {
 
 .arrow {
 
-
-    &__right {
+    &.right {
         margin-left: 5px;
         width: 40px;
         height: 15px;
@@ -46,7 +45,7 @@ textarea {
         position: relative;
         top: 4px;
 
-        &--line {
+        .line {
             position: absolute;
             top: 5px;
             width: 100%;
@@ -54,7 +53,7 @@ textarea {
             background: $black;
         }
     
-        &--point {
+        .point {
             height: 11px;
             width: 11px;
             border-top: 1px solid $black;
@@ -65,7 +64,7 @@ textarea {
         }
     }
 
-    &__down {
+    &.down {
         margin-right: 5px;
         width: 20px;
         height: 15px;
@@ -75,7 +74,7 @@ textarea {
         // background: red;
         transform: rotateZ(90deg);
 
-        &--line {
+        .line {
             position: absolute;
             top: 7px;
             width: 100%;
@@ -83,7 +82,7 @@ textarea {
             background: $black;
         }
     
-        &--point {
+        .point {
             height: 15px;
             width: 15px;
             border-top: 1px solid $black;
