@@ -7,28 +7,30 @@
 {% block content %}
 <div class="news">
 
-    {# Listbar #}
+    {# LISTBAR #}
     {% include 'navigation/listbar.html.twig' %}
 
-    {# List #}
     {% if view == 'compact' %}
 
         {% for p in page.children.order('date', 'desc') %}
             <div class='item compact'>
 
+                {# LINK OVERLAY :: COMPACT #}
                 <a href='{{p.url}}' class='link'></a>
 
+                {# TEXT :: COMPACT #}
                 <div class='text'>
 
-                    {# Meta #}
+                    {# META :: COMPACT #}
                     <div class='meta'>
+                        {# DATE :: COMPACT #}
                         <div class='date'>{{ p.date|date('Y-m-d') }}</div>
                     </div>
                     
-                    {# Title #}
+                    {# TITLE :: COMPACT #}
                     <h1 class='title'><a href='{{p.url}}'>{{p.title}}</a></h1>
 
-                    {# Tags #}
+                    {# TAGY :: COMPACT #}
                     <div class='tags'>
                         {% for tag in p.taxonomy.tag %}
                             <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
@@ -45,21 +47,22 @@
         {% for p in page.children.order('date', 'desc') %}
             <div class='item small'>
 
+                {# LINK OVERLAY :: SMALL #}
                 <a href='{{p.url}}' class='link'></a>
 
+                {# TEXT :: SMALL #}
                 <div class='text'>
 
-                    {# Meta #}
+                    {# META :: SMALL #}
                     <div class='meta'>
+                        {# DATE :: SMALL #}
                         <div class='date'>{{ p.date|date('Y-m-d') }}</div>
                     </div>
                     
-                    {# Title #}
-                    <h1 class='title'>
-                        <a href='{{p.url}}'>{{p.title}}</a>
-                    </h1>
+                    {# TITLE :: SMALL #}
+                    <h1 class='title'>{{p.title}}</h1>
 
-                    {# Tags #}
+                    {# TAGS :: SMALL #}
                     <div class='tags'>
                         {% for tag in p.taxonomy.tag %}
                             <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
@@ -68,6 +71,7 @@
 
                 </div>
 
+                {# IMAGE :: SMALL #}
                 <a href='{{p.url}}' class='image'>
                     {{ p.media[p.header.featured_image].cropZoom(200, 200).html('', p.title|escape)}}
                 </a>              

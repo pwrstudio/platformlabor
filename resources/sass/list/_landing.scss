@@ -112,8 +112,7 @@
                     }
         
                      .provider {
-                        @include greybox;
-                        border: 1px solid $grey-2;
+                        @include greenbox;
                     }
         
                     .author {
@@ -193,7 +192,6 @@
         &.spaced {
             margin-right: 9px;
         }
-
     
         &.about {
             @include font-style-sans-small;

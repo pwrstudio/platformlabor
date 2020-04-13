@@ -9,91 +9,12 @@
 
     .item {
 
-        &__list {
-            @include list-item-small;
-            border-bottom: 1px solid $grey-2;
-            height: auto;
-            overflow: hidden;
-
-            &:hover {
-                background: $grey-1;
-                .publications--item__list--text {
-                  &--meta {
-                    &--date {
-                      border: 1px solid $grey-2;
-                    }
-                  }
-                }
-            }
-
-            &--pdf, &--exit {
-              font-family: space mono,Courier New,Courier,monospace;
-              font-size: 12px;
-              line-height: 52px;
-              height: 52px;
-              margin-right: 10px;
-              color: #000;
-              padding: 10px;
-              border: 1px solid $grey-2 !important;
-              z-index: 100;
-              position: relative;
-
-
-              &:hover {
-                background: $grey-2;
-              }
-            }
-
-            &--exit {
-              max-width: 80vw;
-              width: 100%;
-              white-space: nowrap;
-              text-overflow: ellipsis;
-              overflow: hidden;
-            }
-
-            &--icon {
-              position: relative;
-              top: 8px;
-            }
-
-            &--text {
-
-              &--title-container {
-                width: 100%;
-                display: inline-block;
-              }
-
-              &--title {
-                max-width: 60ch;
-                &:hover {
-                  text-decoration: underline;
-                }
-              }
-
-              &--meta {
-                &--date, &--author {
-                  margin-bottom: 7px;
-                }
-
-                &--provider {
-                  @include screen-size('small') {
-                    display: none;
-                  }
-                }
-              }
-
-            }
-
-        }
-
         &.small {
           display: block;
           padding: 20px;
           height: auto;
           margin-bottom: 0;
-          border-bottom:none;
-          border-top: 1px solid $grey-2;
+          border-bottom: 1px solid $grey-2;
           width: 100%;
           position: relative;
     
@@ -124,11 +45,11 @@
               height: auto;
               width: 100%;
               float: left;
+              margin-bottom: 7px;
     
               .date {
                 @include datebox;
-    
-                margin-bottom: 7px;
+                margin-right: 7px;    
               }
     
               .author {
@@ -136,7 +57,13 @@
     
                 display: inline-block;
                 margin-right: 7px;
-                margin-bottom: 7px;
+              }
+
+              .provider {
+                @include datebox;
+    
+                display: inline-block;
+                margin-right: 7px;
               }
     
             }
@@ -155,6 +82,20 @@
 
               &:hover {
                 text-decoration: underline;
+              }
+            }
+
+            .description {
+
+              .inner {
+                @include font-style-sans-small;
+                height: auto;
+                max-width: 80ch;
+                margin-bottom:  1em;
+                overflow: hidden;
+                cursor: pointer;
+                display: block;
+                user-select: none;
               }
             }
           }
@@ -213,14 +154,13 @@
           }
 
           .pdf, .exit {
-            font-family: space mono,Courier New,Courier,monospace;
-            font-size: 12px;
+            @include font-style-mono;
             line-height: 52px;
             height: 52px;
             margin-right: 10px;
             color: #000;
             padding: 10px;
-            border: 1px solid $grey-2 !important;
+            border: 1px solid $grey-2;
             z-index: 100;
             position: relative;
 
@@ -249,7 +189,7 @@
     
             .text {
               .meta {
-                .date, .author {
+                .date, .author, .provider {
                   border: 1px solid $grey-2;
                 }
               }
@@ -262,6 +202,7 @@
           height: auto;
           border-bottom: 1px solid $grey-2;
           padding: 20px;
+          width: 100%;
     
           .link {
             width: 100%;
@@ -365,20 +306,4 @@
         }
 
     }
-}
-
-.description.full .description-inner {
-  display: none;
-}
-
-.description.full .description-inner-full {
-  display: block;
-}
-
-.description.full .description-inner {
-  display: none;
-}
-
-.description.full .description-inner-full {
-  display: block;
 }

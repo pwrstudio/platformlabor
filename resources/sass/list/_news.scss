@@ -23,8 +23,7 @@
       padding: 20px;
       height: auto;
       margin-bottom: 0;
-      border-bottom:none;
-      border-top: 1px solid $grey-2;
+      border-BOTTOM: 1px solid $grey-2;
 
       @include screen-size('small') {
         width: 100%;

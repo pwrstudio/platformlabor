@@ -4,83 +4,82 @@
 <div class="about">
 
   {# TOP #}
-  <div class="about--top">
+  <div class="top">
 
-    {# Text #}
-    <div class='about--top--text'>
-      {# Title #}
-      <h1 class='about--top--text--title'>Platform Labor</h1>
+    {# TEXT :: TOP #}
+    <div class='text'>
+      {# TITLE :: TOP #}
+      <h1 class='title'>Platform Labor</h1>
     </div>
 
-    {# Meta #}
-    <div class='about--top--image'>
-      <img src='{{ page.media[page.header.featured_image].url}}'>
+    {# IMAGE :: TOP  #}
+    <div class='image'>
+      {{ page.media[page.header.featured_image].resize(900).html('',page.title|escape)}}
     </div>
 
   </div>
 
-  {# SECTION: Main #}
-  <div class='about--section about--section--main'>
+  {# MAIN #}
+  <div class='main'>
 
-    {# NAVIGATION #}
-    <div class='about--section--main--navigation'>
+    {# NAVIGATION :: MAIN #}
+    <div class='navigation'>
 
-      {# PROJECTS #}
-      <a href='#projects' data-target='projects' class='about--section--main--navigation--item js-page-link'>
-        <div class='arrow arrow__down'>
-          <div class='arrow__down--line'></div>
-          <div class='arrow__down--point'></div>
+      {# PROJECTS :: MAIN #}
+      <a href='#projects' data-target='projects' class='navigation-item js-page-link'>
+        <div class='arrow down'>
+          <div class='line'></div>
+          <div class='point'></div>
         </div>
         <span>Projects</span>
       </a>
 
-      {# RESEARCH TEAM #}
-      <a href='#research-team' data-target='research-team' class='about--section--main--navigation--item js-page-link'>
-        <div class='arrow arrow__down'>
-          <div class='arrow__down--line'></div>
-          <div class='arrow__down--point'></div>
+      {# RESEARCH TEAM :: MAIN #}
+      <a href='#research-team' data-target='research-team' class='navigation-item js-page-link'>
+        <div class='arrow down'>
+          <div class='line'></div>
+          <div class='point'></div>
         </div>
         <span>Research team</span>
       </a>
 
-      {# CONTACT #}
-      <a href='#contact' data-target='contact' class='about--section--main--navigation--item js-page-link'>
-        <div class='arrow arrow__down'>
-          <div class='arrow__down--line'></div>
-          <div class='arrow__down--point'></div>
+      {# CONTACT :: MAIN #}
+      <a href='#contact' data-target='contact' class='navigation-item js-page-link'>
+        <div class='arrow down'>
+          <div class='line'></div>
+          <div class='point'></div>
         </div>
         <span>Contact</span>
       </a>
 
-      {# UPDATES #}
-      <a href='{{base_url}}/email-notification-form' class='about--section--main--navigation--item'>
+      {# UPDATES :: MAIN #}
+      <a href='{{base_url}}/email-notification-form' class='navigation-item'>
         <span>Sign up for updates</span>
       </a>
 
     </div>
 
-    {# DESCRIPTION #}
-    <div class='about--section--main--description'>
+    {# DESCRIPTION :: MAIN #}
+    <div class='description'>
       {{ page.content}}
     </div>
 
   </div>
 
-  {# SECTION: Subprojects #}
-  <div id='projects' class='about--section about--section--subprojects'>
+  {# SUBPROJECTS #}
+  <div id='projects' class='subprojects'>
 
-    {# Header #}
-    <h2 class='about--section--subprojects--header'>Projects</h2>
+    {# HEADER :: SUBPROJECTS #}
+    <h2 class='header'>Projects</h2>
 
-    <div class='about--section--subprojects--inner'>
-      {# Links #}
+    <div class='inner'>
       {% for p in page.find('/projects').children.order('manual', 'asc') %}
-        <a href='{{p.url}}' class='about--section--subprojects--inner--item'>
-            <div class='about--section--subprojects--inner--item--text'>
-                <h1 class='about--section--subprojects--inner--item--text--title'>{{p.title}}</h1>
+        <a href='{{p.url}}' class='inner-item'>
+            <div class='text'>
+                <h1 class='title'>{{p.title}}</h1>
             </div>
             {% if p.header.featured_image %}
-              <div class='about--section--subprojects--inner--item--image'>
+              <div class='image'>
                 {{ p.media[p.header.featured_image].resize(400).html('',page.title|escape)}}
               </div>
             {% endif %}
@@ -91,23 +90,23 @@
 
   </div>
 
-  {# SECTION: Team #}
-  <div id='research-team' class='about--section about--section--team'>
+  {# TEAM #}
+  <div id='research-team' class='team'>
 
-    {# Header   #}
-    <h2 class='about--section--team--header'>Research team</h2>
+    {# HEADER :: TEAM #}
+    <h2 class='header'>Research team</h2>
 
-    {# Profiles #}
-    <div class='about--section--team--inner'>
+    {# PROFILES :: TEAM #}
+    <div class='inner'>
       {% for p in page.find('/research-team').children if p != page %}  
-          <a href='{{p.url}}' class='about--section--team--inner--item{% if not p.header.profile %} about--section--team--inner--item__inactive{% endif %}'>
-              <div class="about--section--team--inner--item--image">
+          <a href='{{p.url}}' class='inner-item{% if not p.header.profile %} inactive{% endif %}'>
+              <div class="image">
                   <img src='{{ p.media[p.header.featured_image].cropZoom(400, 400).url}}'>
               </div>
-              <div class="about--section--team--inner--item__title">
+              <div class="title">
                 {{p.title}}
                 <br/>
-                <span class='about--section--team--inner--item__title__note'>{{p.header.note}}</span>
+                <span class='note'>{{p.header.note}}</span>
               </div>
           </a>
       {% endfor %}
@@ -115,26 +114,25 @@
 
   </div>
 
-  {# SECTION: Contact #}
-  <div id='contact' class='about--section about--section--contact'>
+  {# CONTACT #}
+  <div id='contact' class='contact'>
 
-    {# Header #}
-    <h2 class='about--section--contact--header'>Contact</h2>
+    {# HEADER :: CONTACT #}
+    <h2 class='header'>Contact</h2>
 
-    <div class='about--section--contact--inner'>
-      {# Links #}
-      <a href='mailto:{{page.header.email}}' class='about--section--contact--inner--link'>
+    <div class='inner'>
+      <a href='mailto:{{page.header.email}}' class='link'>
         <span>Send Mail</span>
-        <div class='arrow arrow__right'>
-          <div class='arrow__right--line'></div>
-          <div class='arrow__right--point'></div>
+        <div class='arrow right'>
+          <div class='line'></div>
+          <div class='point'></div>
         </div>
       </a>
-      <a href='{{base_url}}/email-notification-form' class='about--section--contact--inner--link'>
+      <a href='{{base_url}}/email-notification-form' class='link'>
         <span>Sign up for updates</span>
-        <div class='arrow arrow__right'>
-          <div class='arrow__right--line'></div>
-          <div class='arrow__right--point'></div>
+        <div class='arrow right'>
+          <div class='line'></div>
+          <div class='point'></div>
         </div>
       </a>
     </div>

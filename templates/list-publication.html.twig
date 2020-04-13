@@ -33,12 +33,10 @@
                                 <div class='author'>{{ page.find(p.header.author).title }}</div>
                             {% endif %}
 
-                            {# PROVIDER :: COMPACT #}
-                            <div class='provider'>{{ p.header.publisher}}</div>
                         </div>
                         
                         {# TITLE :: COMPACT #}
-                        <h1 class='title'><a href='{{p.header.link}}' target=_blank>{{p.title}}</a></h1>
+                        <h1 class='title'><a href='{{p.slug}}'>{{p.title}}</a></h1>
 
                         {# TAGS:: COMPACT #}
                         <div class='tags'>
@@ -73,19 +71,23 @@
                                 <div class='date'>{{ p.header.publication_date|date('Y-m-d') }}</div>
                             {% endif %}
 
+                            {# PROVIDER :: SMALL #}
+                            {# <div class='provider'>{{ p.header.publisher }}</div> #}
+
                             {# AUTHORS :: SMALL #}
                             {% if p.header.authors is iterable %}
+                            <div class='author'>
                                 {% for author in p.header.authors %}
                                     {% if author.external %}
-                                        <div class='author'>{{ author.external }}</div>
+                                        {% set name = author.external %}
                                     {% elseif author.internal %}
-                                        <div class='author'>{{ page.find(author.internal).title }}</div>
+                                        {% set name = page.find(author.internal).title %}
                                     {% endif %}
+                                    {{ name }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
                                 {% endfor %}
+                                </div>
                             {% endif %}
 
-                            {# PROVIDER :: SMALL #}
-                            <div class='provider'>{{ p.header.publisher }}</div>
                         </div>
                         
                         {# TITLE :: SMALL #}
@@ -97,7 +99,6 @@
                         {% if p.header.description %}
                             <div class='description'>
                                 <div class='inner'>{{p.header.description|truncate(240, true)}}</div>
-                                <div class='inner-full'>{{p.header.description}}</div>
                             </div>
                         {% endif %}
 

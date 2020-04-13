@@ -119,7 +119,6 @@
                           {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
                         {% endfor %}
                       </div>
-
                     {% endif %}
 
                     {# TITlE #}
@@ -159,7 +158,7 @@
                     {{ relatedPost.media[relatedPost.header.featured_image].cropZoom(260, 200).html('', relatedPost.title|escape)}}
                   </div>
 
-                  {# AUTHOR :: RELATED #}
+                  {# AUTHORS :: RELATED #}
                   {% if relatedPost.header.author is iterable %}
                     <div class='author'>
                       {% for author in relatedPost.header.author %}
@@ -201,7 +200,7 @@
                   {{ relatedPost.media[relatedPost.header.featured_image].cropZoom(400,300).html('', relatedPost.title|escape)}}
                 </div>
 
-                {# AUTHOR ::  RELATED :: END #}
+                {# AUTHORS ::  RELATED :: END #}
                 {% if relatedPost.header.author is iterable %}
                   <div class='author'>
                     {% for author in relatedPost.header.author %}

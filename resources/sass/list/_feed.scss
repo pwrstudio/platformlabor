@@ -21,48 +21,6 @@
     margin-left: 0;
     width: 100%;
   }
-  
-  .banner {
-    @include font-style-sans-small;
-    width: 100%;
-
-    padding: 20px;
-    margin-bottom: 0;
-    position: relative;
-
-    border-radius: 10px;
-    height: auto;
-    border: 0;
-    margin-top: 10px;
-
-    opacity: 1;
-    display: block;
-
-    background: $green;
-
-
-    @include screen-size('small') {
-        height: auto;
-        margin-right: 15px;
-        margin-left: 15px;
-        width: calc(100% - 30px);
-    }
-
-
-    p {
-        width: 95%;
-    }
-
-    a {
-      border-bottom: 1px solid $black;
-
-      &:hover {
-        border-bottom: 1px solid transparent;
-
-      }
-    }
-
-  }
 
   .item {
     color: $black;
@@ -74,8 +32,7 @@
       padding: 20px;
       height: auto;
       margin-bottom: 0;
-      border-bottom:none;
-      border-top: 1px solid $grey-2;
+      border-bottom: 1px solid $grey-2;
 
       @include screen-size('small') {
         width: 100%;
@@ -111,8 +68,8 @@
             margin-bottom: 7px;
           }
 
-          .author {
-            @include greybox;
+          .provider {
+            @include greenbox;
 
             display: inline-block;
             margin-right: 7px;
@@ -153,7 +110,6 @@
           &:hover {
             background: $dark-yellow;
             transition: background 0.3s $easing;
-            // box-shadow: 0px 2px 5px rgba(210,210,210,1); 
           }
 
           @include screen-size('small') {
@@ -168,8 +124,8 @@
       }
 
       .image {
-        width: 200px;
-        height: 200px;
+        width: 120px;
+        height: 120px;
         float: right;
 
         @include screen-size('small') {
@@ -234,8 +190,8 @@
             line-height: 10px;
           }
   
-          .author {
-            @include greybox;
+          .provider {
+            @include greenbox;
 
             float: left;
             margin: 0;
@@ -263,17 +219,15 @@
             z-index: 10;
             position: relative;
             
-            text-decoration: none !important; 
+            text-decoration: none; 
         
             color: black;
         
-            // border: 1px solid transparent;
             background: $yellow;
         
             &:hover {
               background: $dark-yellow;
               transition: background 0.3s $easing;
-                // border: 1px solid $grey-2;
             }
 
 

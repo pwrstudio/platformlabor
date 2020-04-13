@@ -115,6 +115,19 @@
 
 }
 
+@mixin greenbox {
+  @include font-style-mono;
+
+  display: inline-block;
+  margin-right: 7px;
+  color: black;
+  padding: 10px;
+  border: 1px solid $green;
+  background: $green;
+  user-select: none;
+
+}
+
 @mixin clickbox {
   @include font-style-mono;
 

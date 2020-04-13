@@ -91,9 +91,6 @@
 
             {# META :: NOTE #}
             <div class='meta'>
-                {# DATE :: NOTE #}
-                {# <div class='date'>{{ latestNote.date|date('Y-m-d') }}</div> #}
-                
                 {# AUTHOR :: NOTE #}
                 {% if latestNote.header.author %}
                     <div class='author'>
@@ -143,11 +140,9 @@
 
             {# META :: FEED #}
             <div class='meta'>
-                {# DATE :: FEED #}
-                {# <div class='date'>{{ latestFeed.date|date('Y-m-d') }}</div> #}
                 
                 {# PROVIDER :: FEED #}
-                <div class='provider'>{{ latestFeed.header.provider_name }}</div>
+                <div class='provider'>Source: {{ latestFeed.header.provider_name }}</div>
             </div>
             
             {# TITLE :: FEED #}

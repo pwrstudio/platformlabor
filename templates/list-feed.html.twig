@@ -7,27 +7,32 @@
 {% block content %}
     <div class="feed">
 
-        {# Listbar #}
+        {# LISTBAR #}
         {% include 'navigation/listbar.html.twig' %}
 
-        {# List #}
         {% if view == 'compact' %}
 
             {% for p in page.children.order('date', 'desc') %}
                 <div class='item compact'>
+                    
+                    {# LINK OVERLAY :: COMPACT #}
+                    <a href='{{ p.header.feedlink }}' target=_blank class='link'></a>
 
+                    {# TEXT :: COMPACT #}
                     <div class='text'>
 
-                        {# Meta #}
+                        {# META :: COMPACT #}
                         <div class='meta'>
+                            {# DATE :: COMPACT #}
                             <div class='date'>{{ p.date|date('Y-m-d') }}</div>
-                            <div class='provider'>{{ p.header.provider_name }}</div>
+                            {# PROVIDER :: COMPACT #}
+                            <div class='provider'>Source: {{ p.header.provider_name }}</div>
                         </div>
                         
-                        {# Title #}
+                        {# TITLE :: COMPACT #}
                         <h1 class='title'><a href='{{p.url}}'>{{p.title}}</a></h1>
 
-                        {# Tags #}
+                        {# TAGS :: COMPACT #}
                         <div class='tags'>
                             {% for tag in p.taxonomy.tag %}
                                 <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
@@ -44,30 +49,35 @@
              {% for p in page.children.order('date', 'desc') %}
                 <div class='item small'>
 
-                    <a href='{{p.url}}' class='link'></a>
+                    {# LINK OVERLAY :: SMALL #}
+                    <a href='{{ p.header.feedlink }}' target=_blank class='link'></a>
 
+                    {# TEXT:: SMALL #}
                     <div class='text'>
 
-                        {# Meta #}
+                        {# META :: SMALL #}
                         <div class='meta'>
+                            {# DATE:: SMALL #}
                             <div class='date'>{{ p.date|date('Y-m-d') }}</div>
-                            <div class='provider'>{{ p.header.provider_name }}</div>
+                            {# PROVIDER :: SMALL #}
+                            <div class='provider'>Source: {{ p.header.provider_name }}</div>
                         </div>
                         
-                        {# Title #}
+                        {# TITLE :: SMALL #}
                         <h1 class='title'>{{p.title}}</h1>
 
                     </div>
 
+                    {# IMAGE :: SMALL #}
                     <div class='image'>
                         {% if p.header.featured_image %}
-                            {{ p.media[p.header.featured_image].cropZoom(200, 200).html('', p.title|escape)}}
+                            {{ p.media[p.header.featured_image].cropZoom(120, 120).html('', p.title|escape)}}
                         {% else %}
                             <img src='{{ p.header.external_image }}'>
                         {% endif %}
                     </div> 
 
-                    {# Tags #}
+                    {# TAGS :: SMALL #}
                     <div class='tags'>
                         {% for tag in p.taxonomy.tag %}
                             <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
