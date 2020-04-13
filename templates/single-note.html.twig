@@ -6,189 +6,221 @@
     <article class="single-note">
 
       {# TOP #}
-      <div class="single-note--top">
+      <div class="top">
 
-        {# Text #}
-        <div class='single-note--top--text'>
+        {# TEXT :: CURRENT POST #}
+        <div class='text'>
 
-          {# DATE #}
-          <div class='single-note--top--text--date'>{{ page.date|date('Y-m-d') }}</div>
+          {# DATE :: CURRENT POST #}
+          <div class='date'>{{ page.date|date('Y-m-d') }}</div>
 
-          {# SUBPROJECT #}
+          {# SUBPROJECT :: CURRENT POST #}
           {% if page.header.subproject %}
-            <div class='single-note--top--meta--subproject'>
-              <a href='{{ base_url }}{{ page.header.subproject }}' class='single-note--top--meta--subproject--link'>{{ page.find(page.header.subproject).title }}</a>
+            <div class='subproject'>
+              <a href='{{ base_url }}{{ page.header.subproject }}' class='link'>{{ page.find(page.header.subproject).title }}</a>
             </div>
           {% endif %}
         
-          {# TAGS #}
+          {# TAGS :: CURRENT POST #}
           {% if page.taxonomy.tag %}
-            <div class='single-note--top--meta--tags'>
+            <div class='tags'>
               {% for tag in page.taxonomy.tag %}
-                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="single-note--top--meta--tags--item">{{ tag }}</a>
+                <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
               {% endfor %}
             </div>
           {% endif %}
 
-          {# Title #}
-          <h1 class='single-note--top--text--title'>{{page.title}}</h1>
+          {# TITLE :: CURRENT POST #}
+          <h1 class='title'>{{page.title}}</h1>
 
-          {# Author #}
+          {# AUTHOR :: CURRENT POST #}
           {% if page.header.author %}
-
-            {% if page.header.author is iterable %}
-
-              {% for author in page.header.author %}
-                {% set authorPost = page.find(author) %}
-                <a href='{{ base_url }}{{ author }}' class='single-note--top--text--author'>
-                  <div class='single-note--top--text--author--image'>
-                    {{ authorPost.media[authorPost.header.featured_image].cropZoom(100,100).grayscale().html('', p.title|escape)}}
-                  </div>   
-                  <div class='single-note--top--text--author--name'>
-                    {{ authorPost.title }}
-                  </div>
-                </a>
-              {% endfor %}
-
-            {% else %}
-
-              {% set authorPost = page.find(page.header.author) %}
-              <a href='{{ base_url }}{{ page.header.author }}' class='single-note--top--text--author'>
-                <div class='single-note--top--text--author--image'>
+            {% for author in page.header.author %}
+              {% set authorPost = page.find(author) %}
+              <a href='{{ base_url }}{{ author }}' class='author'>
+                <div class='image'>
                   {{ authorPost.media[authorPost.header.featured_image].cropZoom(100,100).grayscale().html('', p.title|escape)}}
                 </div>   
-                <div class='single-note--top--text--author--name'>
+                <div class='name'>
                   {{ authorPost.title }}
                 </div>
-              </a>            
-
-            {% endif %}
-
+              </a>
+            {% endfor %}
           {% endif %}
-
 
         </div>
 
-        {# Meta #}
-        <div class='single-note--top--meta'>
+        {# META :: CURRENT POST #}
+        <div class='meta'>
           {# REPLIES #}
           {% if  page.children|length > 0 %}
-            <div class='single-note--main--end--related replies'>
-              <div class='single-note--main--end--related--header'>In reply to this post</div>
-              {% for replyPost in page.children %}
-                <a href='{{replyPost.url}}' class='single-note--main--end--related--item'>
+            {# :: REPLY  #}
+            <div class='replies'>
 
-                  {# IMAGE #}
-                  <div class='single-note--main--end--related--item--image'>
-                    {{ replyPost.media[replyPost.header.featured_image].resize(400).html('', replyPost.title|escape)}}
+              {# HEADER :: REPLY #}
+              <div class='header'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-down-right icon">
+                    <polyline points="15 10 20 15 15 20"></polyline>
+                    <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                </svg> Reply
+              </div>
+
+              {% for replyPost in page.children %}
+                <a href='{{replyPost.url}}' class='reply'>
+
+                  {# IMAGE :: REPLY #}
+                  <div class='image'>
+                    {{ replyPost.media[replyPost.header.featured_image].cropZoom(260, 200).html('', replyPost.title|escape)}}
                   </div>
 
-                  {# TITlE #}
-                  <div class='single-note--main--end--related--item--title'>{{ replyPost.title }}</div>
-                  
-                  {# AUTHOR #}
+                  {# AUTHOR :: REPLY  #}
                   {% if replyPost.header.author is iterable %}
 
-                    {% for author in replyPost.header.author %}
-                      {% set authorPost = page.find(author) %}
-                      <div class='single-note--related--author'>
-                        <div class='single-note--related--author--image'>
-                          {{ authorPost.media[authorPost.header.featured_image].cropZoom(100,100).grayscale().html('', p.title|escape)}}
-                        </div>   
-                        <div class='single-note--related--author--name'>
-                          {{ authorPost.title }}
+                      <div class='author'>
+                        <div class='name'>
+                          {% for author in replyPost.header.author %}
+                            {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
+                          {% endfor %}
                         </div>
                       </div>
-                    {% endfor %}
 
                   {% endif %}
 
+                  {# TITlE :: REPLY  #}
+                  <div class='title'>{{ replyPost.title }}</div>
+
                 </a>
               {% endfor %}
             </div>
-            {% elseif page.parent.slug != 'blog' %}
-              <div class='single-note--main--end--related replies'>
-                <div class='single-note--main--end--related--header'>Replies to this post</div>
-                <a href='{{page.parent.url}}' class='single-note--main--end--related--item'>
 
-                    {# IMAGE #}
-                    <div class='single-note--main--end--related--item--image'>
-                      {{ page.parent.media[page.parent.header.featured_image].resize(400).html('', page.parent.title|escape)}}
+            {% elseif page.parent.slug != 'blog' %}
+                {# :: IN-REPLY-TO #}
+              <div class='replies'>
+                
+                {# HEADER :: IN-REPLY-TO #}
+                <div class='header'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-down-right icon">
+                    <polyline points="15 10 20 15 15 20"></polyline>
+                    <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                </svg> Reply
+                </div>
+                
+                <a href='{{page.parent.url}}' class='reply'>
+
+                    {# IMAGE :: IN-REPLY-TO #}
+                    <div class='image'>
+                      {{ page.parent.media[page.parent.header.featured_image].cropZoom(260, 160).html('', page.parent.title|escape)}}
                     </div>
 
-                    {# TITlE #}
-                    <div class='single-note--main--end--related--item--title'>{{ page.parent.title }}</div>
-                    
-                    {# AUTHOR #}
+                    {# AUTHOR :: IN-REPLY-TO #}
                     {% if page.parent.header.author is iterable %}
-
-                      {% for author in page.parent.header.author %}
-                        {% set authorPost = page.find(author) %}
-                        <div class='single-note--related--author'>
-                          <div class='single-note--related--author--image'>
-                            {{ authorPost.media[authorPost.header.featured_image].cropZoom(100,100).grayscale().html('', p.title|escape)}}
-                          </div>   
-                          <div class='single-note--related--author--name'>
-                            {{ authorPost.title }}
-                          </div>
-                        </div>
-                      {% endfor %}
+                      <div class='author'>
+                        {% for author in page.parent.header.author %}
+                          {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
+                        {% endfor %}
+                      </div>
 
                     {% endif %}
+
+                    {# TITlE #}
+                    <div class='title'>{{ page.parent.title }}</div>
 
                   </a>
                 </div>
           {% endif %}
         </div>
         
-
       </div>
 
       {# MAIN #}
-      <div class="single-note--main">
+      <div class="main">
 
         {# CONTENT #}
-        <div class="single-note--main--content">
+        <div class="content">
           {{ page.content }}
         </div>
 
-        <div class="single-note--main--sidebar">
+        {# SIDEBAR #}
+        <div class="sidebar">
 
           {# RELATED #}
           {% if page.header.related %}
-            <div class='single-note--main--end--related related'>
-                <div class='single-note--main--end--related--header'>Related blog posts</div>
-                {% for related in page.header.related %}
-                  {% set relatedPost = page.find(related) %}
-                  <a href='{{relatedPost.url}}' class='single-note--main--end--related--item'>
-                    <div class='single-note--main--end--related--item--image'>
-                      {{ relatedPost.media[relatedPost.header.featured_image].resize(400).html('', relatedPost.title|escape)}}
-                    </div>
-                    <div class='single-note--main--end--related--item--title'>{{ relatedPost.title }}</div>
+            <div class='related'>
 
-                    {# AUTHOR #}
-                    {% if relatedPost.header.author is iterable %}
+              {# HEADER :: RELATED #}
+              <div class='header'>Related blog posts</div>
+
+              {% for related in page.header.related %}
+                {% set relatedPost = page.find(related) %}
+                <a href='{{relatedPost.url}}' class='item'>
+
+                  {# IMAGE :: RELATED #}
+                  <div class='image'>
+                    {{ relatedPost.media[relatedPost.header.featured_image].cropZoom(260, 200).html('', relatedPost.title|escape)}}
+                  </div>
+
+                  {# AUTHOR :: RELATED #}
+                  {% if relatedPost.header.author is iterable %}
+                    <div class='author'>
                       {% for author in relatedPost.header.author %}
-                        {% set authorPost = page.find(author) %}
-                        <div class='single-note--related--author'>
-                          <div class='single-note--related--author--image'>
-                            {{ authorPost.media[authorPost.header.featured_image].cropZoom(100,100).grayscale().html('', p.title|escape)}}
-                          </div>   
-                          <div class='single-note--related--author--name'>
-                            {{ authorPost.title }}
-                          </div>
-                        </div>
+                        {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
                       {% endfor %}
-                    {% endif %}
-                  </a>
-                {% endfor %}
+                    </div>
+                  {% endif %}
+
+                  {# TITLE :: RELATED #}
+                  <div class='title'>{{ relatedPost.title }}</div>
+
+                </a>
+              {% endfor %}
             </div>
           {% endif %}
 
         </div>
         
       </div>
-      
+
+      {# END #}
+      {% if page.header.related %}
+        <div class='end'>
+          
+          {# RELATED :: END #}
+          <div class='related'>
+          
+            {# HEADER ::  RELATED :: END #}
+            <div class='header-container'>
+              <div class='header'>Related blog posts</div>
+            </div>
+
+            {% for related in page.header.related %}
+              {% set relatedPost = page.find(related) %}
+              <a href='{{relatedPost.url}}' class='item'>
+
+                {# IMAGE ::  RELATED :: END #}
+                <div class='image'>
+                  {{ relatedPost.media[relatedPost.header.featured_image].cropZoom(400,300).html('', relatedPost.title|escape)}}
+                </div>
+
+                {# AUTHOR ::  RELATED :: END #}
+                {% if relatedPost.header.author is iterable %}
+                  <div class='author'>
+                    {% for author in relatedPost.header.author %}
+                      {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                {# TITLE ::  RELATED :: END #}
+                <div class='title'>{{ relatedPost.title }}</div>
+
+              </a>
+            {% endfor %}
+          
+          </div>
+
+        </div>
+      {% endif %}
+
     </article>
 
   </main>

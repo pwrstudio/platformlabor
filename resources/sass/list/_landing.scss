@@ -97,13 +97,13 @@
             margin-top: 10px;
 
             // background: rgb(220,220,220);
-            // background: linear-gradient(45deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 150%);
+            background: linear-gradient(45deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 150%);
 
-            background: $green;
+            // background: $green;
 
             &:hover {
-                background: $green;
-                // background: linear-gradient(45deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 150%);
+                // background: $green;
+                background: linear-gradient(45deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 150%);
             }
 
             @include font-style-sans-small;

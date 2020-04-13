@@ -13,7 +13,7 @@
     background: white;
     box-shadow: 0 0 20px white;
 
-    &--burger {
+    .burger {
         display: none;
         height: 60px;
         width: 71px;
@@ -47,14 +47,15 @@
         }
     }
 
-    &--item {
+    .item {
         float: left;
         height: 60px;
-        padding-right: 15px;
-        padding-left: 15px;
+        padding-right: 20px;
+        padding-left: 20px;
         line-height: 60px;
         color: black;
         text-decoration: none !important;
+        user-select: none;
 
         &:hover {
             background: $grey-1;
@@ -66,7 +67,7 @@
             }
         }
 
-        &__active {
+        &.active {
             background: $grey-2;
             color: $black;
             svg {
@@ -76,19 +77,16 @@
             }
         }
 
-        &--search {
+        &.search {
             float: right;
-            margin-right: 30px;
-            padding-right: 30px;
-            padding-left: 30px;
-            // background: yellow;
+            margin-right: 0;
+            padding-right: 20px;
+            padding-left: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
 
             svg {
-                // margin-top: 4px;
-                // background: red;
                 circle, line {
                     stroke: black;
                 }
@@ -99,22 +97,21 @@
             }
         }
 
-        &--desktop {
+        &.desktop {
             @include screen-size('small') {
                 display: none;
             }
         }
-    }
 
-    &--logo {
-        margin-left: 15px;
-        font-family: 'Archivo Black', sans-serif;
-
-        @include screen-size('small') {
-            margin-left: 10px;
+        &.logo {
+            margin-left: 0;
+            font-family: 'Archivo Black', sans-serif;
+    
+            @include screen-size('small') {
+                margin-left: 10px;
+            }
         }
     }
-
 }
 
 .mobile-menu {
@@ -126,12 +123,15 @@
     background: white;
     z-index: 10;
     user-select: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    @include hide-scroll;
+    display: none;
 
-    &--close {
+    .close {
         position: absolute;
-        top: 0px;
+        top: 0;
         right: 10px;
-        display: block;
         height: 60px;
         width: 71px;
         padding-left: 10px;
@@ -139,7 +139,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // background: red;
 
         svg {
                 height: 40px;
@@ -149,34 +148,13 @@
                 }
             }
 
-
-        div {
-            display: block;
-            background-color: black;
-            height: 2px;
-            width: 100%;
-            &:nth-child(1) {
-                margin-top: 18px;
-            }
-            &:nth-child(2) {
-                margin-top: 10px;
-            }
-            &:nth-child(3) {
-                margin-top: 10px;
-            }
-        }
-
         &:hover {
             background: $grey-1;
         }
 
     }
 
-    &--logo {
-        font-family: 'Archivo Black', sans-serif;
-    }
-
-    &--item {
+    .item {
         @include font-style-sans-small;
 
         display: block;
@@ -191,11 +169,14 @@
             background: $grey-1;
             cursor: pointer;
         }
+
+        &.logo {
+            font-family: 'Archivo Black', sans-serif;
+        }
     }
-    overflow-y: scroll;
-    overflow-x: hidden;
-    @include hide-scroll;
-    display: none;
+
+
+
     &.open {
         display: block;
     }

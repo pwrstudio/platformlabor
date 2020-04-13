@@ -1,33 +1,33 @@
  <nav class='navbar' id='navbar' inline-template>
 
-    <a class="navbar--item navbar--logo" href="{{ base_url == '' ? '/' : base_url }}">PLATFORM LABOR</a>
+    <a class="item logo" href="{{ base_url == '' ? '/' : base_url }}">PLATFORM LABOR</a>
 
-    <a href="{{ base_url }}/blog" class="navbar--item navbar--item--desktop {{ page.slug == 'blog' ? 'navbar--item__active' }}">Blog</a>
-    <a href="{{ base_url }}/feed" class="navbar--item navbar--item--desktop {{ page.slug == 'feed' ? 'navbar--item__active' }}">Feed</a>
-    <a href="{{ base_url }}/announcements" class="navbar--item navbar--item--desktop {{ page.slug == 'announcements' ? 'navbar--item__active' }}">Announcements</a>
-    <a href="{{ base_url }}/output" class="navbar--item navbar--item--desktop {{ page.slug == 'output' ? 'navbar--item__active' }}">Output</a>
-    <a href="{{ base_url }}/profiles" class="navbar--item navbar--item--desktop {{ page.slug == 'profiles' ? 'navbar--item__active' }}">Profiles</a>
-    <a href="{{ base_url }}/about" class="navbar--item navbar--item--desktop {{ page.slug == 'about' ? 'navbar--item__active' }}">About</a>
-    <a href='#search' role='search' class="navbar--item navbar--item--desktop navbar--item--search"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+    <a href="{{ base_url }}/blog" class="item desktop {{ page.slug == 'blog' ? 'active' }}">Blog</a>
+    <a href="{{ base_url }}/feed" class="item desktop {{ page.slug == 'feed' ? 'active' }}">Feed</a>
+    <a href="{{ base_url }}/announcements" class="item desktop {{ page.slug == 'announcements' ? 'active' }}">Announcements</a>
+    <a href="{{ base_url }}/output" class="item desktop {{ page.slug == 'output' ? 'active' }}">Output</a>
+    <a href="{{ base_url }}/profiles" class="item desktop {{ page.slug == 'profiles' ? 'active' }}">Profiles</a>
+    <a href="{{ base_url }}/about" class="item desktop {{ page.slug == 'about' ? 'active' }}">About</a>
+    <a href='#search' role='search' class="item desktop search"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
 
-    <div id='burger' class="navbar--burger">
+    <div id='burger' class="burger">
         <div></div>
         <div></div>
         <div></div>
     </div>
 
     <div id='mobile-menu' class='mobile-menu'>
-        <div id='close' class="mobile-menu--close">
+        <div id='close' class="close">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </div>
-        <a class="mobile-menu--item mobile-menu--logo" href="{{ base_url == '' ? '/' : base_url }}">PLATFORM LABOR</a>
-        <a href="{{ base_url }}/blog" class="mobile-menu--item mobile-menu--item--desktop {{ page.slug == 'blog' ? 'mobile-menu--item__active' }}">Blog</a>
-        <a href="{{ base_url }}/feed" class="mobile-menu--item mobile-menu--item--desktop {{ page.slug == 'feed' ? 'mobile-menu--item__active' }}">Feed</a>
-        <a href="{{ base_url }}/announcements" class="mobile-menu--item mobile-menu--item--desktop {{ page.slug == 'announcements' ? 'mobile-menu--item__active' }}">Announcements</a>
-        <a href="{{ base_url }}/output" class="mobile-menu--item mobile-menu--item--desktop {{ page.slug == 'output' ? 'mobile-menu--item__active' }}">Output</a>
-        <a href="{{ base_url }}/profiles" class="navbar--item mobile--item--desktop {{ page.slug == 'profiles' ? 'navbar--item__active' }}">Profiles</a>
-        <a href="{{ base_url }}/about" class="mobile-menu--item mobile-menu--item--desktop {{ page.slug == 'about' ? 'mobile-menu--item__active' }}">About</a>
-        <a href='#search' role='search' class="mobile-menu--item mobile-menu--item--desktop mobile-menu--item--search"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+        <a class="item logo" href="{{ base_url == '' ? '/' : base_url }}">PLATFORM LABOR</a>
+        <a href="{{ base_url }}/blog" class="item {{ page.slug == 'blog' ? 'active' }}">Blog</a>
+        <a href="{{ base_url }}/feed" class="item {{ page.slug == 'feed' ? 'active' }}">Feed</a>
+        <a href="{{ base_url }}/announcements" class="item {{ page.slug == 'announcements' ? 'active' }}">Announcements</a>
+        <a href="{{ base_url }}/output" class="item {{ page.slug == 'output' ? 'active' }}">Output</a>
+        <a href="{{ base_url }}/profiles" class="item {{ page.slug == 'profiles' ? 'active' }}">Profiles</a>
+        <a href="{{ base_url }}/about" class="item {{ page.slug == 'about' ? 'active' }}">About</a>
+        <a href='#search' role='search' class="item search"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
     </div>
 
     <script>
@@ -43,19 +43,19 @@
 
 </nav>
 
-<div id='search' role='search' class='search'>
-    <a href='{{ base_url }}' class='search--close'>
+<div id='search' role='search' class='search-overlay'>
+    <a href='{{ base_url }}' class='close'>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </a>
-    <div class='search--form'>
-        <input class='search--form--box'/>
-        <div class='search--form--submit'>SEARCH</div>
+    <div class='form'>
+        <input class='box'/>
+        <div class='submit'>SEARCH</div>
     </div>
 
     <script>
         // Search box
-        var searchBox = document.querySelector('.search--form--box')
-        document.querySelector('.search--form--submit').addEventListener('click', e => {
+        var searchBox = document.querySelector('.box')
+        document.querySelector('.submit').addEventListener('click', e => {
             window.location = '/search/query:' +  searchBox.value
         })
         searchBox.addEventListener('keypress', e => {

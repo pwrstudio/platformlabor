@@ -8,40 +8,52 @@
 {% block content %}
 <div class="notes">
 
-    <div id="landing--item__about" class="landing--item__about landing--item__output landing--item__about__active">
-        <p>Do you want to contribute or have an idea for a blog post? <a href="mailto:N.A.J.M.vanDoorn@uva.nl">Get in touch!</a></p>
-    </div>
+    {% if view != 'compact' %}
+        <div id="landing--item__about" class="landing--item__about landing--item__output landing--item__about__active">
+            <p>Do you want to contribute or have an idea for a blog post? <a href="mailto:N.A.J.M.vanDoorn@uva.nl">Get in touch!</a></p>
+        </div>
+    {% endif %}
 
 
-    {# Listbar #}
+    {# LISTBAR #}
     {% include 'navigation/listbar.html.twig' %}
 
     {% if view == 'compact' %}
 
         {% for p in page.collection %}
-            <div class='notes--item__compact'>
+            <div class='notes--item compact'>
 
-                <div class='notes--item__compact--text'>
+                {# LINK OVERLAY :: COMPACT #}
+                <a href='{{p.url}}' class='link'></a>
 
-                    {# Meta #}
-                    <div class='notes--item__compact--text--meta'>
-                        <div class='notes--item__compact--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
-                        {# {% if p.header.author %}
+                {# TEXT :: COMPACT #}
+                <div class='text'>
+
+                    {# META :: COMPACT #}
+                    <div class='meta'>
+                        
+                        {# DATE :: COMPACT #}
+                        <div class='date'>{{ p.date|date('Y-m-d') }}</div>
+
+                        {# AUTHORS :: COMPACT #}
+                        {% if p.header.author %}
+                         <div class='author'>
                             {% for author in p.header.author %}
-                                <div class='notes--item__compact--text--meta--author'>{{ page.find(author).title }}</div>
+                                {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
                             {% endfor %}
-                        {% endif %} #}
+                            </div>
+                        {% endif %}
                     </div>
                     
-                    {# Title #}
-                    <h1 class='notes--item__compact--text--title'><a href='{{p.url}}'>{{p.title}}</a></h1>
+                    {# TITLE :: COMPACT #}
+                    <h1 class='title'><a href='{{p.url}}'>{{p.title}}</a></h1>
 
-                    {# Tags #}
-                    <div class='notes--item__compact--text--tags'>
+                    {# TAGS :: COMPACT #}
+                    {# <div class='tags'>
                         {% for tag in p.taxonomy.tag %}
-                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="notes--item__compact--text--tags--item">{{ tag }}</a>
+                            <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                         {% endfor %}
-                    </div>
+                    </div> #}
 
                 </div>
                 
@@ -52,40 +64,43 @@
     
         {# POST 1: FULL #}
         {% set latestNote = page.collection.first %}
-        <div  class='notes--item__full'>
+        <div  class='notes--item full'>
 
-            <a href='{{latestNote.url}}' class='notes--item__full--link'></a>
+            {# LINK OVERLAY :: FULL #}
+            <a href='{{latestNote.url}}' class='link'></a>
 
-            <div class='notes--item__full--text'>
+            <div class='text'>
 
-                {# Meta #}
-                <div class='notes--item__full--text--meta'>
-                    <div class='notes--item__full--text--meta--date'>{{ latestNote.date|date('Y-m-d') }}</div>
+                {# META :: FULL #}
+                <div class='meta'>
+                    <div class='date'>{{ latestNote.date|date('Y-m-d') }}</div>
 
+                    {# AUTHOR :: FULL #}
                     {% if latestNote.header.author %}
-                        <div class='notes--item__full--text--meta--author'>
+                        <div class='author'>
                             {% for author in latestNote.header.author %}
                                 {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
                             {% endfor %}
                         </div>
                     {% endif %}
+
                 </div>
 
-                {# Title #}
-                <a href='{{latestNote.url}}' class='notes--item__full--text--title'>{{latestNote.title}}</a>
+                {# TITLE :: FULL #}
+                <a href='{{latestNote.url}}' class='title'>{{latestNote.title}}</a>
 
-                {# Tags #}
-                <div class='notes--item__full--text--tags'>
+                {# TAGS :: FULL #}
+                <div class='tags'>
                     {% for tag in latestNote.taxonomy.tag %}
-                        <a href="{{ base_url }}/filter/tag:{{ tag }}" class="notes--item__full--text--tags--item">{{ tag }}</a>
+                        <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                     {% endfor %}
                 </div>
 
             </div>
 
-            {# Image #}
+            {# IMAGE :: FULL #}
             {% if latestNote.header.featured_image %}
-                <div class='notes--item__full--image'>
+                <div class='image'>
                     {{ latestNote.media[latestNote.header.featured_image].cropResize(900).html('', latestNote.title|escape)}}
                 </div>
             {% endif %}
@@ -94,18 +109,23 @@
 
         {# POST 2 ... n: SMALL #}
         {% for p in page.collection.slice(1,100) %}
-            <div class='notes--item__list'>
+            <div class='notes--item small'>
 
-                <a href='{{p.url}}' class='notes--item__list--link'></a>
+                {# LINK OVERLAY :: SMALL #}
+                <a href='{{p.url}}' class='link'></a>
 
-                <div class='notes--item__list--text'>
+                {# TEXT :: SMALL #}
+                <div class='text'>
 
-                    {# Meta #}
-                    <div class='notes--item__list--text--meta'>
-                        <div class='notes--item__list--text--meta--date'>{{ p.date|date('Y-m-d') }}</div>
+                    {# META :: SMALL #}
+                    <div class='meta'>
+
+                        {# DATE :: SMALL #}
+                        <div class='date'>{{ p.date|date('Y-m-d') }}</div>
                         
+                        {# AUTHOR :: SMALL #}
                         {% if p.header.author %}
-                         <div class='notes--item__list--text--meta--author'>
+                         <div class='author'>
                             {% for author in p.header.author %}
                                 {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
                             {% endfor %}
@@ -113,51 +133,52 @@
                         {% endif %}
                     </div>
                     
-                    {# Title #}
-                    <h1 class='notes--item__list--text--title'>{{p.title}}</h1>
+                    {# TITLE :: SMALL #}
+                    <h1 class='title'>{{p.title}}</h1>
 
                 </div>
 
-                <div class='notes--item__list--image'>
+                {# IMAGE :: SMALL #}
+                <div class='image'>
                     {{ p.media[p.header.featured_image].cropZoom(200, 200).html('', p.title|escape)}}
                 </div> 
 
-                {# Tags #}
-                <div class='notes--item__list--tags'>
+                {# TAGS :: SMALL #}
+                <div class='tags'>
                     {% for tag in p.taxonomy.tag %}
-                        <a href="{{ base_url }}/filter/tag:{{ tag }}" class="notes--item__list--tags--item">{{ tag }}</a>
+                        <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                     {% endfor %}
                 </div>
                 
             </div>
 
-            {# Replies #}
+            {# REPLIES#}
             {% for r in p.children %}
-                {# Reply #}
-                <div class='notes--item__reply'>
+                <div class='notes--item reply'>
 
-                    <a href='{{r.url}}' class='notes--item__list--link'></a>
+                    {# LINK OVERLAY :: REPLY #}
+                    <a href='{{r.url}}' class='link'></a>
 
-                    {# Icon #}
+                    {# ICON :: REPLY #}
                     <div class='icon'>
                         <div>
-                            {# <div>In reply</div> #}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-down-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-down-right">
                                 <polyline points="15 10 20 15 15 20"></polyline>
                                 <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
                             </svg>
                         </div>
                     </div>
 
+                    {# INNER REPLY :: REPLY #}
                     <div class='inner-reply'>
 
-                        {# Text #}
+                        {# TEXT :: REPLY #}
                         <div class='text'>
                         
-                            {# Date #}
+                            {# DATE :: REPLY #}
                             <div class='date'>{{ r.date|date('Y-m-d') }}</div>
 
-                            {# Author #}
+                            {# AUTHOR :: REPLY #}
                             {% if r.header.author %}
                                 <div class='author'>
                                     {% for author in r.header.author %}
@@ -166,10 +187,11 @@
                                 </div>
                             {% endif %}
 
-                            {# Title #}
+                            {# TITLE :: REPLY #}
                             <div class='title'>{{r.title}}</div>
                         </div>
 
+                        {# IMAGE :: REPLY #}
                         <div class='image'>
                             {{ r.media[r.header.featured_image].cropZoom(140, 140).html('', r.title|escape)}}
                         </div> 
@@ -182,10 +204,6 @@
         {% endfor %}
 
     {% endif %}
-
-    <div class='notes--item notes--item__more'>
-        <div class='notes--item__more--button'>Load more</div>
-    </div>
 
 </div>
 {% endblock %}
