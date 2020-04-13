@@ -1,7 +1,6 @@
 .listbar {
     width: 100%;
     border-bottom: 1px solid $grey-2;
-    // margin-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
 
@@ -9,7 +8,7 @@
         display: none;
     }
 
-    &--description {
+    .description {
         @include font-style-mono;
         line-height: 28px;
 
@@ -21,10 +20,10 @@
         width: 90%;
     }
 
-    &--view {
+    .view {
         float: right;
 
-        &--item {
+        .item {
             float: right;
             padding: 5px;
             margin-top: 7px;

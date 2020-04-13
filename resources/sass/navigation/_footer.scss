@@ -1,23 +1,20 @@
 footer {
     @include font-style-mono;
-    padding: 0;
     border-top: 1px solid $grey-2;
     background: white;
     color: black;
     margin: 0 !important;
     padding: 30px;
     line-height: 40px;
-}
 
-.footer {
-    &--item {
+    .item {
         margin-right: 10px;
 
         &:hover {
             background: $grey-1;
         }
 
-        &__active {
+        &.active {
             font-weight: bold;
         }
 
@@ -32,7 +29,7 @@ footer {
         }
     }
 
-    &--logo {
+    .logo {
         font-weight: bold;
     }
 }
