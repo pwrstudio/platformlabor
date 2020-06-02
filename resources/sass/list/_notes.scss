@@ -354,6 +354,8 @@
         z-index: 0;
       }
 
+
+
       .icon {
         @include font-style-sans-small;
 
@@ -365,9 +367,15 @@
         align-items: center;
         font-weight: bold;
 
+        .reply-label {
+          opacity: 0;
+          font-weight: normal;
+          @include font-style-mono;
+        }
+
         svg {
-          width: 72px;
-          height: 72px;
+          width: 62px;
+          height: 62px;
         }
 
 
@@ -436,6 +444,12 @@
       &:hover {
         background: $grey-1;
         transition: background 0.3s $easing;
+
+        .icon {
+          .reply-label {
+            opacity: 1;
+          }
+        }
 
         .inner-reply {
           .text {

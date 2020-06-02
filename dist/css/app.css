@@ -628,9 +628,15 @@ footer {
         justify-content: center;
         align-items: center;
         font-weight: bold; }
+        .notes--item.reply .icon .reply-label {
+          opacity: 0;
+          font-weight: normal;
+          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-size: 12px;
+          line-height: 1.2em; }
         .notes--item.reply .icon svg {
-          width: 72px;
-          height: 72px; }
+          width: 62px;
+          height: 62px; }
         @media (max-width: 800px) {
           .notes--item.reply .icon {
             width: 60px; }
@@ -693,6 +699,8 @@ footer {
       .notes--item.reply:hover {
         background: #e6e6e6;
         transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+        .notes--item.reply:hover .icon .reply-label {
+          opacity: 1; }
         .notes--item.reply:hover .inner-reply .text .date, .notes--item.reply:hover .inner-reply .text .author {
           border: 1px solid #b4b4b4; }
     .notes--item.compact {
