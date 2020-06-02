@@ -4,7 +4,7 @@
 <div class="profiles">
 
     {% for p in page.collection %}
-        <div class='item'>
+        <div class='item profile-item' id='{{p.slug}}'>
 
             <a href='{{p.url}}' class='link'></a>
 
@@ -20,4 +20,5 @@
     {% endfor %}
 
 </div>
+
 {% endblock %}

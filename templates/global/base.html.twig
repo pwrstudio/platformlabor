@@ -17,7 +17,6 @@
 
         <script>
             var descriptions = document.querySelectorAll('.description')
-
             if(descriptions.length > 0) {
                 descriptions.forEach(function(d) {
                     console.dir(d)
@@ -26,6 +25,17 @@
                     })
                 });
             }
+
+            // Highlight profiles
+            const profileItems = Array.from(document.querySelectorAll('.profile-item'))
+            profileItems.forEach(p => {
+                p.addEventListener('mouseenter', e => {
+                    profileItems.filter(x => x.id != p.id).forEach(y => y.classList.add('dimmed'))
+                });
+                p.addEventListener('mouseleave', e => {
+                    profileItems.filter(x => x.id != p.id).forEach(y => y.classList.remove('dimmed'))
+                });
+            })
         </script>
 
     </body>

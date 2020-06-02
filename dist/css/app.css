@@ -795,8 +795,9 @@ footer {
   margin-top: 80px;
   margin-right: 20px;
   margin-left: 20px;
-  padding-bottom: 20px;
-  position: relative; }
+  margin-bottom: 20px;
+  position: relative;
+  background: black; }
   .profiles .item {
     display: block;
     padding: 20px;
@@ -804,7 +805,7 @@ footer {
     position: relative;
     width: 50%;
     height: 500px;
-    background: #ffff8a; }
+    transition: opacity 0.3s ease-out; }
     .profiles .item .link {
       width: 100%;
       height: 100%;
@@ -853,11 +854,11 @@ footer {
       z-index: 10;
       color: black;
       font-family: 'Archivo', sans-serif;
-      font-size: 46px;
+      font-size: 32px;
       line-height: 1em;
       font-weight: bold; }
-    .profiles .item:hover .image {
-      mix-blend-mode: multiply; }
+    .profiles .item.dimmed {
+      opacity: 0.4; }
 
 .news {
   margin-top: 60px;

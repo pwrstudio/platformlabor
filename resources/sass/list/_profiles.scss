@@ -5,8 +5,10 @@
   margin-top: 80px;
   margin-right: 20px;
   margin-left: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
   position: relative;
+  background: black;
+
 
   .item {
     display: block;
@@ -15,7 +17,7 @@
     position: relative;
     width: 50%;
     height: 500px;
-    background: $yellow;
+    transition: opacity 0.3s ease-out;
 
     .link {
       width: 100%;
@@ -78,14 +80,18 @@
       background: rgba(255,255,255,0.9);
       z-index: 10;
       color: black;
-      @include font-style-sans-large;
+      @include font-style-sans-medium;
     }
 
-    &:hover {
-      .image {
-        mix-blend-mode: multiply;
-      }
+    // &:hover {
+    //   .image {
+    //     mix-blend-mode: multiply;
+    //   }
       
+    // }
+
+    &.dimmed {
+      opacity: 0.4;
     }
 
   }
