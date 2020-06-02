@@ -64,7 +64,7 @@
     
         {# POST 1: FULL #}
         {% set latestNote = page.collection.first %}
-        <div  class='notes--item full'>
+        <div data-aos="fade" class='notes--item full'>
 
             {# LINK OVERLAY :: FULL #}
             <a href='{{latestNote.url}}' class='link'></a>
@@ -109,7 +109,11 @@
 
         {# POST 2 ... n: SMALL #}
         {% for p in page.collection.slice(1,100) %}
-            <div class='notes--item small'>
+            {% if loop.first %}
+                <div data-aos="fade" data-aos-offset="-200" data-aos-delay="500" class='notes--item small'>
+             {% else %}
+                <div data-aos="fade" class='notes--item small'>
+            {% endif %}
 
                 {# LINK OVERLAY :: SMALL #}
                 <a href='{{p.url}}' class='link'></a>
@@ -154,7 +158,7 @@
 
             {# REPLIES#}
             {% for r in p.children %}
-                <div class='notes--item reply'>
+                <div data-aos="fade" class='notes--item reply'>
 
                     {# LINK OVERLAY :: REPLY #}
                     <a href='{{r.url}}' class='link'></a>

@@ -15,7 +15,13 @@
         {% block content %}{% endblock %}
         {% include 'navigation/footer.html.twig' %}
 
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
         <script>
+
+            // Fade in element on scroll
+            AOS.init({once: true, duration: 800, easing: 'ease-out', anchorPlacement: 'top-top',});
+
             var descriptions = document.querySelectorAll('.description')
             if(descriptions.length > 0) {
                 descriptions.forEach(function(d) {

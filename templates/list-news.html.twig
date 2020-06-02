@@ -45,7 +45,7 @@
     {% else %}
 
         {% for p in page.children.order('date', 'desc') %}
-            <div class='item small'>
+            <div data-aos="fade" class='item small'>
 
                 {# LINK OVERLAY :: SMALL #}
                 <a href='{{p.url}}' class='link'></a>
