@@ -210,6 +210,13 @@
   font-weight: bold;
 }
 
+@mixin font-style-sans-medium {
+  font-family: 'Archivo', sans-serif;
+  font-size: 32px;
+  line-height: 1em; 
+  font-weight: bold;
+}
+
 @mixin font-style-serif {
   font-family: 'Noto Serif', serif;
   font-size: 17px;

@@ -101,7 +101,7 @@
             {# IMAGE :: FULL #}
             {% if latestNote.header.featured_image %}
                 <div class='image'>
-                    {{ latestNote.media[latestNote.header.featured_image].cropResize(900).html('', latestNote.title|escape)}}
+                    {{ latestNote.media[latestNote.header.featured_image].cropResize(500).html('', latestNote.title|escape)}}
                 </div>
             {% endif %}
             
