@@ -64,7 +64,7 @@
                 .tags {
                     bottom: 0;
                     float: left;
-                    margin-top: 20px;
+                    margin-top: 10px;
 
                     .tag {
                         @include font-style-mono;
@@ -119,6 +119,7 @@
                         display: inline-block;
                         margin-right: 7px;
                         margin-bottom: 7px;
+                        margin-top: 10px;
                     }
                 }
             }
@@ -150,6 +151,7 @@
                 text-align: center;
                 padding: 20px;
                 border: 1px solid $grey-2;
+
                 &:hover {
                     background: $grey-1;
                 }
@@ -193,7 +195,7 @@
             width: 100%;
 
             border-bottom: 1px solid $grey-2;
-            padding: 20px;
+            padding: 10px;
             margin-bottom: 0;
             position: relative;
 
@@ -236,6 +238,7 @@
                 padding: 20px;
                 border: 1px solid black;
                 margin-bottom: 15px;
+                margin-right: 6px;
 
                 &:hover {
                     background: white;

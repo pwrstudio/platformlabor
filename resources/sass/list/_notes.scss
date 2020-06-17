@@ -16,8 +16,10 @@
   .banner {
     @include font-style-sans-small;
     width: 100%;
-
-    padding: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
     margin-bottom: 0;
     position: relative;
 
@@ -207,7 +209,7 @@
       padding: 10px;
       padding-top: 20px;
       height: auto;
-      margin-bottom: 0;
+      margin-bottom: 0px;
       border-bottom: none;
       border-top: 1px solid $grey-2;
       transition: background 0.5s $easing;

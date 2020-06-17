@@ -53,7 +53,7 @@
         {# META :: CURRENT POST #}
         <div class='meta'>
           {# REPLIES #}
-          {% if  page.children|length > 0 %}
+          {% if page.children|length > 0 %}
             {# :: REPLY  #}
             <div class='replies'>
 
@@ -93,9 +93,9 @@
               {% endfor %}
             </div>
 
-            {% elseif page.parent.slug != 'blog' %}
-                {# :: IN-REPLY-TO #}
-              <div class='replies'>
+          {% elseif page.parent.slug != 'blog' %}
+            {# :: IN-REPLY-TO #}
+            <div class='replies'>
                 
                 {# HEADER :: IN-REPLY-TO #}
                 <div class='header'>
@@ -126,6 +126,11 @@
 
                   </a>
                 </div>
+          {% else %}
+            {# IMAGE #}
+            <div class='featured-image'>
+              {{ page.media[page.header.featured_image].cropResize(600,600).html('', page.title|escape)}}
+            </div> 
           {% endif %}
         </div>
         

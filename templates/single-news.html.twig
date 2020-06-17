@@ -34,6 +34,11 @@
 
         </div>
 
+        {# META :: TOP #}
+        <div class='meta'>
+          {{ page.media[page.header.featured_image].cropResize(900).html('', latestNote.title|escape)}}
+        </div>
+
       </div>
 
       {# MAIN #}

@@ -89,6 +89,9 @@
                 <div class='date'>{{ latestNote.date|date('Y-m-d') }}</div>
             </div>
 
+            {# TITLE :: NOTE #}
+            <a href='{{latestNote.url}}' class='title'>{{latestNote.title}}</a>
+
             {# META :: NOTE #}
             <div class='meta'>
                 {# AUTHOR :: NOTE #}
@@ -100,9 +103,6 @@
                     </div>
                 {% endif %}
             </div>
-
-            {# TITLE :: NOTE #}
-            <a href='{{latestNote.url}}' class='title'>{{latestNote.title}}</a>
 
             {# TAGS :: NOTE #}
             <div class='tags'>
@@ -138,15 +138,16 @@
                 <div class='date'>{{ latestFeed.date|date('Y-m-d') }}</div>
             </div>
 
+            {# TITLE :: FEED #}
+            <h1 class='title'>{{ latestFeed.title }}</h1>
+
             {# META :: FEED #}
             <div class='meta'>
-                
                 {# PROVIDER :: FEED #}
                 <div class='provider'>Source: {{ latestFeed.header.provider_name }}</div>
             </div>
             
-            {# TITLE :: FEED #}
-            <h1 class='title'>{{ latestFeed.title }}</h1>
+
 
         </div>
 

@@ -18,10 +18,10 @@
         {# META #}
         <div class='meta'>
 
-            {# IMAGE #}
-            <div class='image'>
-                {{ page.media[page.header.featured_image].html('', page.title|escape)}}
-            </div> 
+          {# IMAGE #}
+          <div class='image'>
+            {{ page.media[page.header.featured_image].cropResize(600, 400).html('', page.title|escape)}}
+          </div> 
           
         </div>
 

@@ -6,6 +6,7 @@
         width: 100%;
         height: auto;
         display: flex;
+        min-height: 340px;
         align-items: stretch;
         background: white;
         color: black;
@@ -151,6 +152,15 @@
                 width: 100%;
                 border-left: none;
                 display: none;
+            }
+
+            img {
+                width: calc(100% - 20px);
+                height: 100%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                object-fit: cover;
             }
         }
     }
