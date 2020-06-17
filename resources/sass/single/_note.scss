@@ -342,8 +342,9 @@
                     border: 1px solid $grey-2;
                     display: inline-block;
                     @include font-style-sans-small;
-                    // margin-left: 0;
                     font-weight: bold;
+                    margin-left: 20px;
+                    margin-bottom: 20px;
 
                     .icon {
                         position: relative;

@@ -61,7 +61,7 @@
     &.full {
       height: auto;
       padding: 10px;
-      padding-top: 20px;
+      padding-top: 15px;
       border-bottom: none;
       border-top: 1px solid $grey-2;
 
@@ -207,7 +207,7 @@
     &.small {
       display: block;
       padding: 10px;
-      padding-top: 20px;
+      padding-top: 15px;
       height: auto;
       margin-bottom: 0px;
       border-bottom: none;
@@ -262,7 +262,8 @@
 
           float: left;
           height: auto;
-          max-width: 40ch;
+          width: 70ch;
+          max-width: 90%;
         }
       }
 
@@ -396,8 +397,8 @@
 
       .inner-reply {
         width: calc(100% - 140px);
-        padding-left: 20px;
-        padding-top: 20px;
+        padding-left: 10px;
+        padding-top: 15px;
 
         .text {
           max-width: calc(100% - 160px);
@@ -423,6 +424,8 @@
           .title {
             @include font-style-sans-small;
             font-weight: bold;
+            width: 70ch;
+            max-width: 90%;
           }
         }
 
