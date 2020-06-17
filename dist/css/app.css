@@ -68,7 +68,7 @@ textarea {
     right: 2px; }
 
 .navbar {
-  font-family: 'Archivo', sans-serif;
+  font-family: "Archivo", sans-serif;
   font-size: 18px;
   line-height: 1.2em;
   display: block;
@@ -181,7 +181,7 @@ textarea {
     .mobile-menu .close:hover {
       background: #e6e6e6; }
   .mobile-menu .item {
-    font-family: 'Archivo', sans-serif;
+    font-family: "Archivo", sans-serif;
     font-size: 18px;
     line-height: 1.2em;
     display: block;
@@ -200,7 +200,7 @@ textarea {
     display: block; }
 
 footer {
-  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-family: "space mono", "Courier New", Courier, monospace;
   font-size: 12px;
   line-height: 1.2em;
   border-top: 1px solid #b4b4b4;
@@ -262,7 +262,7 @@ footer {
   .search-overlay .form {
     width: 80vw; }
     .search-overlay .form .box {
-      font-family: 'Archivo', sans-serif;
+      font-family: "Archivo", sans-serif;
       font-size: 18px;
       line-height: 1.2em;
       float: left;
@@ -279,7 +279,7 @@ footer {
         background: #e6e6e6;
         outline: none; }
     .search-overlay .form .submit {
-      font-family: 'Archivo', sans-serif;
+      font-family: "Archivo", sans-serif;
       font-size: 18px;
       line-height: 1.2em;
       float: left;
@@ -297,14 +297,13 @@ footer {
 
 .listbar {
   width: 100%;
-  border-bottom: 1px solid #b4b4b4;
-  padding-left: 20px;
-  padding-right: 20px; }
+  padding-left: 0px;
+  padding-right: 0px; }
   @media (max-width: 800px) {
     .listbar {
       display: none; } }
   .listbar .description {
-    font-family: 'space mono', 'Courier New', Courier, monospace;
+    font-family: "space mono", "Courier New", Courier, monospace;
     font-size: 12px;
     line-height: 1.2em;
     line-height: 28px;
@@ -325,12 +324,14 @@ footer {
         width: 30px;
         padding: 5px;
         stroke: black; }
-        .listbar .view .toggle svg line, .listbar .view .toggle svg circle {
+        .listbar .view .toggle svg line,
+        .listbar .view .toggle svg circle {
           stroke: black; }
       .listbar .view .toggle:hover svg {
         background: #e6e6e6;
         stroke: black; }
-        .listbar .view .toggle:hover svg line, .listbar .view .toggle:hover svg circle {
+        .listbar .view .toggle:hover svg line,
+        .listbar .view .toggle:hover svg circle {
           stroke: black; }
       .listbar .view .toggle.active svg {
         background: #b4b4b4; }
@@ -342,21 +343,21 @@ footer {
   margin-left: 20px;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 140px; }
+  padding-bottom: 20px; }
   @media (max-width: 800px) {
     .notes {
       margin-right: 0;
       margin-left: 0;
       width: 100%; } }
   .notes .banner {
-    font-family: 'Archivo', sans-serif;
+    font-family: "Archivo", sans-serif;
     font-size: 18px;
     line-height: 1.2em;
     width: 100%;
     padding: 20px;
     margin-bottom: 0;
     position: relative;
-    border-radius: 10px;
+    border-radius: 4px;
     height: auto;
     border: 0;
     margin-top: 10px;
@@ -381,8 +382,10 @@ footer {
     position: relative; }
     .notes--item.full {
       height: auto;
-      padding: 20px;
-      border-bottom: none; }
+      padding: 10px;
+      padding-top: 20px;
+      border-bottom: none;
+      border-top: 1px solid #b4b4b4; }
       @media (max-width: 800px) {
         .notes--item.full {
           height: auto; } }
@@ -412,7 +415,7 @@ footer {
             .notes--item.full .text .tags {
               margin-bottom: 20px; } }
           .notes--item.full .text .tags .tag {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             padding: 7px;
@@ -432,7 +435,7 @@ footer {
               .notes--item.full .text .tags .tag {
                 padding: 5px; } }
         .notes--item.full .text .title {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 32px;
           line-height: 1em;
           font-weight: bold;
@@ -442,23 +445,24 @@ footer {
           margin-right: 40px; }
           @media (max-width: 800px) {
             .notes--item.full .text .title {
-              font-family: 'Archivo', sans-serif;
+              font-family: "Archivo", sans-serif;
               font-size: 18px;
               line-height: 1.2em; } }
         .notes--item.full .text .meta .date {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
           display: inline-block;
           color: #646464;
+          color: black;
           padding: 10px;
           border: 1px solid #e6e6e6;
           background: #e6e6e6;
           user-select: none;
           margin-bottom: 7px; }
         .notes--item.full .text .meta .author {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           display: inline-block;
@@ -489,8 +493,10 @@ footer {
           opacity: 1; }
       .notes--item.full:hover {
         background: #e6e6e6;
-        transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .notes--item.full:hover .text .meta .date, .notes--item.full:hover .text .meta .author {
+        transition: background 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        border-top: 1px solid #e6e6e6; }
+        .notes--item.full:hover .text .meta .date,
+        .notes--item.full:hover .text .meta .author {
           border: 1px solid #b4b4b4; }
       @media (max-width: 800px) {
         .notes--item.full .text {
@@ -500,11 +506,13 @@ footer {
           height: auto; } }
     .notes--item.small {
       display: block;
-      padding: 20px;
+      padding: 10px;
+      padding-top: 20px;
       height: auto;
       margin-bottom: 0;
       border-bottom: none;
-      border-top: 1px solid #b4b4b4; }
+      border-top: 1px solid #b4b4b4;
+      transition: background 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
       @media (max-width: 800px) {
         .notes--item.small {
           width: 100%; } }
@@ -528,19 +536,20 @@ footer {
           width: 100%;
           float: left; }
           .notes--item.small .text .meta .date {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             padding: 7px;
             display: inline-block;
             color: #646464;
+            color: black;
             padding: 10px;
             border: 1px solid #e6e6e6;
             background: #e6e6e6;
             user-select: none;
             margin-bottom: 7px; }
           .notes--item.small .text .meta .author {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             display: inline-block;
@@ -554,7 +563,7 @@ footer {
             margin-right: 7px;
             margin-bottom: 7px; }
         .notes--item.small .text .title {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 18px;
           line-height: 1.2em;
           float: left;
@@ -565,7 +574,7 @@ footer {
         float: left;
         z-index: 10; }
         .notes--item.small .tags .tag {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -580,7 +589,7 @@ footer {
           background: #ffff8a; }
           .notes--item.small .tags .tag:hover {
             background: yellow;
-            transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+            transition: background 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
           @media (max-width: 800px) {
             .notes--item.small .tags .tag {
               padding: 5px; } }
@@ -590,7 +599,8 @@ footer {
       .notes--item.small .image {
         width: 200px;
         height: 200px;
-        float: right; }
+        float: right;
+        background: #e6e6e6; }
         @media (max-width: 800px) {
           .notes--item.small .image {
             display: none; } }
@@ -598,17 +608,23 @@ footer {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          opacity: 1; }
+          opacity: 0;
+          transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+          transition-delay: 0.5s; }
+      .notes--item.small.aos-animate .image img {
+        opacity: 1; }
       .notes--item.small:hover {
         background: #e6e6e6;
-        transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .notes--item.small:hover .text .meta .date, .notes--item.small:hover .text .meta .author {
+        transition: none;
+        border-top: 1px solid #e6e6e6; }
+        .notes--item.small:hover .text .meta .date,
+        .notes--item.small:hover .text .meta .author {
           border: 1px solid #b4b4b4; }
     .notes--item.reply {
       margin-bottom: 0;
       height: 180px;
       display: flex;
-      border-top: 1px solid #b4b4b4; }
+      border-top: 1px solid #e6e6e6; }
       .notes--item.reply .link {
         width: 100%;
         height: 100%;
@@ -618,7 +634,7 @@ footer {
         left: 0;
         z-index: 0; }
       .notes--item.reply .icon {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 18px;
         line-height: 1.2em;
         height: 100%;
@@ -631,7 +647,7 @@ footer {
         .notes--item.reply .icon .reply-label {
           opacity: 0;
           font-weight: normal;
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em; }
         .notes--item.reply .icon svg {
@@ -654,19 +670,20 @@ footer {
             .notes--item.reply .inner-reply .text {
               max-width: unset; } }
           .notes--item.reply .inner-reply .text .date {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             padding: 7px;
             display: inline-block;
             color: #646464;
+            color: black;
             padding: 10px;
             border: 1px solid #e6e6e6;
             background: #e6e6e6;
             user-select: none;
             margin-bottom: 10px; }
           .notes--item.reply .inner-reply .text .author {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             display: inline-block;
@@ -680,7 +697,7 @@ footer {
             margin-right: 5px;
             padding: 10px; }
           .notes--item.reply .inner-reply .text .title {
-            font-family: 'Archivo', sans-serif;
+            font-family: "Archivo", sans-serif;
             font-size: 18px;
             line-height: 1.2em;
             font-weight: bold; }
@@ -699,15 +716,19 @@ footer {
       .notes--item.reply:hover {
         background: #e6e6e6;
         transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .notes--item.reply:hover .icon .reply-label {
-          opacity: 1; }
-        .notes--item.reply:hover .inner-reply .text .date, .notes--item.reply:hover .inner-reply .text .author {
+        .notes--item.reply:hover .icon {
+          color: #646464; }
+          .notes--item.reply:hover .icon .reply-label {
+            opacity: 1; }
+        .notes--item.reply:hover .inner-reply .text .date,
+        .notes--item.reply:hover .inner-reply .text .author {
           border: 1px solid #b4b4b4; }
     .notes--item.compact {
       display: flex;
       height: auto;
       border-bottom: 1px solid #b4b4b4;
-      padding: 20px; }
+      padding: 7px;
+      padding-left: 0; }
       .notes--item.compact .link {
         width: 100%;
         height: 100%;
@@ -716,84 +737,78 @@ footer {
         top: 0;
         left: 0;
         z-index: 0; }
-      .notes--item.compact .text {
-        width: 100%; }
-        .notes--item.compact .text .meta {
-          float: left;
-          margin-right: 10px;
-          margin-bottom: 5px;
-          height: 30px;
-          width: auto; }
-          .notes--item.compact .text .meta .date {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
-            font-size: 12px;
-            line-height: 1.2em;
-            padding: 7px;
-            display: inline-block;
-            color: #646464;
-            padding: 10px;
-            border: 1px solid #e6e6e6;
-            background: #e6e6e6;
-            user-select: none;
-            float: left;
-            padding-left: 5px;
-            padding-right: 5px;
-            height: 30px;
-            line-height: 10px; }
-          .notes--item.compact .text .meta .author {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
-            font-size: 12px;
-            line-height: 1.2em;
-            display: inline-block;
-            margin-right: 7px;
-            color: black;
-            padding: 10px;
-            border: 1px solid #e6e6e6;
-            background: #e6e6e6;
-            user-select: none;
-            float: left;
-            margin: 0;
-            margin-left: 10px;
-            padding-left: 5px;
-            padding-right: 5px;
-            height: 30px;
-            line-height: 10px; }
-        .notes--item.compact .text .tags {
-          float: left;
-          display: block; }
-          .notes--item.compact .text .tags .tag {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
-            font-size: 12px;
-            line-height: 1.2em;
-            padding: 2px;
-            border-radius: 2px;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            display: inline-block;
-            z-index: 10;
-            position: relative;
-            text-decoration: none !important;
-            color: black;
-            background: #ffff8a; }
-            .notes--item.compact .text .tags .tag:hover {
-              background: yellow;
-              transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .notes--item.compact .text .title {
-          font-family: 'Archivo', sans-serif;
-          font-size: 16px;
+      .notes--item.compact .date {
+        font-family: "space mono", "Courier New", Courier, monospace;
+        font-size: 12px;
+        line-height: 1.2em;
+        padding: 7px;
+        display: inline-block;
+        color: #646464;
+        color: black;
+        padding: 10px;
+        border: 1px solid #e6e6e6;
+        background: #e6e6e6;
+        user-select: none;
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+        height: 30px;
+        line-height: 10px;
+        margin-right: 5px; }
+      .notes--item.compact .author {
+        font-family: "space mono", "Courier New", Courier, monospace;
+        font-size: 12px;
+        line-height: 1.2em;
+        display: inline-block;
+        margin-right: 7px;
+        color: black;
+        padding: 10px;
+        border: 1px solid #e6e6e6;
+        background: #e6e6e6;
+        user-select: none;
+        float: left;
+        margin: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+        height: 30px;
+        line-height: 10px;
+        margin-right: 5px; }
+      .notes--item.compact .tags {
+        float: left;
+        display: block; }
+        .notes--item.compact .tags .tag {
+          font-family: "space mono", "Courier New", Courier, monospace;
+          font-size: 12px;
           line-height: 1.2em;
+          padding: 2px;
+          border-radius: 2px;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          display: inline-block;
+          z-index: 10;
+          position: relative;
+          text-decoration: none !important;
           color: black;
-          height: 30px;
-          line-height: 30px;
-          width: 100%;
-          margin: 0;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap; }
+          background: #ffff8a; }
+          .notes--item.compact .tags .tag:hover {
+            background: yellow;
+            transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+      .notes--item.compact .title {
+        margin-left: 5px;
+        font-family: "Archivo", sans-serif;
+        font-size: 16px;
+        line-height: 1.2em;
+        color: black;
+        line-height: 30px;
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
       .notes--item.compact:hover {
         background: #e6e6e6;
         transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .notes--item.compact:hover .text .meta .date, .notes--item.compact:hover .text .meta .author {
+        .notes--item.compact:hover .text .meta .date,
+        .notes--item.compact:hover .text .meta .author {
           border: 1px solid #b4b4b4; }
 
 .profiles {
@@ -823,7 +838,7 @@ footer {
       left: 0;
       z-index: 0; }
     .profiles .item .category {
-      font-family: 'space mono', 'Courier New', Courier, monospace;
+      font-family: "space mono", "Courier New", Courier, monospace;
       font-size: 12px;
       line-height: 1.2em;
       position: absolute;
@@ -861,7 +876,7 @@ footer {
       background: rgba(255, 255, 255, 0.9);
       z-index: 10;
       color: black;
-      font-family: 'Archivo', sans-serif;
+      font-family: "Archivo", sans-serif;
       font-size: 32px;
       line-height: 1em;
       font-weight: bold; }
@@ -875,7 +890,7 @@ footer {
   margin-left: 20px;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 140px; }
+  padding-bottom: 40vh; }
   @media (max-width: 800px) {
     .news {
       margin-right: 0;
@@ -887,10 +902,11 @@ footer {
     position: relative; }
     .news .item.small {
       display: block;
-      padding: 20px;
+      padding: 10px;
+      padding-top: 15px;
       height: auto;
       margin-bottom: 0;
-      border-BOTTOM: 1px solid #b4b4b4; }
+      border-top: 1px solid #b4b4b4; }
       @media (max-width: 800px) {
         .news .item.small {
           width: 100%; } }
@@ -914,19 +930,20 @@ footer {
           width: 100%;
           float: left; }
           .news .item.small .text .meta .date {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             padding: 7px;
             display: inline-block;
             color: #646464;
+            color: black;
             padding: 10px;
             border: 1px solid #e6e6e6;
             background: #e6e6e6;
             user-select: none;
             margin-bottom: 7px; }
           .news .item.small .text .meta .author {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             display: inline-block;
@@ -940,7 +957,7 @@ footer {
             margin-right: 7px;
             margin-bottom: 7px; }
         .news .item.small .text .title {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 18px;
           line-height: 1.2em;
           float: left;
@@ -951,7 +968,7 @@ footer {
         float: left;
         z-index: 10; }
         .news .item.small .tags .tag {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -987,8 +1004,10 @@ footer {
           opacity: 1; }
       .news .item.small:hover {
         background: #e6e6e6;
-        transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .news .item.small:hover .text .meta .date, .news .item.small:hover .text .meta .author {
+        transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        border-top: 1px solid #e6e6e6; }
+        .news .item.small:hover .text .meta .date,
+        .news .item.small:hover .text .meta .author {
           border: 1px solid #b4b4b4; }
     .news .item.compact {
       display: flex;
@@ -1012,12 +1031,13 @@ footer {
           height: 30px;
           width: auto; }
           .news .item.compact .text .meta .date {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             padding: 7px;
             display: inline-block;
             color: #646464;
+            color: black;
             padding: 10px;
             border: 1px solid #e6e6e6;
             background: #e6e6e6;
@@ -1028,7 +1048,7 @@ footer {
             height: 30px;
             line-height: 10px; }
           .news .item.compact .text .meta .author {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             display: inline-block;
@@ -1049,7 +1069,7 @@ footer {
           float: left;
           display: block; }
           .news .item.compact .text .tags .tag {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             padding: 2px;
@@ -1066,7 +1086,7 @@ footer {
               background: yellow;
               transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
         .news .item.compact .text .title {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 16px;
           line-height: 1.2em;
           color: black;
@@ -1080,7 +1100,8 @@ footer {
       .news .item.compact:hover {
         background: #e6e6e6;
         transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .news .item.compact:hover .text .meta .date, .news .item.compact:hover .text .meta .author {
+        .news .item.compact:hover .text .meta .date,
+        .news .item.compact:hover .text .meta .author {
           border: 1px solid #b4b4b4; }
 
 .publications {
@@ -1090,13 +1111,14 @@ footer {
   margin-left: 20px;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 140px; }
+  padding-bottom: 20px; }
   .publications .item.small {
     display: block;
-    padding: 20px;
+    padding: 10px;
+    padding-top: 15px;
     height: auto;
     margin-bottom: 0;
-    border-bottom: 1px solid #b4b4b4;
+    border-top: 1px solid #b4b4b4;
     width: 100%;
     position: relative; }
     @media (max-width: 800px) {
@@ -1123,19 +1145,20 @@ footer {
         float: left;
         margin-bottom: 7px; }
         .publications .item.small .text .meta .date {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
           display: inline-block;
           color: #646464;
+          color: black;
           padding: 10px;
           border: 1px solid #e6e6e6;
           background: #e6e6e6;
           user-select: none;
           margin-right: 7px; }
         .publications .item.small .text .meta .author {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           display: inline-block;
@@ -1148,12 +1171,13 @@ footer {
           display: inline-block;
           margin-right: 7px; }
         .publications .item.small .text .meta .provider {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
           display: inline-block;
           color: #646464;
+          color: black;
           padding: 10px;
           border: 1px solid #e6e6e6;
           background: #e6e6e6;
@@ -1164,7 +1188,7 @@ footer {
         width: 100%;
         display: inline-block; }
       .publications .item.small .text .title {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 18px;
         line-height: 1.2em;
         float: left;
@@ -1173,7 +1197,7 @@ footer {
         .publications .item.small .text .title:hover {
           text-decoration: underline; }
       .publications .item.small .text .description .inner {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 18px;
         line-height: 1.2em;
         height: auto;
@@ -1188,7 +1212,7 @@ footer {
       float: left;
       z-index: 10; }
       .publications .item.small .tags .tag {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
@@ -1222,8 +1246,9 @@ footer {
         height: 100%;
         object-fit: cover;
         opacity: 1; }
-    .publications .item.small .pdf, .publications .item.small .exit {
-      font-family: 'space mono', 'Courier New', Courier, monospace;
+    .publications .item.small .pdf,
+    .publications .item.small .exit {
+      font-family: "space mono", "Courier New", Courier, monospace;
       font-size: 12px;
       line-height: 1.2em;
       line-height: 52px;
@@ -1234,7 +1259,8 @@ footer {
       border: 1px solid #b4b4b4;
       z-index: 100;
       position: relative; }
-      .publications .item.small .pdf:hover, .publications .item.small .exit:hover {
+      .publications .item.small .pdf:hover,
+      .publications .item.small .exit:hover {
         background: #b4b4b4; }
     .publications .item.small .exit {
       max-width: 80vw;
@@ -1247,8 +1273,11 @@ footer {
       top: 8px; }
     .publications .item.small:hover {
       background: #e6e6e6;
-      transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-      .publications .item.small:hover .text .meta .date, .publications .item.small:hover .text .meta .author, .publications .item.small:hover .text .meta .provider {
+      transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      border-top: 1px solid #e6e6e6; }
+      .publications .item.small:hover .text .meta .date,
+      .publications .item.small:hover .text .meta .author,
+      .publications .item.small:hover .text .meta .provider {
         border: 1px solid #b4b4b4; }
   .publications .item.compact {
     display: flex;
@@ -1273,12 +1302,13 @@ footer {
         height: 30px;
         width: auto; }
         .publications .item.compact .text .meta .date {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
           display: inline-block;
           color: #646464;
+          color: black;
           padding: 10px;
           border: 1px solid #e6e6e6;
           background: #e6e6e6;
@@ -1289,7 +1319,7 @@ footer {
           height: 30px;
           line-height: 10px; }
         .publications .item.compact .text .meta .author {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           display: inline-block;
@@ -1310,7 +1340,7 @@ footer {
         float: left;
         display: block; }
         .publications .item.compact .text .tags .tag {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 2px;
@@ -1327,7 +1357,7 @@ footer {
             background: yellow;
             transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
       .publications .item.compact .text .title {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 16px;
         line-height: 1.2em;
         color: black;
@@ -1341,7 +1371,8 @@ footer {
     .publications .item.compact:hover {
       background: #e6e6e6;
       transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-      .publications .item.compact:hover .text .meta .date, .publications .item.compact:hover .text .meta .author {
+      .publications .item.compact:hover .text .meta .date,
+      .publications .item.compact:hover .text .meta .author {
         border: 1px solid #b4b4b4; }
 
 .feed {
@@ -1350,10 +1381,10 @@ footer {
   margin-left: 20px;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 140px;
-  margin-top: 80px; }
+  margin-top: 60px;
+  padding-bottom: 20px; }
   .feed .header {
-    font-family: 'Archivo', sans-serif;
+    font-family: "Archivo", sans-serif;
     font-size: 18px;
     line-height: 1.2em;
     color: black;
@@ -1376,10 +1407,13 @@ footer {
     position: relative; }
     .feed .item.small {
       display: block;
-      padding: 20px;
+      padding: 10px;
+      padding-top: 15px;
       height: auto;
       margin-bottom: 0;
-      border-bottom: 1px solid #b4b4b4; }
+      border-top: 1px solid #b4b4b4; }
+      .feed .item.small:first-of-type {
+        border-top: 1px solid transparent; }
       @media (max-width: 800px) {
         .feed .item.small {
           width: 100%; } }
@@ -1403,19 +1437,20 @@ footer {
           width: 100%;
           float: left; }
           .feed .item.small .text .meta .date {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             padding: 7px;
             display: inline-block;
             color: #646464;
+            color: black;
             padding: 10px;
             border: 1px solid #e6e6e6;
             background: #e6e6e6;
             user-select: none;
             margin-bottom: 7px; }
           .feed .item.small .text .meta .provider {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             display: inline-block;
@@ -1429,7 +1464,7 @@ footer {
             margin-right: 7px;
             margin-bottom: 7px; }
         .feed .item.small .text .title {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 18px;
           line-height: 1.2em;
           float: left;
@@ -1440,7 +1475,7 @@ footer {
         float: left;
         z-index: 10; }
         .feed .item.small .tags .tag {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -1477,13 +1512,15 @@ footer {
       .feed .item.small:hover {
         background: #e6e6e6;
         transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .feed .item.small:hover .text .meta .date, .feed .item.small:hover .text .meta .author {
+        .feed .item.small:hover .text .meta .date,
+        .feed .item.small:hover .text .meta .author {
           border: 1px solid #b4b4b4; }
     .feed .item.compact {
       display: flex;
       height: auto;
-      border-bottom: 1px solid #b4b4b4;
-      padding: 20px; }
+      border-top: 1px solid #b4b4b4;
+      padding: 6px;
+      padding-left: 0; }
       .feed .item.compact .link {
         width: 100%;
         height: 100%;
@@ -1497,16 +1534,16 @@ footer {
         .feed .item.compact .text .meta {
           float: left;
           margin-right: 10px;
-          margin-bottom: 5px;
           height: 30px;
           width: auto; }
           .feed .item.compact .text .meta .date {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             padding: 7px;
             display: inline-block;
             color: #646464;
+            color: black;
             padding: 10px;
             border: 1px solid #e6e6e6;
             background: #e6e6e6;
@@ -1517,7 +1554,7 @@ footer {
             height: 30px;
             line-height: 10px; }
           .feed .item.compact .text .meta .provider {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             display: inline-block;
@@ -1535,16 +1572,17 @@ footer {
             height: 30px;
             line-height: 10px; }
         .feed .item.compact .text .tags {
-          float: left;
-          display: block; }
+          float: right;
+          height: 100%;
+          display: flex;
+          align-items: center; }
           .feed .item.compact .text .tags .tag {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
-            padding: 2px;
+            padding: 5px;
             border-radius: 2px;
             margin-right: 5px;
-            margin-bottom: 5px;
             display: inline-block;
             z-index: 10;
             position: relative;
@@ -1555,21 +1593,22 @@ footer {
               background: yellow;
               transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
         .feed .item.compact .text .title {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 16px;
           line-height: 1.2em;
           color: black;
           height: 30px;
           line-height: 30px;
-          width: 100%;
           margin: 0;
+          display: inline-block;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap; }
       .feed .item.compact:hover {
         background: #e6e6e6;
         transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .feed .item.compact:hover .text .meta .date, .feed .item.compact:hover .text .meta .author {
+        .feed .item.compact:hover .text .meta .date,
+        .feed .item.compact:hover .text .meta .author {
           border: 1px solid #b4b4b4; }
 
 .filter {
@@ -1578,21 +1617,8 @@ footer {
   margin-left: 20px;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 140px;
-  margin-top: 80px; }
-  .filter .header {
-    font-family: 'Archivo', sans-serif;
-    font-size: 18px;
-    line-height: 1.2em;
-    color: black;
-    padding: 20px;
-    border: 1px solid #b4b4b4;
-    margin-left: 30px;
-    font-weight: bold;
-    margin-left: 0; }
-    @media (max-width: 800px) {
-      .filter .header {
-        margin-left: 20px; } }
+  margin-top: 80px;
+  padding-bottom: 20px; }
   @media (max-width: 800px) {
     .filter {
       margin-right: 0;
@@ -1604,10 +1630,11 @@ footer {
     position: relative; }
     .filter .item.small {
       display: block;
-      padding: 20px;
+      padding: 10px;
+      padding-top: 20px;
       height: auto;
       margin-bottom: 0;
-      border-bottom: 1px solid #b4b4b4; }
+      border-top: 1px solid #b4b4b4; }
       @media (max-width: 800px) {
         .filter .item.small {
           width: 100%; } }
@@ -1631,19 +1658,20 @@ footer {
           width: 100%;
           float: left; }
           .filter .item.small .text .meta .date {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             padding: 7px;
             display: inline-block;
             color: #646464;
+            color: black;
             padding: 10px;
             border: 1px solid #e6e6e6;
             background: #e6e6e6;
             user-select: none;
             margin-bottom: 7px; }
           .filter .item.small .text .meta .author {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             display: inline-block;
@@ -1657,7 +1685,7 @@ footer {
             margin-right: 7px;
             margin-bottom: 7px; }
           .filter .item.small .text .meta .provider {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             display: inline-block;
@@ -1671,7 +1699,7 @@ footer {
             margin-right: 7px;
             margin-bottom: 7px; }
         .filter .item.small .text .title {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 18px;
           line-height: 1.2em;
           float: left;
@@ -1682,7 +1710,7 @@ footer {
         float: left;
         z-index: 10; }
         .filter .item.small .tags .tag {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -1719,7 +1747,8 @@ footer {
       .filter .item.small:hover {
         background: #e6e6e6;
         transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .filter .item.small:hover .text .meta .date, .filter .item.small:hover .text .meta .author {
+        .filter .item.small:hover .text .meta .date,
+        .filter .item.small:hover .text .meta .author {
           border: 1px solid #b4b4b4; }
     .filter .item.compact {
       display: flex;
@@ -1743,12 +1772,13 @@ footer {
           height: 30px;
           width: auto; }
           .filter .item.compact .text .meta .date {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             padding: 7px;
             display: inline-block;
             color: #646464;
+            color: black;
             padding: 10px;
             border: 1px solid #e6e6e6;
             background: #e6e6e6;
@@ -1759,7 +1789,7 @@ footer {
             height: 30px;
             line-height: 10px; }
           .filter .item.compact .text .meta .author {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             display: inline-block;
@@ -1780,7 +1810,7 @@ footer {
           float: left;
           display: block; }
           .filter .item.compact .text .tags .tag {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             padding: 2px;
@@ -1797,7 +1827,7 @@ footer {
               background: yellow;
               transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
         .filter .item.compact .text .title {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 16px;
           line-height: 1.2em;
           color: black;
@@ -1811,7 +1841,8 @@ footer {
       .filter .item.compact:hover {
         background: #e6e6e6;
         transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-        .filter .item.compact:hover .text .meta .date, .filter .item.compact:hover .text .meta .author {
+        .filter .item.compact:hover .text .meta .date,
+        .filter .item.compact:hover .text .meta .author {
           border: 1px solid #b4b4b4; }
 
 .landing {
@@ -1821,15 +1852,14 @@ footer {
   display: flex;
   flex-wrap: wrap;
   margin-top: 60px;
-  padding-bottom: 60px; }
+  padding-bottom: 20px; }
   .landing .item.third {
     margin-top: 10px;
     position: relative;
-    padding: 20px;
+    padding: 10px;
     padding-top: 10px;
     color: black;
     width: calc(33.3333% - 6px);
-    border-bottom: 1px solid #e6e6e6;
     background: linear-gradient(180deg, gainsboro 0%, white 50%);
     overflow: hidden;
     height: 520px;
@@ -1853,12 +1883,11 @@ footer {
           height: auto;
           width: 100%; } }
       .landing .item.third .text .header {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         border-bottom: 1px solid #b4b4b4;
         padding-bottom: 10px;
-        padding-left: 10px;
         margin-bottom: 20px;
         text-transform: uppercase;
         height: 30px;
@@ -1872,7 +1901,7 @@ footer {
         float: left;
         margin-top: 20px; }
         .landing .item.third .text .tags .tag {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -1893,27 +1922,29 @@ footer {
             .landing .item.third .text .tags .tag {
               padding: 5px; } }
       .landing .item.third .text .title {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 18px;
         line-height: 1.2em;
         float: left;
         font-weight: bold;
         letter-spacing: -0.03em;
-        margin-top: 10px; }
+        margin-top: 10px;
+        max-width: 40ch; }
       .landing .item.third .text .meta .date {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
         display: inline-block;
         color: #646464;
+        color: black;
         padding: 10px;
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
         user-select: none;
         border: 1px solid #b4b4b4; }
       .landing .item.third .text .meta .provider {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -1924,7 +1955,7 @@ footer {
         background: #7df4b4;
         user-select: none; }
       .landing .item.third .text .meta .author {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -1940,8 +1971,8 @@ footer {
         margin-bottom: 7px; }
     .landing .item.third .image {
       width: 100%;
-      flex-basis: 40%;
-      max-height: 40%; }
+      flex-basis: 45%;
+      max-height: 45%; }
       @media (max-width: 800px) {
         .landing .item.third .image {
           height: auto;
@@ -1952,7 +1983,7 @@ footer {
         object-fit: cover;
         opacity: 1; }
     .landing .item.third .button {
-      font-family: 'Archivo', sans-serif;
+      font-family: "Archivo", sans-serif;
       font-size: 18px;
       line-height: 1.2em;
       margin-right: auto;
@@ -1981,7 +2012,7 @@ footer {
   .landing .item.spaced {
     margin-right: 9px; }
   .landing .item.about {
-    font-family: 'Archivo', sans-serif;
+    font-family: "Archivo", sans-serif;
     font-size: 18px;
     line-height: 1.2em;
     width: 100%;
@@ -2012,7 +2043,7 @@ footer {
       opacity: 1;
       transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out; }
     .landing .item.about .button {
-      font-family: 'Archivo', sans-serif;
+      font-family: "Archivo", sans-serif;
       font-size: 18px;
       line-height: 1.2em;
       display: inline-block;
@@ -2029,24 +2060,14 @@ footer {
   margin-left: 20px;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 140px; }
-  .search-list .header {
-    font-family: 'Archivo', sans-serif;
-    font-size: 18px;
-    line-height: 1.2em;
-    color: black;
-    padding: 20px;
-    border: 1px solid #b4b4b4;
-    margin-left: 30px;
-    font-weight: bold;
-    margin-left: 0px; }
+  padding-bottom: 20px; }
   .search-list .item.small {
     display: block;
     padding: 20px;
     height: auto;
     margin-bottom: 0;
     border-bottom: none;
-    border-top: 1px solid #b4b4b4; }
+    border-top: 1px solid #e6e6e6; }
     @media (max-width: 800px) {
       .search-list .item.small {
         width: 100%; } }
@@ -2070,19 +2091,20 @@ footer {
         width: 100%;
         float: left; }
         .search-list .item.small .text .meta .date {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
           display: inline-block;
           color: #646464;
+          color: black;
           padding: 10px;
           border: 1px solid #e6e6e6;
           background: #e6e6e6;
           user-select: none;
           margin-bottom: 7px; }
         .search-list .item.small .text .meta .author {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           display: inline-block;
@@ -2096,7 +2118,7 @@ footer {
           margin-right: 7px;
           margin-bottom: 7px; }
       .search-list .item.small .text .title {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 18px;
         line-height: 1.2em;
         float: left;
@@ -2107,7 +2129,7 @@ footer {
       float: left;
       z-index: 10; }
       .search-list .item.small .tags .tag {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
@@ -2144,8 +2166,24 @@ footer {
     .search-list .item.small:hover {
       background: #e6e6e6;
       transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
-      .search-list .item.small:hover .text .meta .date, .search-list .item.small:hover .text .meta .author {
+      .search-list .item.small:hover .text .meta .date,
+      .search-list .item.small:hover .text .meta .author {
         border: 1px solid #b4b4b4; }
+
+.header-container {
+  padding-bottom: 20px;
+  width: 100%; }
+  .header-container .header {
+    font-family: "Archivo", sans-serif;
+    font-size: 18px;
+    line-height: 1.2em;
+    color: black;
+    padding: 20px;
+    border: 1px solid #b4b4b4;
+    font-weight: bold;
+    margin-left: 0;
+    width: auto;
+    display: inline-block; }
 
 .about {
   display: flex;
@@ -2169,7 +2207,7 @@ footer {
           width: 100%;
           padding: 10px 20px 21px 20px; } }
       .about .top .text .title {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 46px;
         line-height: 1em;
         font-weight: bold;
@@ -2189,6 +2227,7 @@ footer {
       .about .top .image img {
         width: 100%;
         height: 100%;
+        min-height: 300px;
         object-fit: cover; }
   .about .main {
     width: calc(100% - 60px);
@@ -2205,10 +2244,10 @@ footer {
         margin-left: 0;
         width: 100%; } }
     .about .main .header {
-      font-family: 'Archivo', sans-serif;
+      font-family: "Archivo", sans-serif;
       font-size: 18px;
       line-height: 1.2em;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       padding: 20px;
       color: black;
       border: 1px solid #b4b4b4;
@@ -2219,8 +2258,11 @@ footer {
     .about .main .description {
       width: calc(100% - 240px);
       padding-top: 20px; }
-      .about .main .description p, .about .main .description ul, .about .main .description ol, .about .main .description li {
-        font-family: 'Noto Serif', serif;
+      .about .main .description p,
+      .about .main .description ul,
+      .about .main .description ol,
+      .about .main .description li {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         margin-bottom: 20px;
@@ -2239,7 +2281,7 @@ footer {
       padding-left: 30px;
       padding-top: 30px; }
       .about .main .navigation .navigation-item {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 18px;
         line-height: 1.2em;
         display: inline-block;
@@ -2260,7 +2302,7 @@ footer {
     flex-wrap: wrap;
     border-bottom: 1px solid #b4b4b4;
     padding-bottom: 40px;
-    padding-top: 60px;
+    padding-top: 20px;
     margin-top: 0; }
     @media (max-width: 800px) {
       .about .subprojects {
@@ -2268,10 +2310,10 @@ footer {
         margin-left: 0;
         width: 100%; } }
     .about .subprojects .header {
-      font-family: 'Archivo', sans-serif;
+      font-family: "Archivo", sans-serif;
       font-size: 18px;
       line-height: 1.2em;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       padding: 20px;
       color: black;
       border: 1px solid #b4b4b4;
@@ -2289,7 +2331,7 @@ footer {
         padding: 20px;
         color: black;
         width: 25%;
-        height: 400px;
+        height: 300px;
         display: flex;
         flex-direction: column; }
         @media (max-width: 800px) {
@@ -2315,7 +2357,7 @@ footer {
               height: auto;
               width: 100%; } }
           .about .subprojects .inner .inner-item .text .header {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             border-bottom: 1px solid #b4b4b4;
@@ -2324,7 +2366,7 @@ footer {
             margin-bottom: 10px;
             text-transform: uppercase; }
           .about .subprojects .inner .inner-item .text .title {
-            font-family: 'Archivo', sans-serif;
+            font-family: "Archivo", sans-serif;
             font-size: 18px;
             line-height: 1.2em;
             float: left;
@@ -2333,8 +2375,8 @@ footer {
             margin-top: 10px; }
         .about .subprojects .inner .inner-item .image {
           width: 100%;
-          flex-basis: 40%;
-          max-height: 40%; }
+          flex-basis: 60%;
+          max-height: 60%; }
           @media (max-width: 800px) {
             .about .subprojects .inner .inner-item .image {
               height: auto;
@@ -2345,7 +2387,7 @@ footer {
             object-fit: cover;
             opacity: 1; }
         .about .subprojects .inner .inner-item .button {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 18px;
           line-height: 1.2em;
           margin-right: auto;
@@ -2364,7 +2406,7 @@ footer {
     flex-wrap: wrap;
     border-bottom: 1px solid #b4b4b4;
     padding-bottom: 40px;
-    padding-top: 60px;
+    padding-top: 20px;
     margin-top: 0; }
     @media (max-width: 800px) {
       .about .team {
@@ -2372,10 +2414,10 @@ footer {
         margin-left: 0px;
         width: 100%; } }
     .about .team .header {
-      font-family: 'Archivo', sans-serif;
+      font-family: "Archivo", sans-serif;
       font-size: 18px;
       line-height: 1.2em;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       padding: 20px;
       color: black;
       border: 1px solid #b4b4b4;
@@ -2388,7 +2430,7 @@ footer {
       justify-content: space-between;
       flex-wrap: wrap; }
       .about .team .inner .inner-item {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 18px;
         line-height: 1.2em;
         height: 240px;
@@ -2411,7 +2453,7 @@ footer {
             height: 100%;
             object-fit: cover; }
         .about .team .inner .inner-item .title {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 18px;
           line-height: 1.2em;
           font-weight: bold;
@@ -2431,7 +2473,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 40px;
-    padding-top: 60px;
+    padding-top: 20px;
     margin-top: 0; }
     @media (max-width: 800px) {
       .about .contact {
@@ -2439,10 +2481,10 @@ footer {
         margin-left: 0px;
         width: 100%; } }
     .about .contact .header {
-      font-family: 'Archivo', sans-serif;
+      font-family: "Archivo", sans-serif;
       font-size: 18px;
       line-height: 1.2em;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       padding: 20px;
       color: black;
       border: 1px solid #b4b4b4;
@@ -2453,7 +2495,7 @@ footer {
     .about .contact .inner {
       width: 100%; }
       .about .contact .inner .link {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 18px;
         line-height: 1.2em;
         display: inline-block;
@@ -2468,7 +2510,7 @@ footer {
             margin-left: 20px; } }
 
 .single-note {
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 17px;
   line-height: 28px;
   padding-top: 50px; }
@@ -2491,18 +2533,19 @@ footer {
           width: 100%;
           padding: 10px 20px 21px 20px; } }
       .single-note .top .text .date {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
         display: inline-block;
         color: #646464;
+        color: black;
         padding: 10px;
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
         user-select: none; }
       .single-note .top .text .subproject {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -2522,7 +2565,7 @@ footer {
       .single-note .top .text .tags {
         margin-top: 10px; }
         .single-note .top .text .tags .tag {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -2546,7 +2589,7 @@ footer {
           .single-note .top .text .tags {
             width: 100%; } }
       .single-note .top .text .title {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 46px;
         line-height: 1em;
         font-weight: bold;
@@ -2555,7 +2598,7 @@ footer {
         max-width: 95%; }
         @media (max-width: 800px) {
           .single-note .top .text .title {
-            font-family: 'Archivo', sans-serif;
+            font-family: "Archivo", sans-serif;
             font-size: 18px;
             line-height: 1.2em; } }
       .single-note .top .text .author {
@@ -2580,14 +2623,16 @@ footer {
           .single-note .top .text .author .image img {
             width: 100%;
             height: 100%;
+            min-height: 300px;
             object-fit: cover; }
           @media (max-width: 800px) {
             .single-note .top .text .author .image {
               width: 30px;
               height: 30px;
+              min-height: unset;
               border-radius: 30px; } }
         .single-note .top .text .author .name {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 16px;
           line-height: 1.2em;
           float: left;
@@ -2617,7 +2662,7 @@ footer {
           .single-note .top .meta .replies {
             width: 100%; } }
         .single-note .top .meta .replies .header {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           display: inline-block;
@@ -2657,13 +2702,13 @@ footer {
             .single-note .top .meta .replies .reply:hover .author {
               border: 1px solid #b4b4b4; }
           .single-note .top .meta .replies .reply .title {
-            font-family: 'Archivo', sans-serif;
+            font-family: "Archivo", sans-serif;
             font-size: 16px;
             line-height: 1.2em;
             font-weight: bold;
             margin-bottom: 0px; }
           .single-note .top .meta .replies .reply .author {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             display: inline-block;
@@ -2702,8 +2747,11 @@ footer {
         transition: border 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
         .single-note .main .content a:hover {
           border-bottom: 1px solid #e6e6e6; }
-      .single-note .main .content p, .single-note .main .content ul, .single-note .main .content ol, .single-note .main .content li {
-        font-family: 'Noto Serif', serif;
+      .single-note .main .content p,
+      .single-note .main .content ul,
+      .single-note .main .content ol,
+      .single-note .main .content li {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 75ch;
@@ -2711,8 +2759,13 @@ footer {
         max-width: 80%;
         margin-right: auto;
         margin-left: 40px; }
-      .single-note .main .content h1, .single-note .main .content h2, .single-note .main .content h3, .single-note .main .content h4 {
-        font-family: 'Noto Serif', serif;
+      .single-note .main .content li {
+        max-width: 90%; }
+      .single-note .main .content h1,
+      .single-note .main .content h2,
+      .single-note .main .content h3,
+      .single-note .main .content h4 {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 70ch;
@@ -2723,16 +2776,14 @@ footer {
         margin-bottom: 20px;
         font-weight: bold; }
       .single-note .main .content img {
-        max-width: 80%; }
+        max-width: 90%; }
       .single-note .main .content li {
         margin-left: 0; }
       .single-note .main .content blockquote p {
         font-size: 17px;
         line-height: 1.2em;
         padding-left: 30px;
-        padding-right: 30px;
-        margin-right: auto;
-        margin-left: auto; }
+        padding-right: 30px; }
     .single-note .main .sidebar {
       float: right;
       width: 340px; }
@@ -2748,7 +2799,7 @@ footer {
           .single-note .main .sidebar .related {
             width: 100%; } }
         .single-note .main .sidebar .related .header {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           display: inline-block;
@@ -2782,13 +2833,13 @@ footer {
             .single-note .main .sidebar .related .item:hover .author {
               border: 1px solid #b4b4b4; }
           .single-note .main .sidebar .related .item .title {
-            font-family: 'Archivo', sans-serif;
+            font-family: "Archivo", sans-serif;
             font-size: 16px;
             line-height: 1.2em;
             font-weight: bold;
             margin-bottom: 20px; }
           .single-note .main .sidebar .related .item .author {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
+            font-family: "space mono", "Courier New", Courier, monospace;
             font-size: 12px;
             line-height: 1.2em;
             display: inline-block;
@@ -2829,7 +2880,7 @@ footer {
       .single-note .end .related .header-container {
         width: 100%; }
       .single-note .end .related .header {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -2863,13 +2914,13 @@ footer {
           .single-note .end .related .item:hover .author {
             border: 1px solid #b4b4b4; }
         .single-note .end .related .item .title {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 16px;
           line-height: 1.2em;
           font-weight: bold;
           margin-bottom: 20px; }
         .single-note .end .related .item .author {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           display: inline-block;
@@ -2892,7 +2943,7 @@ footer {
             object-fit: cover; }
 
 .single-profile {
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 17px;
   line-height: 28px;
   padding-top: 50px; }
@@ -2915,18 +2966,19 @@ footer {
           width: 100%;
           padding: 10px 20px 21px 20px; } }
       .single-profile .top .text .date {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
         display: inline-block;
         color: #646464;
+        color: black;
         padding: 10px;
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
         user-select: none; }
       .single-profile .top .text .subproject {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -2946,7 +2998,7 @@ footer {
       .single-profile .top .text .tags {
         margin-top: 10px; }
         .single-profile .top .text .tags .tag {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -2970,7 +3022,7 @@ footer {
           .single-profile .top .text .tags {
             width: 100%; } }
       .single-profile .top .text .title {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 46px;
         line-height: 1em;
         font-weight: bold;
@@ -2979,7 +3031,7 @@ footer {
         max-width: 95%; }
         @media (max-width: 800px) {
           .single-profile .top .text .title {
-            font-family: 'Archivo', sans-serif;
+            font-family: "Archivo", sans-serif;
             font-size: 18px;
             line-height: 1.2em; } }
     .single-profile .top .meta {
@@ -3017,8 +3069,11 @@ footer {
         transition: border 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
         .single-profile .main .content a:hover {
           border-bottom: 1px solid #e6e6e6; }
-      .single-profile .main .content p, .single-profile .main .content ul, .single-profile .main .content ol, .single-profile .main .content li {
-        font-family: 'Noto Serif', serif;
+      .single-profile .main .content p,
+      .single-profile .main .content ul,
+      .single-profile .main .content ol,
+      .single-profile .main .content li {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 75ch;
@@ -3026,8 +3081,13 @@ footer {
         max-width: 80%;
         margin-right: auto;
         margin-left: 40px; }
-      .single-profile .main .content h1, .single-profile .main .content h2, .single-profile .main .content h3, .single-profile .main .content h4 {
-        font-family: 'Noto Serif', serif;
+      .single-profile .main .content li {
+        max-width: 90%; }
+      .single-profile .main .content h1,
+      .single-profile .main .content h2,
+      .single-profile .main .content h3,
+      .single-profile .main .content h4 {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 70ch;
@@ -3051,7 +3111,7 @@ footer {
 
 .single-feed {
   padding-top: 50px;
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 17px;
   line-height: 28px; }
   .single-feed--top {
@@ -3074,12 +3134,13 @@ footer {
           width: 100%;
           padding: 10px 20px 21px 20px; } }
       .single-feed--top--text--date {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
         display: inline-block;
         color: #646464;
+        color: black;
         padding: 10px;
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
@@ -3088,7 +3149,7 @@ footer {
           .single-feed--top--text--date {
             display: none; } }
       .single-feed--top--text--title {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 46px;
         line-height: 1em;
         font-weight: bold;
@@ -3113,7 +3174,7 @@ footer {
             height: 100%;
             object-fit: cover; }
         .single-feed--top--text--author--name {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 18px;
           line-height: 1.2em;
           float: left;
@@ -3121,11 +3182,11 @@ footer {
           color: black;
           line-height: 50px; }
       .single-feed--top--text--title {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 18px;
         line-height: 1.2em; }
       .single-feed--top--text--provider {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -3136,7 +3197,7 @@ footer {
         background: #e6e6e6;
         user-select: none; }
       .single-feed--top--text--link {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 18px;
         line-height: 1.2em;
         margin-right: auto;
@@ -3148,7 +3209,7 @@ footer {
         .single-feed--top--text--link:hover {
           background: #e6e6e6; }
       .single-feed--top--text--excerpt {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 18px;
         line-height: 1.2em;
         margin-top: 20px;
@@ -3173,7 +3234,7 @@ footer {
         padding-top: 10px;
         margin-right: 20px; }
         .single-feed--top--meta--tags--item {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -3189,7 +3250,7 @@ footer {
           .single-feed--top--meta--tags--item:hover {
             background: yellow; }
       .single-feed--top--meta--subproject {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -3204,12 +3265,13 @@ footer {
           .single-feed--top--meta--subproject {
             display: none; } }
       .single-feed--top--meta--date {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
         display: inline-block;
         color: #646464;
+        color: black;
         padding: 10px;
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
@@ -3242,7 +3304,7 @@ footer {
         .single-feed--main--content a:hover {
           border-bottom: 1px solid #b4b4b4; }
       .single-feed--main--content p, .single-feed--main--content ul, .single-feed--main--content ol, .single-feed--main--content li {
-        font-family: 'Noto Serif', serif;
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 70ch;
@@ -3251,7 +3313,7 @@ footer {
         margin-right: auto;
         margin-left: 40px; }
       .single-feed--main--content h1, .single-feed--main--content h2, .single-feed--main--content h3, .single-feed--main--content h4 {
-        font-family: 'Noto Serif', serif;
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 70ch;
@@ -3285,7 +3347,7 @@ footer {
       width: 100%; }
 
 .single-news {
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 17px;
   line-height: 28px;
   padding-top: 50px; }
@@ -3308,18 +3370,19 @@ footer {
           width: 100%;
           padding: 10px 20px 21px 20px; } }
       .single-news .top .text .date {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
         display: inline-block;
         color: #646464;
+        color: black;
         padding: 10px;
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
         user-select: none; }
       .single-news .top .text .subproject {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -3339,7 +3402,7 @@ footer {
       .single-news .top .text .tags {
         margin-top: 10px; }
         .single-news .top .text .tags .tag {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -3363,7 +3426,7 @@ footer {
           .single-news .top .text .tags {
             width: 100%; } }
       .single-news .top .text .title {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 46px;
         line-height: 1em;
         font-weight: bold;
@@ -3372,7 +3435,7 @@ footer {
         max-width: 95%; }
         @media (max-width: 800px) {
           .single-news .top .text .title {
-            font-family: 'Archivo', sans-serif;
+            font-family: "Archivo", sans-serif;
             font-size: 18px;
             line-height: 1.2em; } }
   .single-news .main {
@@ -3394,8 +3457,11 @@ footer {
         transition: border 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
         .single-news .main .content a:hover {
           border-bottom: 1px solid #e6e6e6; }
-      .single-news .main .content p, .single-news .main .content ul, .single-news .main .content ol, .single-news .main .content li {
-        font-family: 'Noto Serif', serif;
+      .single-news .main .content p,
+      .single-news .main .content ul,
+      .single-news .main .content ol,
+      .single-news .main .content li {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 75ch;
@@ -3403,8 +3469,13 @@ footer {
         max-width: 80%;
         margin-right: auto;
         margin-left: 40px; }
-      .single-news .main .content h1, .single-news .main .content h2, .single-news .main .content h3, .single-news .main .content h4 {
-        font-family: 'Noto Serif', serif;
+      .single-news .main .content li {
+        max-width: 90%; }
+      .single-news .main .content h1,
+      .single-news .main .content h2,
+      .single-news .main .content h3,
+      .single-news .main .content h4 {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 70ch;
@@ -3427,7 +3498,7 @@ footer {
         margin-left: auto; }
 
 .single-publication {
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 17px;
   line-height: 28px;
   padding-top: 50px; }
@@ -3450,18 +3521,19 @@ footer {
           width: 100%;
           padding: 10px 20px 21px 20px; } }
       .single-publication .top .text .date {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
         display: inline-block;
         color: #646464;
+        color: black;
         padding: 10px;
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
         user-select: none; }
       .single-publication .top .text .provider {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -3472,7 +3544,7 @@ footer {
         background: #7df4b4;
         user-select: none; }
       .single-publication .top .text .subproject {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -3492,7 +3564,7 @@ footer {
       .single-publication .top .text .tags {
         margin-top: 10px; }
         .single-publication .top .text .tags .tag {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -3516,7 +3588,7 @@ footer {
           .single-publication .top .text .tags {
             width: 100%; } }
       .single-publication .top .text .title {
-        font-family: 'Archivo', sans-serif;
+        font-family: "Archivo", sans-serif;
         font-size: 46px;
         line-height: 1em;
         font-weight: bold;
@@ -3525,7 +3597,7 @@ footer {
         max-width: 95%; }
         @media (max-width: 800px) {
           .single-publication .top .text .title {
-            font-family: 'Archivo', sans-serif;
+            font-family: "Archivo", sans-serif;
             font-size: 18px;
             line-height: 1.2em; } }
       .single-publication .top .text .author {
@@ -3557,7 +3629,7 @@ footer {
               height: 30px;
               border-radius: 30px; } }
         .single-publication .top .text .author .name {
-          font-family: 'Archivo', sans-serif;
+          font-family: "Archivo", sans-serif;
           font-size: 16px;
           line-height: 1.2em;
           float: left;
@@ -3585,12 +3657,13 @@ footer {
     height: auto;
     display: inline-block; }
     .single-publication .main .content {
-      padding-top: 40px;
+      padding-top: 0;
       padding-bottom: 60px;
       width: calc(100% - 340px);
       float: left; }
-      .single-publication .main .content .pdf, .single-publication .main .content .exit {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+      .single-publication .main .content .pdf,
+      .single-publication .main .content .exit {
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         line-height: 52px;
@@ -3601,7 +3674,8 @@ footer {
         border: 1px solid #b4b4b4;
         z-index: 100;
         position: relative; }
-        .single-publication .main .content .pdf:hover, .single-publication .main .content .exit:hover {
+        .single-publication .main .content .pdf:hover,
+        .single-publication .main .content .exit:hover {
           background: #b4b4b4; }
       .single-publication .main .content .exit {
         max-width: 80vw;
@@ -3621,8 +3695,11 @@ footer {
         transition: border 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
         .single-publication .main .content a:hover {
           border-bottom: 1px solid #e6e6e6; }
-      .single-publication .main .content p, .single-publication .main .content ul, .single-publication .main .content ol, .single-publication .main .content li {
-        font-family: 'Noto Serif', serif;
+      .single-publication .main .content p,
+      .single-publication .main .content ul,
+      .single-publication .main .content ol,
+      .single-publication .main .content li {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 75ch;
@@ -3630,8 +3707,13 @@ footer {
         max-width: 80%;
         margin-right: auto;
         margin-left: 40px; }
-      .single-publication .main .content h1, .single-publication .main .content h2, .single-publication .main .content h3, .single-publication .main .content h4 {
-        font-family: 'Noto Serif', serif;
+      .single-publication .main .content li {
+        max-width: 90%; }
+      .single-publication .main .content h1,
+      .single-publication .main .content h2,
+      .single-publication .main .content h3,
+      .single-publication .main .content h4 {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 70ch;
@@ -3655,10 +3737,10 @@ footer {
 
 .single-team {
   padding-top: 50px;
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 17px;
   line-height: 28px; }
-  .single-team--top {
+  .single-team .top {
     width: 100%;
     height: auto;
     display: flex;
@@ -3667,83 +3749,105 @@ footer {
     color: black;
     border-bottom: 1px solid #b4b4b4; }
     @media (max-width: 800px) {
-      .single-team--top {
+      .single-team .top {
         flex-wrap: wrap; } }
-    .single-team--top--text {
-      width: 66.6666%;
-      background: white;
+    .single-team .top .text {
+      width: calc(100% - 340px);
       padding: 20px 40px 20px 40px; }
       @media (max-width: 800px) {
-        .single-team--top--text {
+        .single-team .top .text {
           width: 100%;
           padding: 10px 20px 21px 20px; } }
-      .single-team--top--text--date {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+      .single-team .top .text .date {
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
         display: inline-block;
         color: #646464;
+        color: black;
         padding: 10px;
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
         user-select: none; }
+      .single-team .top .text .subproject {
+        font-family: "space mono", "Courier New", Courier, monospace;
+        font-size: 12px;
+        line-height: 1.2em;
+        display: inline-block;
+        margin-right: 7px;
+        color: black;
+        padding: 10px;
+        border: 1px solid #e6e6e6;
+        background: transparent;
+        user-select: none;
+        margin-right: 20px; }
+        .single-team .top .text .subproject:hover {
+          background: #e6e6e6;
+          transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
         @media (max-width: 800px) {
-          .single-team--top--text--date {
+          .single-team .top .text .subproject {
             display: none; } }
-      .single-team--top--text--title {
-        font-family: 'Archivo', sans-serif;
+      .single-team .top .text .tags {
+        margin-top: 10px; }
+        .single-team .top .text .tags .tag {
+          font-family: "space mono", "Courier New", Courier, monospace;
+          font-size: 12px;
+          line-height: 1.2em;
+          padding: 7px;
+          border-radius: 5px;
+          margin-right: 4px;
+          margin-bottom: 6px;
+          display: inline-block;
+          z-index: 10;
+          position: relative;
+          text-decoration: none !important;
+          color: black;
+          user-select: none;
+          background: #ffff8a; }
+          .single-team .top .text .tags .tag:hover {
+            background: yellow;
+            transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+          @media (max-width: 800px) {
+            .single-team .top .text .tags .tag {
+              padding: 5px; } }
+        @media (max-width: 800px) {
+          .single-team .top .text .tags {
+            width: 100%; } }
+      .single-team .top .text .title {
+        font-family: "Archivo", sans-serif;
         font-size: 46px;
         line-height: 1em;
         font-weight: bold;
-        margin-top: 20px;
-        margin-bottom: 0; }
-      .single-team--top--text--author {
-        padding: 10px;
-        margin-top: 20px;
-        display: inline-block;
-        margin-bottom: 60px; }
-        .single-team--top--text--author:hover {
-          background: #e6e6e6; }
-        .single-team--top--text--author--image {
-          float: left;
-          width: 50px;
-          height: 50px;
-          background: #b4b4b4;
-          border-radius: 50px;
-          overflow: hidden; }
-          .single-team--top--text--author--image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; }
-        .single-team--top--text--author--name {
-          font-family: 'Archivo', sans-serif;
-          font-size: 18px;
-          line-height: 1.2em;
-          float: left;
-          margin-left: 7px;
-          color: black;
-          line-height: 50px; }
-    .single-team--top--image {
+        margin-top: 10px;
+        margin-bottom: 0;
+        max-width: 95%; }
+        @media (max-width: 800px) {
+          .single-team .top .text .title {
+            font-family: "Archivo", sans-serif;
+            font-size: 18px;
+            line-height: 1.2em; } }
+    .single-team .top .image {
       width: 33.3333%;
       border-left: 1px solid #b4b4b4;
       margin-bottom: 20px;
       margin-top: 20px;
       padding-left: 20px;
+      width: 320px;
       margin-right: 20px; }
       @media (max-width: 800px) {
-        .single-team--top--image {
+        .single-team .top .image {
           width: 100%;
           border-left: none; } }
-      .single-team--top--image--divider {
+      .single-team .top .image--divider {
         margin-top: 20px;
         border-bottom: 1px solid #b4b4b4;
         margin-bottom: 20px; }
-      .single-team--top--image--tags {
+      .single-team .top .image--tags {
         padding-top: 10px;
         margin-right: 20px; }
-        .single-team--top--image--tags--item {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+        .single-team .top .image--tags--item {
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -3756,10 +3860,10 @@ footer {
           text-decoration: none !important;
           color: black;
           background: #ffff8a; }
-          .single-team--top--image--tags--item:hover {
+          .single-team .top .image--tags--item:hover {
             background: yellow; }
-      .single-team--top--image--subproject {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+      .single-team .top .image--subproject {
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -3771,15 +3875,16 @@ footer {
         user-select: none;
         margin-right: 20px; }
         @media (max-width: 800px) {
-          .single-team--top--image--subproject {
+          .single-team .top .image--subproject {
             display: none; } }
-      .single-team--top--image--date {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+      .single-team .top .image--date {
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
         display: inline-block;
         color: #646464;
+        color: black;
         padding: 10px;
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
@@ -3787,45 +3892,52 @@ footer {
         display: inline-block;
         margin-right: 7px; }
         @media (max-width: 800px) {
-          .single-team--top--image--date {
+          .single-team .top .image--date {
             display: none; } }
-      .single-team--top--image img {
+      .single-team .top .image img {
         width: 100%;
         height: 100%;
         object-fit: cover; }
-  .single-team--main {
+  .single-team .main {
     width: 100%;
     min-height: 80vh;
     height: auto;
     display: inline-block; }
-    .single-team--main--content {
+    .single-team .main .content {
       padding-top: 40px;
-      padding-bottom: 60px;
-      width: 66.6666%;
+      padding-bottom: 40px;
+      width: calc(100% - 340px);
       float: left;
-      width: 66.6666%;
-      float: left;
-      padding-bottom: 100px;
-      border-right: 1px solid #b4b4b4;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding-top: 0px;
-      border-bottom: none; }
-      .single-team--main--content a {
-        border-bottom: 1px solid black; }
-        .single-team--main--content a:hover {
-          border-bottom: 1px solid #b4b4b4; }
-      .single-team--main--content p, .single-team--main--content ul, .single-team--main--content ol, .single-team--main--content li {
-        font-family: 'Noto Serif', serif;
+      margin-bottom: 20px; }
+      @media (max-width: 800px) {
+        .single-team .main .content {
+          width: 100%; } }
+      .single-team .main .content a {
+        text-decoration: none;
+        border-bottom: 1px solid #646464;
+        transition: border 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        .single-team .main .content a:hover {
+          border-bottom: 1px solid #e6e6e6; }
+      .single-team .main .content p,
+      .single-team .main .content ul,
+      .single-team .main .content ol,
+      .single-team .main .content li {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
-        width: 70ch;
+        width: 75ch;
         margin-bottom: 20px;
-        max-width: 90%;
+        max-width: 80%;
         margin-right: auto;
-        margin-left: 40px; }
-      .single-team--main--content h1, .single-team--main--content h2, .single-team--main--content h3, .single-team--main--content h4 {
-        font-family: 'Noto Serif', serif;
+        margin-left: 40px;
+        margin-top: 0; }
+      .single-team .main .content li {
+        max-width: 90%; }
+      .single-team .main .content h1,
+      .single-team .main .content h2,
+      .single-team .main .content h3,
+      .single-team .main .content h4 {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 70ch;
@@ -3835,32 +3947,28 @@ footer {
         padding-top: 20px;
         margin-bottom: 20px;
         font-weight: bold; }
-      .single-team--main--content li {
-        margin-left: 0em; }
-      .single-team--main--content blockquote p {
+      .single-team .main .content img {
+        max-width: 80%; }
+      .single-team .main .content li {
+        margin-left: 0; }
+      .single-team .main .content blockquote p {
         font-size: 17px;
         line-height: 1.2em;
         padding-left: 30px;
         padding-right: 30px;
         margin-right: auto;
         margin-left: auto; }
-      @media (max-width: 800px) {
-        .single-team--main--content {
-          width: 100%;
-          border-right: none; } }
-    .single-team--main--side {
-      width: 33.3333%;
+    .single-team .main .side {
+      width: 340px;
       float: left;
       padding: 20px;
       margin-top: 20px; }
       @media (max-width: 800px) {
-        .single-team--main--side {
+        .single-team .main .side {
           width: 100%;
-          border-top: 1px solid #b4b4b4; } }
-      .single-team--main--side--header {
-        border: 1px solid #b4b4b4;
-        margin-bottom: 20px;
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+          border-top: 1px solid #e6e6e6; } }
+      .single-team .main .side .header {
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -3870,16 +3978,23 @@ footer {
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
         user-select: none;
-        padding: 10px;
-        background: white;
-        border: 1px solid #b4b4b4;
         margin-right: 7px;
-        margin-bottom: 10px; }
-      .single-team--main--side--links {
+        background: white;
+        margin-bottom: 20px;
+        padding: 20px;
+        color: black;
+        border: 1px solid #b4b4b4;
+        display: inline-block;
+        font-family: "Archivo", sans-serif;
+        font-size: 18px;
+        line-height: 1.2em;
+        margin-left: 0;
+        font-weight: bold; }
+      .single-team .main .side .links {
         display: block;
         margin-bottom: 20px; }
-        .single-team--main--side--links--item {
-          font-family: 'Archivo', sans-serif;
+        .single-team .main .side .links .link {
+          font-family: "Archivo", sans-serif;
           font-size: 18px;
           line-height: 1.2em;
           width: auto;
@@ -3888,13 +4003,14 @@ footer {
           padding: 20px;
           border: 1px solid #b4b4b4;
           margin-bottom: 20px; }
-          .single-team--main--side--links--item:hover {
+          .single-team .main .side .links .link:hover {
             background: #e6e6e6; }
-      .single-team--main--side--subproject {
+      .single-team .main .side .subproject {
         display: block;
-        margin-bottom: 20px; }
-        .single-team--main--side--subproject--item {
-          font-family: 'Archivo', sans-serif;
+        margin-bottom: 20px;
+        padding-top: 0; }
+        .single-team .main .side .subproject .subproject-item {
+          font-family: "Archivo", sans-serif;
           font-size: 18px;
           line-height: 1.2em;
           margin-right: auto;
@@ -3903,189 +4019,168 @@ footer {
           text-align: center;
           padding: 20px;
           border: 1px solid #b4b4b4; }
-          .single-team--main--side--subproject--item:hover {
+          .single-team .main .side .subproject .subproject-item:hover {
             background: #e6e6e6; }
-    .single-team--main--related {
+    .single-team .main .related {
       float: left;
       width: 100%;
-      padding-bottom: 200px;
-      background: white;
-      margin-top: 60px;
-      width: calc(100% - 60px);
-      margin-right: 30px;
-      margin-left: 30px;
-      display: flex;
-      flex-wrap: wrap;
       margin-top: 0; }
-      @media (max-width: 800px) {
-        .single-team--main--related {
-          margin-right: 0px;
-          margin-left: 0px;
-          width: 100%; } }
-      .single-team--main--related--header {
-        margin-bottom: 40px;
-        padding: 20px;
-        color: black;
-        border: 1px solid #b4b4b4;
-        display: inline-block;
-        font-family: 'Archivo', sans-serif;
-        font-size: 18px;
-        line-height: 1.2em; }
+      .single-team .main .related .list {
+        background: white;
+        width: calc(100% - 60px);
+        margin-right: 30px;
+        margin-left: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 20px; }
         @media (max-width: 800px) {
-          .single-team--main--related--header {
-            margin-left: 20px; } }
-      .single-team--main--related--item__list {
-        width: 100%;
-        display: block;
-        border-bottom: 1px solid #b4b4b4;
-        padding: 20px;
-        height: auto;
-        margin-bottom: 0;
-        position: relative; }
-        @media (max-width: 800px) {
-          .single-team--main--related--item__list {
+          .single-team .main .related .list {
+            margin-right: 0;
+            margin-left: 0;
             width: 100%; } }
-        .single-team--main--related--item__list:hover {
-          background: #e6e6e6; }
-        .single-team--main--related--item__list--text {
-          width: calc(100% - 200px);
-          float: left; }
+        .single-team .main .related .list .header {
+          margin-bottom: 20px;
+          padding: 20px;
+          color: black;
+          border: 1px solid #b4b4b4;
+          display: inline-block;
+          font-family: "Archivo", sans-serif;
+          font-size: 18px;
+          line-height: 1.2em;
+          margin-left: 0;
+          font-weight: bold; }
+        .single-team .main .related .list .item {
+          width: 100%;
+          display: block;
+          border-top: 1px solid #b4b4b4;
+          padding: 10px;
+          padding-top: 20px;
+          height: auto;
+          margin-bottom: 0;
+          position: relative;
+          transition: background 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
           @media (max-width: 800px) {
-            .single-team--main--related--item__list--text {
+            .single-team .main .related .list .item {
               width: 100%; } }
-          .single-team--main--related--item__list--text--meta {
-            margin-right: 20px;
-            height: auto;
-            width: 100%;
+          .single-team .main .related .list .item .text {
+            width: calc(100% - 200px);
             float: left; }
-            .single-team--main--related--item__list--text--meta--provider {
-              font-family: 'space mono', 'Courier New', Courier, monospace;
-              font-size: 12px;
+            @media (max-width: 800px) {
+              .single-team .main .related .list .item .text {
+                width: 100%; } }
+            .single-team .main .related .list .item .text .meta {
+              margin-right: 20px;
+              height: auto;
+              width: 100%;
+              float: left; }
+              .single-team .main .related .list .item .text .meta .provider {
+                font-family: "space mono", "Courier New", Courier, monospace;
+                font-size: 12px;
+                line-height: 1.2em;
+                display: inline-block;
+                margin-right: 7px;
+                color: black;
+                padding: 10px;
+                border: 1px solid #e6e6e6;
+                background: #e6e6e6;
+                user-select: none; }
+              .single-team .main .related .list .item .text .meta .date {
+                font-family: "space mono", "Courier New", Courier, monospace;
+                font-size: 12px;
+                line-height: 1.2em;
+                padding: 7px;
+                display: inline-block;
+                color: #646464;
+                color: black;
+                padding: 10px;
+                border: 1px solid #e6e6e6;
+                background: #e6e6e6;
+                user-select: none;
+                margin-bottom: 7px; }
+              .single-team .main .related .list .item .text .meta .author {
+                font-family: "space mono", "Courier New", Courier, monospace;
+                font-size: 12px;
+                line-height: 1.2em;
+                display: inline-block;
+                margin-right: 7px;
+                color: black;
+                padding: 10px;
+                border: 1px solid #e6e6e6;
+                background: #e6e6e6;
+                user-select: none;
+                display: inline-block;
+                margin-right: 7px;
+                margin-bottom: 7px; }
+            .single-team .main .related .list .item .text .title {
+              font-family: "Archivo", sans-serif;
+              font-size: 18px;
               line-height: 1.2em;
-              display: inline-block;
-              margin-right: 7px;
               color: black;
-              padding: 10px;
-              border: 1px solid #e6e6e6;
-              background: #e6e6e6;
-              user-select: none; }
-            .single-team--main--related--item__list--text--meta--comments {
-              background: #7df4b4;
-              border: 1px solid #7df4b4; }
-            .single-team--main--related--item__list--text--meta--date {
-              font-family: 'space mono', 'Courier New', Courier, monospace;
+              float: left;
+              height: auto;
+              max-width: 40ch; }
+          .single-team .main .related .list .item .tags {
+            margin-top: 10px; }
+            .single-team .main .related .list .item .tags .tag {
+              font-family: "space mono", "Courier New", Courier, monospace;
               font-size: 12px;
               line-height: 1.2em;
               padding: 7px;
+              border-radius: 5px;
+              margin-right: 4px;
+              margin-bottom: 6px;
               display: inline-block;
-              color: #646464;
-              padding: 10px;
-              border: 1px solid #e6e6e6;
-              background: #e6e6e6;
-              user-select: none;
-              margin-bottom: 7px; }
-            .single-team--main--related--item__list--text--meta--comments {
-              font-family: 'space mono', 'Courier New', Courier, monospace;
-              font-size: 12px;
-              line-height: 1.2em;
-              display: inline-block;
-              margin-right: 7px;
+              z-index: 10;
+              position: relative;
+              text-decoration: none !important;
               color: black;
-              padding: 10px;
-              border: 1px solid #e6e6e6;
-              background: #e6e6e6;
               user-select: none;
-              background: #7df4b4;
-              border: 1px solid #7df4b4; }
-            .single-team--main--related--item__list--text--meta--author {
-              font-family: 'space mono', 'Courier New', Courier, monospace;
-              font-size: 12px;
-              line-height: 1.2em;
-              display: inline-block;
-              margin-right: 7px;
-              color: black;
-              padding: 10px;
-              border: 1px solid #e6e6e6;
-              background: #e6e6e6;
-              user-select: none;
-              display: inline-block;
-              margin-right: 7px;
-              margin-bottom: 7px; }
-          .single-team--main--related--item__list--text--title {
-            font-family: 'Archivo', sans-serif;
-            font-size: 18px;
-            line-height: 1.2em;
-            color: black;
-            float: left;
-            height: auto;
-            max-width: 40ch; }
-        .single-team--main--related--item__list--tags {
-          width: calc(100% - 400px);
-          float: left;
-          z-index: 10; }
-          .single-team--main--related--item__list--tags--item {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
-            font-size: 12px;
-            line-height: 1.2em;
-            padding: 7px;
-            border-radius: 5px;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            display: inline-block;
-            z-index: 10;
-            position: relative;
-            text-decoration: none !important;
-            color: black;
-            background: #ffff8a; }
-            .single-team--main--related--item__list--tags--item:hover {
-              background: yellow; }
-          @media (max-width: 800px) {
-            .single-team--main--related--item__list--tags {
-              width: 100%; } }
-        .single-team--main--related--item__list--link {
-          width: 100%;
-          height: 100%;
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 0; }
-        .single-team--main--related--item__list--image {
-          width: 200px;
-          height: 200px;
-          float: right; }
-          @media (max-width: 800px) {
-            .single-team--main--related--item__list--image {
-              display: none; } }
-          .single-team--main--related--item__list--image img {
+              background: #ffff8a; }
+              .single-team .main .related .list .item .tags .tag:hover {
+                background: yellow;
+                transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+              @media (max-width: 800px) {
+                .single-team .main .related .list .item .tags .tag {
+                  padding: 5px; } }
+            @media (max-width: 800px) {
+              .single-team .main .related .list .item .tags {
+                width: 100%; } }
+          .single-team .main .related .list .item .link {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 1; }
-        .single-team--main--related--item__list--text--title {
-          font-family: 'Archivo', sans-serif;
-          font-size: 18px;
-          line-height: 1.2em; }
-      .single-team--main--related--header {
-        font-family: 'Archivo', sans-serif;
-        font-size: 18px;
-        line-height: 1.2em;
-        color: black;
-        padding: 20px;
-        border: 1px solid #b4b4b4;
-        margin-left: 30px;
-        font-weight: bold;
-        display: inline-block;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        margin-left: 0px; }
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; }
+          .single-team .main .related .list .item .image {
+            width: 200px;
+            height: 200px;
+            float: right; }
+            @media (max-width: 800px) {
+              .single-team .main .related .list .item .image {
+                display: none; } }
+            .single-team .main .related .list .item .image img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              opacity: 1; }
+          .single-team .main .related .list .item:hover {
+            background: #e6e6e6;
+            transition: none;
+            border-top: 1px solid #e6e6e6; }
+            .single-team .main .related .list .item:hover .icon .reply-label {
+              opacity: 1; }
+            .single-team .main .related .list .item:hover .text .meta .date,
+            .single-team .main .related .list .item:hover .text .meta .author {
+              border: 1px solid #b4b4b4; }
 
 .subproject {
   padding-top: 50px;
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 17px;
   line-height: 28px; }
-  .subproject--top {
+  .subproject .top {
     width: 100%;
     height: auto;
     display: flex;
@@ -4094,83 +4189,105 @@ footer {
     color: black;
     border-bottom: 1px solid #b4b4b4; }
     @media (max-width: 800px) {
-      .subproject--top {
+      .subproject .top {
         flex-wrap: wrap; } }
-    .subproject--top--text {
-      width: 66.6666%;
-      background: white;
+    .subproject .top .text {
+      width: calc(100% - 340px);
       padding: 20px 40px 20px 40px; }
       @media (max-width: 800px) {
-        .subproject--top--text {
+        .subproject .top .text {
           width: 100%;
           padding: 10px 20px 21px 20px; } }
-      .subproject--top--text--date {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+      .subproject .top .text .date {
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
         display: inline-block;
         color: #646464;
+        color: black;
         padding: 10px;
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
         user-select: none; }
+      .subproject .top .text .subproject {
+        font-family: "space mono", "Courier New", Courier, monospace;
+        font-size: 12px;
+        line-height: 1.2em;
+        display: inline-block;
+        margin-right: 7px;
+        color: black;
+        padding: 10px;
+        border: 1px solid #e6e6e6;
+        background: transparent;
+        user-select: none;
+        margin-right: 20px; }
+        .subproject .top .text .subproject:hover {
+          background: #e6e6e6;
+          transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
         @media (max-width: 800px) {
-          .subproject--top--text--date {
+          .subproject .top .text .subproject {
             display: none; } }
-      .subproject--top--text--title {
-        font-family: 'Archivo', sans-serif;
+      .subproject .top .text .tags {
+        margin-top: 10px; }
+        .subproject .top .text .tags .tag {
+          font-family: "space mono", "Courier New", Courier, monospace;
+          font-size: 12px;
+          line-height: 1.2em;
+          padding: 7px;
+          border-radius: 5px;
+          margin-right: 4px;
+          margin-bottom: 6px;
+          display: inline-block;
+          z-index: 10;
+          position: relative;
+          text-decoration: none !important;
+          color: black;
+          user-select: none;
+          background: #ffff8a; }
+          .subproject .top .text .tags .tag:hover {
+            background: yellow;
+            transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+          @media (max-width: 800px) {
+            .subproject .top .text .tags .tag {
+              padding: 5px; } }
+        @media (max-width: 800px) {
+          .subproject .top .text .tags {
+            width: 100%; } }
+      .subproject .top .text .title {
+        font-family: "Archivo", sans-serif;
         font-size: 46px;
         line-height: 1em;
         font-weight: bold;
-        margin-top: 20px;
-        margin-bottom: 0; }
-      .subproject--top--text--author {
-        padding: 10px;
-        margin-top: 20px;
-        display: inline-block;
-        margin-bottom: 60px; }
-        .subproject--top--text--author:hover {
-          background: #e6e6e6; }
-        .subproject--top--text--author--image {
-          float: left;
-          width: 50px;
-          height: 50px;
-          background: #b4b4b4;
-          border-radius: 50px;
-          overflow: hidden; }
-          .subproject--top--text--author--image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; }
-        .subproject--top--text--author--name {
-          font-family: 'Archivo', sans-serif;
-          font-size: 18px;
-          line-height: 1.2em;
-          float: left;
-          margin-left: 7px;
-          color: black;
-          line-height: 50px; }
-    .subproject--top--image {
+        margin-top: 10px;
+        margin-bottom: 0;
+        max-width: 95%; }
+        @media (max-width: 800px) {
+          .subproject .top .text .title {
+            font-family: "Archivo", sans-serif;
+            font-size: 18px;
+            line-height: 1.2em; } }
+    .subproject .top .image {
       width: 33.3333%;
       border-left: 1px solid #b4b4b4;
       margin-bottom: 20px;
       margin-top: 20px;
       padding-left: 20px;
+      width: 320px;
       margin-right: 20px; }
       @media (max-width: 800px) {
-        .subproject--top--image {
+        .subproject .top .image {
           width: 100%;
           border-left: none; } }
-      .subproject--top--image--divider {
+      .subproject .top .image--divider {
         margin-top: 20px;
         border-bottom: 1px solid #b4b4b4;
         margin-bottom: 20px; }
-      .subproject--top--image--tags {
+      .subproject .top .image--tags {
         padding-top: 10px;
         margin-right: 20px; }
-        .subproject--top--image--tags--item {
-          font-family: 'space mono', 'Courier New', Courier, monospace;
+        .subproject .top .image--tags--item {
+          font-family: "space mono", "Courier New", Courier, monospace;
           font-size: 12px;
           line-height: 1.2em;
           padding: 7px;
@@ -4183,10 +4300,10 @@ footer {
           text-decoration: none !important;
           color: black;
           background: #ffff8a; }
-          .subproject--top--image--tags--item:hover {
+          .subproject .top .image--tags--item:hover {
             background: yellow; }
-      .subproject--top--image--subproject {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+      .subproject .top .image--subproject {
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -4198,15 +4315,16 @@ footer {
         user-select: none;
         margin-right: 20px; }
         @media (max-width: 800px) {
-          .subproject--top--image--subproject {
+          .subproject .top .image--subproject {
             display: none; } }
-      .subproject--top--image--date {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+      .subproject .top .image--date {
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
         display: inline-block;
         color: #646464;
+        color: black;
         padding: 10px;
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
@@ -4214,45 +4332,52 @@ footer {
         display: inline-block;
         margin-right: 7px; }
         @media (max-width: 800px) {
-          .subproject--top--image--date {
+          .subproject .top .image--date {
             display: none; } }
-      .subproject--top--image img {
+      .subproject .top .image img {
         width: 100%;
         height: 100%;
+        min-height: 300px;
         object-fit: cover; }
-  .subproject--main {
+  .subproject .main {
     width: 100%;
     min-height: 80vh;
     height: auto;
     display: inline-block; }
-    .subproject--main--content {
+    .subproject .main .content {
       padding-top: 40px;
-      padding-bottom: 60px;
-      width: 66.6666%;
-      float: left;
-      width: 66.6666%;
-      float: left;
-      padding-bottom: 0px;
-      border-right: 1px solid #b4b4b4;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding-top: 0px;
-      border-bottom: none; }
-      .subproject--main--content a {
-        border-bottom: 1px solid black; }
-        .subproject--main--content a:hover {
-          border-bottom: 1px solid #b4b4b4; }
-      .subproject--main--content p, .subproject--main--content ul, .subproject--main--content ol, .subproject--main--content li {
-        font-family: 'Noto Serif', serif;
+      padding-bottom: 40px;
+      width: calc(100% - 340px);
+      float: left; }
+      @media (max-width: 800px) {
+        .subproject .main .content {
+          width: 100%; } }
+      .subproject .main .content a {
+        text-decoration: none;
+        border-bottom: 1px solid #646464;
+        transition: border 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        .subproject .main .content a:hover {
+          border-bottom: 1px solid #e6e6e6; }
+      .subproject .main .content p,
+      .subproject .main .content ul,
+      .subproject .main .content ol,
+      .subproject .main .content li {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
-        width: 70ch;
+        width: 75ch;
         margin-bottom: 20px;
-        max-width: 90%;
+        max-width: 80%;
         margin-right: auto;
-        margin-left: 40px; }
-      .subproject--main--content h1, .subproject--main--content h2, .subproject--main--content h3, .subproject--main--content h4 {
-        font-family: 'Noto Serif', serif;
+        margin-left: 40px;
+        margin-top: 0; }
+      .subproject .main .content li {
+        max-width: 90%; }
+      .subproject .main .content h1,
+      .subproject .main .content h2,
+      .subproject .main .content h3,
+      .subproject .main .content h4 {
+        font-family: "Noto Serif", serif;
         font-size: 17px;
         line-height: 28px;
         width: 70ch;
@@ -4262,32 +4387,28 @@ footer {
         padding-top: 20px;
         margin-bottom: 20px;
         font-weight: bold; }
-      .subproject--main--content li {
-        margin-left: 0em; }
-      .subproject--main--content blockquote p {
+      .subproject .main .content img {
+        max-width: 80%; }
+      .subproject .main .content li {
+        margin-left: 0; }
+      .subproject .main .content blockquote p {
         font-size: 17px;
         line-height: 1.2em;
         padding-left: 30px;
         padding-right: 30px;
         margin-right: auto;
         margin-left: auto; }
-      @media (max-width: 800px) {
-        .subproject--main--content {
-          width: 100%;
-          border-right: none; } }
-    .subproject--main--side {
-      width: 33.3333%;
+    .subproject .main .side {
+      width: 340px;
       float: left;
       padding: 20px;
       margin-top: 20px; }
       @media (max-width: 800px) {
-        .subproject--main--side {
+        .subproject .main .side {
           width: 100%;
-          border-top: 1px solid #b4b4b4; } }
-      .subproject--main--side--header {
-        border: 1px solid #b4b4b4;
-        margin-bottom: 20px;
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+          border-top: 1px solid #e6e6e6; } }
+      .subproject .main .side .header {
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         display: inline-block;
@@ -4297,13 +4418,20 @@ footer {
         border: 1px solid #e6e6e6;
         background: #e6e6e6;
         user-select: none;
-        padding: 10px;
-        background: white;
-        border: 1px solid #b4b4b4;
         margin-right: 7px;
-        margin-bottom: 10px; }
-      .subproject--main--side--tags--item {
-        font-family: 'space mono', 'Courier New', Courier, monospace;
+        background: white;
+        margin-bottom: 20px;
+        padding: 20px;
+        color: black;
+        border: 1px solid #b4b4b4;
+        display: inline-block;
+        font-family: "Archivo", sans-serif;
+        font-size: 18px;
+        line-height: 1.2em;
+        margin-left: 0;
+        font-weight: bold; }
+      .subproject .main .side .tags--item {
+        font-family: "space mono", "Courier New", Courier, monospace;
         font-size: 12px;
         line-height: 1.2em;
         padding: 7px;
@@ -4316,193 +4444,183 @@ footer {
         text-decoration: none !important;
         color: black;
         background: #ffff8a; }
-        .subproject--main--side--tags--item:hover {
+        .subproject .main .side .tags--item:hover {
           background: yellow; }
-      .subproject--main--side--team {
+      .subproject .main .side .team {
         display: block;
         margin-bottom: 20px; }
-        .subproject--main--side--team--item {
-          font-family: 'Archivo', sans-serif;
+        .subproject .main .side .team .author {
+          font-family: "Archivo", sans-serif;
           font-size: 18px;
           line-height: 1.2em;
           padding: 10px;
           display: inline-block; }
-          .subproject--main--side--team--item:hover {
+          .subproject .main .side .team .author:hover {
             background: #e6e6e6; }
-    .subproject--main--related {
+          .subproject .main .side .team .author .name {
+            font-family: "Archivo", sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%; }
+          .subproject .main .side .team .author .image {
+            margin-bottom: 10px; }
+            .subproject .main .side .team .author .image img {
+              width: 140px;
+              border-radius: 140px; }
+    .subproject .main .related {
       float: left;
       width: 100%;
-      padding-bottom: 200px;
-      background: white;
-      margin-top: 60px;
-      width: calc(100% - 60px);
-      margin-right: 30px;
-      margin-left: 30px;
-      display: flex;
-      flex-wrap: wrap;
       margin-top: 0; }
-      @media (max-width: 800px) {
-        .subproject--main--related {
-          margin-right: 0px;
-          margin-left: 0px;
-          width: 100%; } }
-      .subproject--main--related--header {
-        margin-bottom: 40px;
-        padding: 20px;
-        color: black;
-        border: 1px solid #b4b4b4;
-        display: inline-block;
-        font-family: 'Archivo', sans-serif;
-        font-size: 18px;
-        line-height: 1.2em; }
+      .subproject .main .related .list {
+        background: white;
+        width: calc(100% - 60px);
+        margin-right: 30px;
+        margin-left: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 20px; }
         @media (max-width: 800px) {
-          .subproject--main--related--header {
-            margin-left: 20px; } }
-      .subproject--main--related--item__list {
-        width: 100%;
-        display: block;
-        border-bottom: 1px solid #b4b4b4;
-        padding: 20px;
-        height: auto;
-        margin-bottom: 0;
-        position: relative; }
-        @media (max-width: 800px) {
-          .subproject--main--related--item__list {
+          .subproject .main .related .list {
+            margin-right: 0;
+            margin-left: 0;
             width: 100%; } }
-        .subproject--main--related--item__list:hover {
-          background: #e6e6e6; }
-        .subproject--main--related--item__list--text {
-          width: calc(100% - 200px);
-          float: left; }
+        .subproject .main .related .list .header {
+          margin-bottom: 20px;
+          padding: 20px;
+          color: black;
+          border: 1px solid #b4b4b4;
+          display: inline-block;
+          font-family: "Archivo", sans-serif;
+          font-size: 18px;
+          line-height: 1.2em;
+          margin-left: 0;
+          font-weight: bold; }
+        .subproject .main .related .list .item {
+          width: 100%;
+          display: block;
+          border-top: 1px solid #b4b4b4;
+          padding: 10px;
+          padding-top: 20px;
+          height: auto;
+          margin-bottom: 0;
+          position: relative;
+          transition: background 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
           @media (max-width: 800px) {
-            .subproject--main--related--item__list--text {
+            .subproject .main .related .list .item {
               width: 100%; } }
-          .subproject--main--related--item__list--text--meta {
-            margin-right: 20px;
-            height: auto;
-            width: 100%;
+          .subproject .main .related .list .item .text {
+            width: calc(100% - 200px);
             float: left; }
-            .subproject--main--related--item__list--text--meta--provider {
-              font-family: 'space mono', 'Courier New', Courier, monospace;
-              font-size: 12px;
+            @media (max-width: 800px) {
+              .subproject .main .related .list .item .text {
+                width: 100%; } }
+            .subproject .main .related .list .item .text .meta {
+              margin-right: 20px;
+              height: auto;
+              width: 100%;
+              float: left; }
+              .subproject .main .related .list .item .text .meta .provider {
+                font-family: "space mono", "Courier New", Courier, monospace;
+                font-size: 12px;
+                line-height: 1.2em;
+                display: inline-block;
+                margin-right: 7px;
+                color: black;
+                padding: 10px;
+                border: 1px solid #e6e6e6;
+                background: #e6e6e6;
+                user-select: none; }
+              .subproject .main .related .list .item .text .meta .date {
+                font-family: "space mono", "Courier New", Courier, monospace;
+                font-size: 12px;
+                line-height: 1.2em;
+                padding: 7px;
+                display: inline-block;
+                color: #646464;
+                color: black;
+                padding: 10px;
+                border: 1px solid #e6e6e6;
+                background: #e6e6e6;
+                user-select: none;
+                margin-bottom: 7px; }
+              .subproject .main .related .list .item .text .meta .author {
+                font-family: "space mono", "Courier New", Courier, monospace;
+                font-size: 12px;
+                line-height: 1.2em;
+                display: inline-block;
+                margin-right: 7px;
+                color: black;
+                padding: 10px;
+                border: 1px solid #e6e6e6;
+                background: #e6e6e6;
+                user-select: none;
+                display: inline-block;
+                margin-right: 7px;
+                margin-bottom: 7px; }
+            .subproject .main .related .list .item .text .title {
+              font-family: "Archivo", sans-serif;
+              font-size: 18px;
               line-height: 1.2em;
-              display: inline-block;
-              margin-right: 7px;
               color: black;
-              padding: 10px;
-              border: 1px solid #e6e6e6;
-              background: #e6e6e6;
-              user-select: none; }
-            .subproject--main--related--item__list--text--meta--comments {
-              background: #7df4b4;
-              border: 1px solid #7df4b4; }
-            .subproject--main--related--item__list--text--meta--date {
-              font-family: 'space mono', 'Courier New', Courier, monospace;
+              float: left;
+              height: auto;
+              max-width: 40ch; }
+          .subproject .main .related .list .item .tags {
+            margin-top: 10px; }
+            .subproject .main .related .list .item .tags .tag {
+              font-family: "space mono", "Courier New", Courier, monospace;
               font-size: 12px;
               line-height: 1.2em;
               padding: 7px;
+              border-radius: 5px;
+              margin-right: 4px;
+              margin-bottom: 6px;
               display: inline-block;
-              color: #646464;
-              padding: 10px;
-              border: 1px solid #e6e6e6;
-              background: #e6e6e6;
-              user-select: none;
-              margin-bottom: 7px; }
-            .subproject--main--related--item__list--text--meta--comments {
-              font-family: 'space mono', 'Courier New', Courier, monospace;
-              font-size: 12px;
-              line-height: 1.2em;
-              display: inline-block;
-              margin-right: 7px;
+              z-index: 10;
+              position: relative;
+              text-decoration: none !important;
               color: black;
-              padding: 10px;
-              border: 1px solid #e6e6e6;
-              background: #e6e6e6;
               user-select: none;
-              background: #7df4b4;
-              border: 1px solid #7df4b4; }
-            .subproject--main--related--item__list--text--meta--author {
-              font-family: 'space mono', 'Courier New', Courier, monospace;
-              font-size: 12px;
-              line-height: 1.2em;
-              display: inline-block;
-              margin-right: 7px;
-              color: black;
-              padding: 10px;
-              border: 1px solid #e6e6e6;
-              background: #e6e6e6;
-              user-select: none;
-              display: inline-block;
-              margin-right: 7px;
-              margin-bottom: 7px; }
-          .subproject--main--related--item__list--text--title {
-            font-family: 'Archivo', sans-serif;
-            font-size: 18px;
-            line-height: 1.2em;
-            color: black;
-            float: left;
-            height: auto;
-            max-width: 40ch; }
-        .subproject--main--related--item__list--tags {
-          width: calc(100% - 400px);
-          float: left;
-          z-index: 10; }
-          .subproject--main--related--item__list--tags--item {
-            font-family: 'space mono', 'Courier New', Courier, monospace;
-            font-size: 12px;
-            line-height: 1.2em;
-            padding: 7px;
-            border-radius: 5px;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            display: inline-block;
-            z-index: 10;
-            position: relative;
-            text-decoration: none !important;
-            color: black;
-            background: #ffff8a; }
-            .subproject--main--related--item__list--tags--item:hover {
-              background: yellow; }
-          @media (max-width: 800px) {
-            .subproject--main--related--item__list--tags {
-              width: 100%; } }
-        .subproject--main--related--item__list--link {
-          width: 100%;
-          height: 100%;
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 0; }
-        .subproject--main--related--item__list--image {
-          width: 200px;
-          height: 200px;
-          float: right; }
-          @media (max-width: 800px) {
-            .subproject--main--related--item__list--image {
-              display: none; } }
-          .subproject--main--related--item__list--image img {
+              background: #ffff8a; }
+              .subproject .main .related .list .item .tags .tag:hover {
+                background: yellow;
+                transition: background 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+              @media (max-width: 800px) {
+                .subproject .main .related .list .item .tags .tag {
+                  padding: 5px; } }
+            @media (max-width: 800px) {
+              .subproject .main .related .list .item .tags {
+                width: 100%; } }
+          .subproject .main .related .list .item .link {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 1; }
-        .subproject--main--related--item__list--text--title {
-          font-family: 'Archivo', sans-serif;
-          font-size: 18px;
-          line-height: 1.2em; }
-      .subproject--main--related--header {
-        font-family: 'Archivo', sans-serif;
-        font-size: 18px;
-        line-height: 1.2em;
-        color: black;
-        padding: 20px;
-        border: 1px solid #b4b4b4;
-        margin-left: 30px;
-        font-weight: bold;
-        display: inline-block;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        margin-left: 20px; }
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; }
+          .subproject .main .related .list .item .image {
+            width: 200px;
+            height: 200px;
+            float: right; }
+            @media (max-width: 800px) {
+              .subproject .main .related .list .item .image {
+                display: none; } }
+            .subproject .main .related .list .item .image img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              opacity: 1; }
+          .subproject .main .related .list .item:hover {
+            background: #e6e6e6;
+            transition: none;
+            border-top: 1px solid #e6e6e6; }
+            .subproject .main .related .list .item:hover .icon .reply-label {
+              opacity: 1; }
+            .subproject .main .related .list .item:hover .text .meta .date,
+            .subproject .main .related .list .item:hover .text .meta .author {
+              border: 1px solid #b4b4b4; }
 
 .pl-form {
   width: 100%;
@@ -4511,20 +4629,20 @@ footer {
   display: inline-block;
   padding: 30px;
   padding-top: 60px;
-  font-family: 'Archivo', sans-serif;
+  font-family: "Archivo", sans-serif;
   font-size: 18px;
   line-height: 1.2em; }
   .pl-form h1, .pl-form h2 {
-    font-family: 'Archivo', sans-serif;
+    font-family: "Archivo", sans-serif;
     font-size: 18px;
     line-height: 1.2em; }
   .pl-form p {
-    font-family: 'Archivo', sans-serif;
+    font-family: "Archivo", sans-serif;
     font-size: 18px;
     line-height: 1.2em; }
   .pl-form .email-field {
     outline: 0;
-    font-family: 'Archivo', sans-serif;
+    font-family: "Archivo", sans-serif;
     font-size: 18px;
     line-height: 1.2em;
     border: 1px solid black;
@@ -4533,7 +4651,7 @@ footer {
     max-width: 95vw; }
   .pl-form .submit-button {
     outline: 0;
-    font-family: 'Archivo', sans-serif;
+    font-family: "Archivo", sans-serif;
     font-size: 18px;
     line-height: 1.2em;
     border: 1px solid black;
@@ -4543,7 +4661,7 @@ footer {
     .pl-form .submit-button:hover {
       background: #e6e6e6; }
   .pl-form label {
-    font-family: 'Archivo', sans-serif;
+    font-family: "Archivo", sans-serif;
     font-size: 18px;
     line-height: 1.2em; }
   .pl-form .form-field {

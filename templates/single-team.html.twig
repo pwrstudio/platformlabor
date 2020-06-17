@@ -6,50 +6,52 @@
     <article class="single-team">
 
       {# TOP #}
-      <div class="single-team--top">
+      <div class="top">
 
         {# Text #}
-        <div class='single-team--top--text'>
+        <div class='text'>
           {# Title #}
-          <h1 class='single-team--top--text--title'>{{page.title}}</h1>
+          <h1 class='title'>{{page.title}}</h1>
         </div>
 
         {# Meta #}
-        <div class='single-team--top--image'>
+        <div class='image'>
           {{ page.media[page.header.featured_image].cropResize(900).grayscale().html('', latestNote.title|escape)}}
         </div>
 
       </div>
 
       {# MAIN #}
-      <div class="single-team--main">
+      <div class="main">
 
         {# CONTENT #}
-        <div class="single-team--main--content">
+        <div class="content">
           {{ page.content }}
         </div>
 
         {# SIDEBAR #}
-        <div class="single-team--main--side">
+        <div class="side">
 
-          <div class='single-team--main--side--header'>Research Project</div>
+          {# SUBPROJECT #}
+          {% set subproject = page.find(page.header.subproject) %}
+          {% if subproject %}
+            <div class='header'>Research Project</div>
+            <div class="subproject">
+              <a href='{{ base_url }}{{ page.header.subproject }}' class="subproject-item">
+                <span>{{ subproject.title }}</span>
+              </a>
+            </div>
+          {% endif %}
 
-          <div class="single-team--main--side--subproject">
-            {% set subproject = page.find(page.header.subproject) %}
-            <a href='{{ base_url }}{{ page.header.subproject }}' class="single-team--main--side--subproject--item">
-              <span>{{ subproject.title }}</span>
-            </a>
-          </div>
-
-          <div class='single-team--main--side--header'>Links</div>
-
-          <div class="single-team--main--side--links">
-            {% if page.header.links %}
+          {# LINKS #}
+          {% if page.header.links %}
+            <div class='header'>Links</div>
+            <div class="links">
               {% for l in page.header.links %}
-                  <a href='{{ l.url }}' class="single-team--main--side--links--item" target=_blank>{{ l.text }}</a>
+                <a href='{{ l.url }}' class="link" target=_blank>{{ l.text }}</a>
               {% endfor %}
-            {% endif %}
-          </div>
+            </div>
+          {% endif %}
 
         </div>
 
@@ -68,45 +70,48 @@
         {% endfor %}
 
         {% if notes|length > 0 %} 
-          <div class="single-team--main--related">
+          <div class="related">
 
-           <div class="single-team--main--related--header">Notes by {{ page.title }}</div>
+            <div class='list'>
+              
+              <div class="header">Related notes ({{ notes|length }})</div>
 
-            {% for note in notes %}
-              <div href='{{note.url}}' class='subproject--main--related--item__list'>
+              {% for note in notes %}
+                <div href='{{note.url}}' class='item'>
 
-                  <div class='subproject--main--related--item__list--text'>
+                    <a href='{{note.url}}' class='link'></a>
+
+                    <div class='text'>
 
                       {# Meta #}
-                      <div class='subproject--main--related--item__list--text--meta'>
-                          <div class='subproject--main--related--item__list--text--meta--date'>{{ note.date|date('Y-m-d') }}</div>
-                          {# {% set author = page.find(note.header.author) %} #}
-                          {# <div class='subproject--main--related--item__list--text--meta--author'>{{ author.title }}</div> #}
-                          {% for author in note.header.author %}
-                            <div class='subproject--main--related--item__list--text--meta--author'>{{ page.find(author).title }}</div>
-                          {% endfor %}
+                      <div class='meta'>
+                        <div class='date'>{{ note.date|date('Y-m-d') }}</div>
+                        {% for author in note.header.author %}
+                          <div class='author'>{{ page.find(author).title }}</div>
+                        {% endfor %}
                       </div>
-                      
-                      {# Title #}
-                      <h1 class='subproject--main--related--item__list--text--title'><a href='{{note.url}}'>{{note.title}}</a></h1>
+                        
+                        {# Title #}
+                        <h1 class='title'><a href='{{note.url}}'>{{note.title}}</a></h1>
 
-                  </div>
+                    </div>
 
-                  {% if note.header.featured_image %}
-                      <div class='subproject--main--related--item__list--image'>
-                          {{ note.media[note.header.featured_image].html('', note.title|escape)}}
-                      </div>              
-                  {% endif %}
+                    {% if note.header.featured_image %}
+                        <div class='image'>
+                            {{ note.media[note.header.featured_image].cropResize(300).html('', note.title|escape)}}
+                        </div>              
+                    {% endif %}
 
-                  {# Tags #}
-                  <div class='subproject--main--related--item__list--tags'>
+                    {# Tags #}
+                    <div class='tags'>
                       {% for tag in note.taxonomy.tag %}
-                          <a href="{{ base_url }}/filter/tag:{{ tag }}" class="subproject--main--related--item__list--tags--item">{{ tag }}</a>
+                        <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                       {% endfor %}
-                  </div>
-                  
+                    </div>
+                    
                 </div>
-            {% endfor %}      
+              {% endfor %}  
+            </div>    
           </div>
         {% endif %}
       

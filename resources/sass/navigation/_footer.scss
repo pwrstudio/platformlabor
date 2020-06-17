@@ -18,7 +18,7 @@ footer {
             font-weight: bold;
         }
 
-        @include screen-size('small') {
+        @include screen-size("small") {
             display: block;
             width: auto;
             line-height: 2.3em;

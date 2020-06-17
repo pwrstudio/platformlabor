@@ -1,10 +1,10 @@
 .listbar {
     width: 100%;
-    border-bottom: 1px solid $grey-2;
-    padding-left: 20px;
-    padding-right: 20px;
+    // border-bottom: 1px solid $grey-2;
+    padding-left: 0px;
+    padding-right: 0px;
 
-    @include screen-size('small') {
+    @include screen-size("small") {
         display: none;
     }
 
@@ -33,7 +33,8 @@
                 width: 30px;
                 padding: 5px;
                 stroke: black;
-                line, circle {
+                line,
+                circle {
                     stroke: black;
                 }
             }
@@ -42,7 +43,8 @@
                 svg {
                     background: $grey-1;
                     stroke: black;
-                    line, circle {
+                    line,
+                    circle {
                         stroke: black;
                     }
                 }

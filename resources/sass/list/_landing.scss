@@ -5,24 +5,23 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
 
     .item {
-
         &.third {
             margin-top: 10px;
             position: relative;
-            padding: 20px;
+            padding: 10px;
             padding-top: 10px;
             color: $black;
             width: calc(33.3333% - 6px);
-            border-bottom: 1px solid $grey-1;
-            background: linear-gradient(180deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 50%);
+            // border-bottom: 1px solid $grey-2;
+            background: linear-gradient(180deg, rgba(220, 220, 220, 1) 0%, rgba(255, 255, 255, 1) 50%);
             overflow: hidden;
             height: 520px;
             display: flex;
             flex-direction: column;
-    
+
             .link {
                 width: 100%;
                 height: 100%;
@@ -33,111 +32,107 @@
                 z-index: 100;
                 cursor: pointer;
             }
-        
+
             .text {
                 width: 100%;
                 z-index: 10;
                 flex-basis: 60%;
-        
-                @include screen-size('small') {
-                  height: auto;
-                  width: 100%;
+
+                @include screen-size("small") {
+                    height: auto;
+                    width: 100%;
                 }
-        
+
                 .header {
-                  @include font-style-mono;
-                  border-bottom: 1px solid $grey-2;
-                  padding-bottom: 10px;
-                  padding-left: 10px;
-                  margin-bottom: 20px;
-                  text-transform: uppercase;
-                  height: 30px;
-                  line-height: 30px;
-
-                  .section {
-                    float: left;
-                  }
-
-                  .date {
-                    float: right;
-                  }
-                }
-        
-                .tags {
-                  bottom: 0;
-                  float: left;
-                  margin-top: 20px;
-
-                  .tag {
                     @include font-style-mono;
-        
-                    padding: 7px;
-                    border-radius: 5px;
-                    margin-right: 4px;
-                    margin-bottom: 6px; 
-                    display: inline-block;
-                    z-index: 1000;
-                    position: relative;
-                    text-decoration: none !important; 
-                    color: black;
-                    user-select: none;
+                    border-bottom: 1px solid $grey-2;
+                    padding-bottom: 10px;
+                    margin-bottom: 20px;
+                    text-transform: uppercase;
+                    height: 30px;
+                    line-height: 30px;
 
-                    background: $yellow;
-              
-                    &:hover {
-                        background: $dark-yellow;
-                        transition: background 0.3s $easing;
+                    .section {
+                        float: left;
                     }
 
-                    @include screen-size('small') {
-                        padding: 5px;
-                    }
-        
+                    .date {
+                        float: right;
                     }
                 }
-        
+
+                .tags {
+                    bottom: 0;
+                    float: left;
+                    margin-top: 20px;
+
+                    .tag {
+                        @include font-style-mono;
+
+                        padding: 7px;
+                        border-radius: 5px;
+                        margin-right: 4px;
+                        margin-bottom: 6px;
+                        display: inline-block;
+                        z-index: 1000;
+                        position: relative;
+                        text-decoration: none !important;
+                        color: black;
+                        user-select: none;
+
+                        background: $yellow;
+
+                        &:hover {
+                            background: $dark-yellow;
+                            transition: background 0.3s $easing;
+                        }
+
+                        @include screen-size("small") {
+                            padding: 5px;
+                        }
+                    }
+                }
+
                 .title {
                     @include font-style-sans-small;
                     float: left;
                     font-weight: bold;
                     letter-spacing: -0.03em;
                     margin-top: 10px;
+                    max-width: 40ch;
                 }
-        
-                .meta {
 
+                .meta {
                     .date {
                         @include datebox;
                         border: 1px solid $grey-2;
                     }
-        
-                     .provider {
+
+                    .provider {
                         @include greenbox;
                     }
-        
+
                     .author {
                         @include greybox;
                         border: 1px solid $grey-2;
-        
+
                         display: inline-block;
                         margin-right: 7px;
-                        margin-bottom:  7px;
+                        margin-bottom: 7px;
                     }
-                    
                 }
-        
             }
-        
+
             .image {
                 width: 100%;
-                flex-basis: 40%;
-                max-height: 40%;
-        
-                @include screen-size('small') {
+                flex-basis: 45%;
+                max-height: 45%;
+
+                @include screen-size("small") {
                     height: auto;
                     float: right;
                 }
-        
+
                 img {
                     width: 100%;
                     height: 100%;
@@ -145,10 +140,10 @@
                     opacity: 1;
                 }
             }
-        
+
             .button {
                 @include font-style-sans-small;
-        
+
                 margin-right: auto;
                 margin-left: auto;
                 display: block;
@@ -160,7 +155,7 @@
                 }
             }
 
-            @include screen-size('small') {
+            @include screen-size("small") {
                 margin: 15px;
                 width: calc(100% - 30px);
                 width: 100%;
@@ -170,11 +165,11 @@
                 background: $grey-1;
 
                 .landing--item__third--text {
-                  &--meta {
-                    &--date {
-                      border: 1px solid $grey-2;
+                    &--meta {
+                        &--date {
+                            border: 1px solid $grey-2;
+                        }
                     }
-                  }
                 }
             }
         }
@@ -183,7 +178,7 @@
             height: 100px;
             border-bottom: 0;
             background: $white;
-    
+
             &:hover {
                 background: none;
             }
@@ -192,11 +187,11 @@
         &.spaced {
             margin-right: 9px;
         }
-    
+
         &.about {
             @include font-style-sans-small;
             width: 100%;
-        
+
             border-bottom: 1px solid $grey-2;
             padding: 20px;
             margin-bottom: 0;
@@ -212,22 +207,19 @@
             transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
             display: block;
 
-            background: linear-gradient(45deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 150%);
-
+            background: linear-gradient(45deg, rgba(220, 220, 220, 1) 0%, rgba(255, 255, 255, 1) 150%);
 
             &:hover {
-                background: linear-gradient(45deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 150%);
+                background: linear-gradient(45deg, rgba(220, 220, 220, 1) 0%, rgba(255, 255, 255, 1) 150%);
             }
 
-
-            @include screen-size('small') {
+            @include screen-size("small") {
                 height: auto;
                 margin-right: 15px;
                 margin-left: 15px;
                 width: calc(100% - 30px);
             }
 
-        
             p {
                 width: 95%;
             }
@@ -244,13 +236,11 @@
                 padding: 20px;
                 border: 1px solid black;
                 margin-bottom: 15px;
-                
+
                 &:hover {
                     background: white;
                 }
             }
-
         }
-
     }
 }

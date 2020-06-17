@@ -9,8 +9,9 @@
 {% endif %}
             
 <div class="filter">
-
-    <div class='header'>Tag: {{query|join(',')}} ({{ taxonomy.findTaxonomy({tag: query})|length }})</div>
+    <div class='header-container'>
+        <div class='header'>Tag: {{query|join(',')}} ({{ taxonomy.findTaxonomy({tag: query})|length }})</div>
+    </div>
 
     {# LIST #}
     {% for p in taxonomy.findTaxonomy({tag: query}) %}

@@ -5,11 +5,10 @@
 @mixin clearfix {
   &::after {
     clear: both;
-    content: '';
+    content: "";
     display: table;
   }
 }
-
 
 ///
 /// Helper to handle overflowing text
@@ -22,7 +21,6 @@
   white-space: nowrap;
 }
 
-
 ///
 /// Helper to set height and width
 ///
@@ -31,7 +29,6 @@
   height: $height;
   width: $width;
 }
-
 
 ///
 /// Helper to center element vertically and horizontally in parent
@@ -53,7 +50,6 @@
   top: 50%;
   transform: translateY(-50%);
 }
-
 
 ///
 /// Helper to center element horizontally in parent
@@ -77,8 +73,10 @@
 ///
 
 @mixin longread {
-
-  p, ul, ol, li {
+  p,
+  ul,
+  ol,
+  li {
     @include font-style-serif;
     margin-bottom: 20px;
     width: 75ch;
@@ -94,7 +92,7 @@
 
 @mixin h2-header {
   @include font-style-sans-small;
-  
+
   color: black;
   padding: 20px;
   border: 1px solid $grey-2;
@@ -103,16 +101,15 @@
 }
 
 @mixin greybox {
-    @include font-style-mono;
+  @include font-style-mono;
 
-    display: inline-block;
-    margin-right: 7px;
-    color: black;
-    padding: 10px;
-    border: 1px solid $grey-1;
-    background: $grey-1;
-    user-select: none;
-
+  display: inline-block;
+  margin-right: 7px;
+  color: black;
+  padding: 10px;
+  border: 1px solid $grey-1;
+  background: $grey-1;
+  user-select: none;
 }
 
 @mixin greenbox {
@@ -125,7 +122,6 @@
   border: 1px solid $green;
   background: $green;
   user-select: none;
-
 }
 
 @mixin clickbox {
@@ -142,7 +138,6 @@
   &:hover {
     background: $grey-1;
     transition: background 0.3s $easing;
-
   }
 }
 
@@ -152,11 +147,11 @@
   padding: 7px;
   display: inline-block;
   color: $grey-3;
+  color: black;
   padding: 10px;
   border: 1px solid $grey-1;
   background: $grey-1;
   user-select: none;
-
 }
 
 @mixin tag {
@@ -166,12 +161,12 @@
     padding: 7px;
     border-radius: 5px;
     margin-right: 5px;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
     display: inline-block;
     z-index: 10;
     position: relative;
-    
-    text-decoration: none !important; 
+
+    text-decoration: none !important;
 
     color: black;
 
@@ -179,46 +174,46 @@
     background: $yellow;
 
     &:hover {
-        background: $dark-yellow;
-        // border: 1px solid $grey-2;
+      background: $dark-yellow;
+      // border: 1px solid $grey-2;
     }
   }
 }
 
 @mixin font-style-mono {
-  font-family: 'space mono', 'Courier New', Courier, monospace;
+  font-family: "space mono", "Courier New", Courier, monospace;
   font-size: 12px;
-  line-height: 1.2em; 
+  line-height: 1.2em;
 }
 
 @mixin font-style-sans-smaller {
-  font-family: 'Archivo', sans-serif;
+  font-family: "Archivo", sans-serif;
   font-size: 16px;
-  line-height: 1.2em; 
+  line-height: 1.2em;
 }
 
 @mixin font-style-sans-small {
-  font-family: 'Archivo', sans-serif;
+  font-family: "Archivo", sans-serif;
   font-size: 18px;
-  line-height: 1.2em; 
+  line-height: 1.2em;
 }
 
 @mixin font-style-sans-large {
-  font-family: 'Archivo', sans-serif;
+  font-family: "Archivo", sans-serif;
   font-size: 46px;
-  line-height: 1em; 
+  line-height: 1em;
   font-weight: bold;
 }
 
 @mixin font-style-sans-medium {
-  font-family: 'Archivo', sans-serif;
+  font-family: "Archivo", sans-serif;
   font-size: 32px;
-  line-height: 1em; 
+  line-height: 1em;
   font-weight: bold;
 }
 
 @mixin font-style-serif {
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 17px;
   line-height: 28px;
 }

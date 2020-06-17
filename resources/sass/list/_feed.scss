@@ -4,19 +4,19 @@
   margin-left: $main-margin;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 140px;
-  margin-top: 80px;
+  margin-top: 60px;
+  padding-bottom: 20px;
 
   .header {
-      @include h2-header;
-      margin-left: 0;
+    @include h2-header;
+    margin-left: 0;
 
-      @include screen-size('small') {
-          margin-left: 20px;
-      }
+    @include screen-size("small") {
+      margin-left: 20px;
+    }
   }
 
-  @include screen-size('small') {
+  @include screen-size("small") {
     margin-right: 0;
     margin-left: 0;
     width: 100%;
@@ -29,12 +29,17 @@
 
     &.small {
       display: block;
-      padding: 20px;
+      padding: 10px;
+      padding-top: 15px;
       height: auto;
       margin-bottom: 0;
-      border-bottom: 1px solid $grey-2;
+      border-top: 1px solid $grey-2;
 
-      @include screen-size('small') {
+      &:first-of-type {
+        border-top: 1px solid transparent;
+      }
+
+      @include screen-size("small") {
         width: 100%;
       }
 
@@ -47,12 +52,12 @@
         left: 0;
         z-index: 0;
       }
-  
+
       .text {
         width: calc(100% - 200px);
         float: left;
 
-        @include screen-size('small') {
+        @include screen-size("small") {
           width: 100%;
         }
 
@@ -75,9 +80,8 @@
             margin-right: 7px;
             margin-bottom: 7px;
           }
-
         }
-  
+
         .title {
           @include font-style-sans-small;
 
@@ -98,28 +102,27 @@
           padding: 7px;
           border-radius: 5px;
           margin-right: 4px;
-          margin-bottom: 6px; 
+          margin-bottom: 6px;
           display: inline-block;
           z-index: 10;
           position: relative;
-          text-decoration: none !important; 
+          text-decoration: none !important;
           color: black;
-      
+
           background: $yellow;
-      
+
           &:hover {
             background: $dark-yellow;
             transition: background 0.3s $easing;
           }
 
-          @include screen-size('small') {
+          @include screen-size("small") {
             padding: 5px;
           }
-
         }
 
-        @include screen-size('small') {
-            width: 100%;
+        @include screen-size("small") {
+          width: 100%;
         }
       }
 
@@ -128,15 +131,15 @@
         height: 120px;
         float: right;
 
-        @include screen-size('small') {
+        @include screen-size("small") {
           display: none;
         }
 
         img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 1;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 1;
         }
       }
 
@@ -146,7 +149,8 @@
 
         .text {
           .meta {
-            .date, .author {
+            .date,
+            .author {
               border: 1px solid $grey-2;
             }
           }
@@ -157,8 +161,9 @@
     &.compact {
       display: flex;
       height: auto;
-      border-bottom: 1px solid $grey-2;
-      padding: 20px;
+      border-top: 1px solid $grey-2;
+      padding: 6px;
+      padding-left: 0;
 
       .link {
         width: 100%;
@@ -169,14 +174,13 @@
         left: 0;
         z-index: 0;
       }
-  
+
       .text {
         width: 100%;
-  
+
         .meta {
           float: left;
           margin-right: 10px;
-          margin-bottom: 5px;
           height: 30px;
           width: auto;
 
@@ -189,7 +193,7 @@
             height: 30px;
             line-height: 10px;
           }
-  
+
           .provider {
             @include greenbox;
 
@@ -201,65 +205,64 @@
             height: 30px;
             line-height: 10px;
           }
-  
         }
-  
+
         .tags {
-          float: left;
-          display: block;
+          float: right;
+          height: 100%;
+          display: flex;
+          align-items: center;
 
           .tag {
             @include font-style-mono;
 
-            padding: 2px;
+            padding: 5px;
             border-radius: 2px;
             margin-right: 5px;
-            margin-bottom: 5px; 
+            // margin-bottom: 5px;
             display: inline-block;
             z-index: 10;
             position: relative;
-            
-            text-decoration: none; 
-        
+
+            text-decoration: none;
+
             color: black;
-        
+
             background: $yellow;
-        
+
             &:hover {
               background: $dark-yellow;
               transition: background 0.3s $easing;
             }
-
-
           }
         }
-  
+
         .title {
           @include font-style-sans-smaller;
 
           color: black;
           height: 30px;
           line-height: 30px;
-          width: 100%;
           margin: 0;
+          display: inline-block;
 
           @include truncate-text;
         }
       }
-      
+
       &:hover {
         background: $grey-1;
         transition: background 0.3s $easing;
 
         .text {
           .meta {
-            .date, .author {
+            .date,
+            .author {
               border: 1px solid $grey-2;
             }
           }
         }
       }
     }
-
   }
 }

@@ -25,25 +25,18 @@
 
                 {# LINK OVERLAY :: COMPACT #}
                 <a href='{{p.url}}' class='link'></a>
-
-                {# TEXT :: COMPACT #}
-                <div class='text'>
-
-                    {# META :: COMPACT #}
-                    <div class='meta'>
                         
-                        {# DATE :: COMPACT #}
-                        <div class='date'>{{ p.date|date('Y-m-d') }}</div>
+                    {# DATE :: COMPACT #}
+                    <div class='date'>{{ p.date|date('Y-m-d') }}</div>
 
-                        {# AUTHORS :: COMPACT #}
-                        {% if p.header.author %}
-                         <div class='author'>
-                            {% for author in p.header.author %}
-                                {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
-                            {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
+                    {# AUTHORS :: COMPACT #}
+                    {% if p.header.author %}
+                        <div class='author'>
+                        {% for author in p.header.author %}
+                            {{ page.find(author).title }}{% if loop.length - loop.index == 1 %} & {% elseif loop.length - loop.index > 1%},{% endif %}
+                        {% endfor %}
+                        </div>
+                    {% endif %}
                     
                     {# TITLE :: COMPACT #}
                     <h1 class='title'><a href='{{p.url}}'>{{p.title}}</a></h1>
@@ -54,8 +47,6 @@
                             <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                         {% endfor %}
                     </div> #}
-
-                </div>
                 
             </div>
         {% endfor %}
@@ -110,7 +101,7 @@
         {# POST 2 ... n: SMALL #}
         {% for p in page.collection.slice(1,100) %}
             {% if loop.first %}
-                <div data-aos="fade" data-aos-offset="-200" data-aos-delay="500" class='notes--item small'>
+                <div data-aos="fade" data-aos-offset="-200" class='notes--item small'>
              {% else %}
                 <div data-aos="fade" class='notes--item small'>
             {% endif %}

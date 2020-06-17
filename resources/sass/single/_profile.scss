@@ -10,80 +10,78 @@
         background: white;
         color: black;
         border-bottom: 1px solid $grey-2;
-    
-        @include screen-size('small') {
+
+        @include screen-size("small") {
             flex-wrap: wrap;
         }
 
         .text {
             width: calc(100% - #{$sidebar-size});
             padding: 20px 40px 20px 40px;
-        
-            @include screen-size('small') {
+
+            @include screen-size("small") {
                 width: 100%;
                 padding: 10px 20px 21px 20px;
             }
-        
+
             .date {
                 @include datebox;
             }
 
             .subproject {
                 @include clickbox;
-        
+
                 margin-right: 20px;
-        
-                @include screen-size('small') {
+
+                @include screen-size("small") {
                     display: none;
                 }
             }
 
             .tags {
                 margin-top: 10px;
-        
+
                 .tag {
                     @include font-style-mono;
-        
+
                     padding: 7px;
                     border-radius: 5px;
                     margin-right: 4px;
-                    margin-bottom: 6px; 
+                    margin-bottom: 6px;
                     display: inline-block;
                     z-index: 10;
                     position: relative;
-                    text-decoration: none !important; 
+                    text-decoration: none !important;
                     color: black;
                     user-select: none;
-                
+
                     background: $yellow;
-                
+
                     &:hover {
                         background: $dark-yellow;
                         transition: background 0.3s $easing;
                     }
 
-                    @include screen-size('small') {
+                    @include screen-size("small") {
                         padding: 5px;
                     }
-        
                 }
-        
-                @include screen-size('small') {
+
+                @include screen-size("small") {
                     width: 100%;
                 }
             }
-        
+
             .title {
                 @include font-style-sans-large;
                 margin-top: 10px;
                 margin-bottom: 0;
                 max-width: 95%;
 
-                @include screen-size('small') {
+                @include screen-size("small") {
                     @include font-style-sans-small;
                 }
             }
-
         }
 
         .meta {
@@ -94,8 +92,7 @@
             margin-top: 20px;
             margin-bottom: 20px;
 
-        
-            @include screen-size('small') {
+            @include screen-size("small") {
                 width: 100%;
                 border-left: none;
                 display: none;
@@ -106,9 +103,7 @@
                 height: 100%;
                 object-fit: cover;
             }
-
         }
-
     }
 
     .main {
@@ -117,13 +112,13 @@
         height: auto;
         display: inline-block;
 
-        .content {   
+        .content {
             padding-top: 40px;
             padding-bottom: 60px;
             width: calc(100% - #{$sidebar-size});
             float: left;
 
-            @include screen-size('small') {
+            @include screen-size("small") {
                 width: 100%;
             }
 
@@ -132,12 +127,15 @@
                 border-bottom: 1px solid $grey-3;
                 transition: border 0.6s $easing;
 
-                &:hover  {
+                &:hover {
                     border-bottom: 1px solid $grey-1;
                 }
             }
 
-            p, ul, ol, li {
+            p,
+            ul,
+            ol,
+            li {
                 @include font-style-serif;
                 width: 75ch;
                 margin-bottom: 20px;
@@ -146,7 +144,14 @@
                 margin-left: 40px;
             }
 
-            h1, h2, h3, h4 {
+            li {
+                max-width: 90%;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4 {
                 @include font-style-serif;
                 width: 70ch;
                 max-width: 90%;
@@ -180,6 +185,5 @@
                 }
             }
         }
-
     }
 }

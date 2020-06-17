@@ -5,5 +5,5 @@
     <a href="{{ base_url }}/announcements" class="item {% if 'announcements' in page.url %}active{% endif %}">Announcements</a>
     <a href="{{ base_url }}/output" class="item {% if 'output' in page.url %}active{% endif %}">Output</a>
     <a href="{{ base_url }}/profiles" class="item {% if 'profiles' in page.url %}active{% endif %}">Profiles</a>
-    <a href="{{ base_url }}/about" class="item {% if 'about' in page.url %}active{% endif %}">About</a>
+    <a href="{{ base_url }}/about" class="item {% if 'about' in page.url %}active{% endif %}{% if 'research-team' in page.url %}active{% endif %}{% if 'projects' in page.url %}active{% endif %}">About</a>
 </footer>

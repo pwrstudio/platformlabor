@@ -1,16 +1,17 @@
 //
 // Colors
 //
-$white: rgba(255,255,255,1);
-$grey-1: rgba(230,230,230,1);
-$grey-2: rgba(180,180,180,1);
-$grey-3: rgba(100,100,100,1);
+$white: rgba(255, 255, 255, 1);
+$grey-1: rgba(230, 230, 230, 1);
+$grey-2: rgba(180, 180, 180, 1);
+$grey-3: rgba(100, 100, 100, 1);
 $black: rgba(0, 0, 0, 1);
 
 $yellow: rgb(255, 255, 138);
 $dark-yellow: rgb(255, 255, 0);
 
 $green: rgb(125, 244, 180);
+$light-green: rgba(125, 244, 180, 0.5);
 
 $easing: cubic-bezier(0.23, 1, 0.32, 1);
 
@@ -22,24 +23,23 @@ $main-margin: 20px;
 $sidebar-size: 340px;
 $author-image-size: 50px;
 
-
 //
 //  Breakpoints
 //
 $breakpoints: (
-    'small': (
-        max-width: 800px
+    "small": (
+        max-width: 800px,
     ),
-    'medium': (
-        max-width: 1088px
+    "medium": (
+        max-width: 1088px,
     ),
-    'sm': (
-        max-width: 920px
+    "sm": (
+        max-width: 920px,
     ),
-    'large': (
-        min-width: 1400px
+    "large": (
+        min-width: 1400px,
     ),
-    'short': (
-        max-height: 600px
-    )
+    "short": (
+        max-height: 600px,
+    ),
 );

@@ -3,48 +3,48 @@
 {% block content %}
   <main>
 
-    <article class="single-team">
+    <article class="subproject">
 
       {# TOP #}
-      <div class="subproject--top">
+      <div class="top">
 
         {# Text #}
-        <div class='subproject--top--text'>
+        <div class='text'>
           {# Title #}
-          <h1 class='subproject--top--text--title'>{{page.title}}</h1>
+          <h1 class='title'>{{page.title}}</h1>
         </div>
 
         {# Meta #}
-        <div class='subproject--top--image'>
+        <div class='image'>
             {{ page.media[page.header.featured_image].cropResize(900).html('', latestNote.title|escape)}}
         </div>
 
       </div>
 
       {# MAIN #}
-      <div class="subproject--main">
+      <div class="main">
 
         {# CONTENT #}
-        <div class="subproject--main--content">
+        <div class="content">
           {{ page.content }}
         </div>
 
         {# SIDEBAR #}
-        <div class="subproject--main--side">
+        <div class="side">
         
-          <div class='subproject--main--side--header'>Research Team</div>
+          <div class='header'>Research Team</div>
             
           {# RESEARCH TEAM #}
-          <div class="subproject--main--side--team">
+          <div class="team">
               
               {% set team = []%}
               {% for t in page.find('/research-team').children.order('date', 'desc') %}
                   {% if t.header.subproject == '/projects/' ~ page.slug %}
-                    <a href='{{ t.url }}' class='single-note--top--text--author'>
-                      <div class='single-note--top--text--author--image'>
+                    <a href='{{ t.url }}' class='author'>
+                      <div class='image'>
                         {{ t.media[t.header.featured_image].grayscale().html('', t.title|escape)}}
                       </div>   
-                      <div class='single-note--top--text--author--name'>
+                      <div class='name'>
                         {{ t.title }}
                       </div>
                     </a>
@@ -53,15 +53,17 @@
 
           </div>
 
-          <div class='subproject--main--side--header'>Related tags</div>
-
-          {# RELATED TAGS #}
-          <div class="subproject--main--side--tags">
+          {% if page.taxonomy.tag %}
+            <div class='header'>Related tags</div>
+            {# RELATED TAGS #}
+            <div class="tags">
               {% for tag in page.taxonomy.tag %}
                 <a href="{{ base_url }}/filter/tag:{{ tag }}" class="subproject--main--side--tags--item">{{ tag }}</a>
               {% endfor %}
-          </div>
+            </div>
+          {% endif %}
         </div>
+
 
         {# RELATED NOTES #}
         {% set notes = []%}
@@ -72,47 +74,52 @@
         {% endfor %}
 
         {% if notes|length > 0 %} 
-          <div class="subproject--main--related">
+          <div class="related">
 
-           <div class="subproject--main--related--header">Related notes</div>
+            <div class='list'>
+              
+              <div class="header">Related notes ({{ notes|length }})</div>
 
-            {% for note in notes %}
-              <div href='{{note.url}}' class='subproject--main--related--item__list'>
+              {% for note in notes %}
+                <div href='{{note.url}}' class='item'>
 
-                  <div class='subproject--main--related--item__list--text'>
+                    <a href='{{note.url}}' class='link'></a>
+
+                    <div class='text'>
 
                       {# Meta #}
-                      <div class='subproject--main--related--item__list--text--meta'>
-                          <div class='subproject--main--related--item__list--text--meta--date'>{{ note.date|date('Y-m-d') }}</div>
-                          {% for author in note.header.author %}
-                            <div class='subproject--main--related--item__list--text--meta--author'>{{ page.find(author).title }}</div>
-                          {% endfor %}
+                      <div class='meta'>
+                        <div class='date'>{{ note.date|date('Y-m-d') }}</div>
+                        {% for author in note.header.author %}
+                          <div class='author'>{{ page.find(author).title }}</div>
+                        {% endfor %}
                       </div>
-                      
-                      {# Title #}
-                      <h1 class='subproject--main--related--item__list--text--title'><a href='{{note.url}}'>{{note.title}}</a></h1>
+                        
+                        {# Title #}
+                        <h1 class='title'><a href='{{note.url}}'>{{note.title}}</a></h1>
 
-                  </div>
+                    </div>
 
-                  {% if note.header.featured_image %}
-                      <div class='subproject--main--related--item__list--image'>
-                          {{ note.media[note.header.featured_image].cropResize(300).html('', note.title|escape)}}
-                      </div>              
-                  {% endif %}
+                    {% if note.header.featured_image %}
+                        <div class='image'>
+                            {{ note.media[note.header.featured_image].cropResize(300).html('', note.title|escape)}}
+                        </div>              
+                    {% endif %}
 
-                  {# Tags #}
-                  <div class='subproject--main--related--item__list--tags'>
+                    {# Tags #}
+                    <div class='tags'>
                       {% for tag in note.taxonomy.tag %}
-                          <a href="{{ base_url }}/filter/tag:{{ tag }}" class="subproject--main--related--item__list--tags--item">{{ tag }}</a>
+                        <a href="{{ base_url }}/filter/tag:{{ tag }}" class="tag">{{ tag }}</a>
                       {% endfor %}
-                  </div>
-                  
+                    </div>
+                    
                 </div>
-            {% endfor %}      
+              {% endfor %}  
+            </div>    
           </div>
         {% endif %}
       
-      </div>
+        </div>
     
     </article>
 
