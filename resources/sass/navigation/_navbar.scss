@@ -42,7 +42,7 @@
             background: $grey-1;
         }
 
-        @include screen-size('small') {
+        @include screen-size("small") {
             display: block;
         }
     }
@@ -56,6 +56,11 @@
         color: black;
         text-decoration: none !important;
         user-select: none;
+
+        @include screen-size("small") {
+            padding-right: $phone-margin;
+            padding-left: $phone-margin;
+        }
 
         &:hover {
             background: $grey-1;
@@ -87,10 +92,11 @@
             align-items: center;
 
             svg {
-                circle, line {
+                circle,
+                line {
                     stroke: black;
                 }
-            } 
+            }
 
             &:hover {
                 background: $grey-1;
@@ -98,17 +104,17 @@
         }
 
         &.desktop {
-            @include screen-size('small') {
+            @include screen-size("small") {
                 display: none;
             }
         }
 
         &.logo {
             margin-left: 0;
-            font-family: 'Archivo Black', sans-serif;
-    
-            @include screen-size('small') {
-                margin-left: 10px;
+            font-family: "Archivo Black", sans-serif;
+
+            @include screen-size("small") {
+                // margin-left: 10px;
             }
         }
     }
@@ -141,20 +147,20 @@
         align-items: center;
 
         svg {
-                height: 40px;
-                width: 40px;
-                line {
-                    stroke: black;
-                }
+            height: 40px;
+            width: 40px;
+            line {
+                stroke: black;
             }
+        }
 
         &:hover {
             background: $grey-1;
         }
-
     }
 
     .item {
+        // @include font-style-sans-small;
         @include font-style-sans-small;
 
         display: block;
@@ -164,18 +170,17 @@
         padding-top: 20px;
         padding-bottom: 20px;
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
             color: $black;
             background: $grey-1;
             cursor: pointer;
         }
 
         &.logo {
-            font-family: 'Archivo Black', sans-serif;
+            font-family: "Archivo Black", sans-serif;
         }
     }
-
-
 
     &.open {
         display: block;

@@ -33,7 +33,7 @@
 
     {# NEWS #}        
     {% set latestNews = page.find('/announcements').collection.first %}
-    <div class='item third spaced'>
+    <div class='item third spaced announcements-order'>
 
         {# LINK OVERLAY :: NEWS #}
         <a class='link' href='{{latestNews.url}}'></a>
@@ -75,7 +75,7 @@
 
     {# NOTE #}
     {% set latestNote = page.find('/blog').collection.first %}
-    <div  class='item third spaced'>
+    <div  class='item third spaced blog-order'>
 
         {# LINK OVERLAY :: NOTE #}
         <a href='{{latestNote.url}}' class='link'></a>
@@ -124,7 +124,7 @@
 
     {# FEED #}
     {% set latestFeed = page.find('/feed').children.order('date', 'desc').first %}
-    <div class='item third'>
+    <div class='item third feed-order'>
 
         {# LINK OVERLAY :: FEED #}
         <a class='link' href='{{latestFeed.url}}'></a>
@@ -170,7 +170,7 @@
     </div>
 
     {# MORE NEWS #}
-    <div class='item third short'>
+    <div class='item third short more-announcements-order'>
         <a href='{{base_url}}/announcements' class='button'>
             <span>More anouncements</span>
             <div class='arrow right'>
@@ -181,7 +181,7 @@
     </div>
 
     {# MORE NOTE #}
-    <div class='item third short'>
+    <div class='item third short more-blog-order'>
         <a href='{{base_url}}/blog' class='button'>
             <span>More blog posts</span>
             <div class='arrow right'>
@@ -192,7 +192,7 @@
     </div>
 
     {# MORE FEED #}
-    <div class='item third short'>
+    <div class='item third short more-feed-order'>
         <a href='{{base_url}}/feed' class='button'>
             <span>More feed</span>
             <div class='arrow right'>

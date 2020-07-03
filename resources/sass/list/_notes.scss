@@ -132,7 +132,7 @@
           float: left;
           font-weight: bold;
           margin-top: 10px;
-          margin-right: 40px;
+          margin-right: $main-margin;
 
           @include screen-size("small") {
             @include font-style-sans-small;

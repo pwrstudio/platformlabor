@@ -17,11 +17,11 @@
 
         .text {
             width: calc(100% - #{$sidebar-size});
-            padding: 20px 40px 20px 40px;
+            padding: $main-margin;
 
             @include screen-size("small") {
                 width: 100%;
-                padding: 10px 20px 20px 20px;
+                padding: $phone-margin;
             }
 
             .date {
@@ -59,7 +59,7 @@
 
                     &:hover {
                         background: $dark-yellow;
-                        transition: background 0.3s $easing;
+                        transition: background 0.5s $easing;
                     }
 
                     @include screen-size("small") {
@@ -79,7 +79,8 @@
                 max-width: 95%;
 
                 @include screen-size("small") {
-                    @include font-style-sans-small;
+                    @include font-style-sans-medium;
+                    margin-bottom: 10px;
                 }
             }
 
@@ -87,11 +88,12 @@
                 padding: 10px;
                 margin-top: 10px;
                 display: inline-block;
-                // margin-bottom: 60px;
                 user-select: none;
 
                 @include screen-size("small") {
                     margin-top: 0;
+                    padding-bottom: 0;
+                    padding-left: 0;
                 }
 
                 &:hover {
@@ -247,7 +249,7 @@
         display: inline-block;
 
         .content {
-            padding-top: 0px;
+            padding-top: 0;
             padding-bottom: 60px;
             width: calc(100% - #{$sidebar-size});
             float: left;
@@ -275,7 +277,14 @@
                 margin-bottom: 20px;
                 max-width: 80%;
                 margin-right: auto;
-                margin-left: 40px;
+                margin-left: $main-margin;
+
+                @include screen-size("small") {
+                    width: calc(100% - 40px);
+                    max-width: unset;
+                    margin-right: $phone-margin;
+                    margin-left: $phone-margin;
+                }
             }
 
             li {
@@ -290,7 +299,7 @@
                 width: 70ch;
                 max-width: 90%;
                 margin-right: auto;
-                margin-left: 40px;
+                margin-left: $main-margin;
                 padding-top: 20px;
                 margin-bottom: 20px;
                 font-weight: bold;
@@ -302,6 +311,10 @@
 
             img {
                 max-width: 90%;
+
+                @include screen-size("small") {
+                    max-width: 100%;
+                }
             }
 
             li {

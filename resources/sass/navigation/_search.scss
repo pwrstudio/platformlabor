@@ -47,10 +47,9 @@
         pointer-events: all;
     }
 
-
     .form {
         width: 80vw;
-        
+
         .box {
             @include font-style-sans-small;
 
@@ -70,11 +69,11 @@
                 outline: none;
             }
         }
-    
+
         .submit {
             @include font-style-sans-small;
             float: left;
-            margin-left: 40px;
+            margin-left: $main-margin;
             border: 1px solid $grey-2;
             color: black;
             height: 50px;
@@ -85,9 +84,8 @@
 
             &:hover {
                 background: $grey-1;
-                color: black;    
+                color: black;
             }
         }
     }
-
 }

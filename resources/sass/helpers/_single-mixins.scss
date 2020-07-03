@@ -12,7 +12,7 @@
     color: black;
     border-bottom: 1px solid $grey-2;
 
-    @include screen-size('small') {
+    @include screen-size("small") {
         flex-wrap: wrap;
     }
 }
@@ -22,7 +22,7 @@
     background: white;
     padding: 20px 40px 20px 40px;
 
-    @include screen-size('small') {
+    @include screen-size("small") {
         width: 100%;
         padding: 10px 20px 21px 20px;
     }
@@ -30,10 +30,9 @@
     &--date {
         @include datebox;
 
-        @include screen-size('small') {
+        @include screen-size("small") {
             display: none;
         }
-
     }
 
     &--title {
@@ -49,7 +48,7 @@
         margin-bottom: 60px;
 
         &:hover {
-            background: $grey-1;    
+            background: $grey-1;
         }
 
         &--image {
@@ -75,9 +74,7 @@
             line-height: 50px;
         }
     }
-
 }
-
 
 @mixin single-top-meta {
     width: 33.3333%;
@@ -86,7 +83,7 @@
     margin-top: 20px;
     padding-left: 20px;
 
-    @include screen-size('small') {
+    @include screen-size("small") {
         width: 100%;
         border-left: none;
     }
@@ -99,13 +96,13 @@
 
     &--tags {
         padding-top: 10px;
-        
+
         margin-right: 20px;
-        @include tag; 
+        @include tag;
     }
 
     &--subproject {
-        @include greybox;  
+        @include greybox;
 
         margin-right: 20px;
 
@@ -124,21 +121,20 @@
         //     }
         // }
 
-        @include screen-size('small') {
+        @include screen-size("small") {
             display: none;
         }
     }
 
     &--date {
-        @include datebox;  
+        @include datebox;
 
         display: inline-block;
         margin-right: 7px;
 
-        @include screen-size('small') {
+        @include screen-size("small") {
             display: none;
         }
-
     }
 }
 
@@ -147,11 +143,9 @@
     min-height: 80vh;
     height: auto;
     display: inline-block;
-
 }
 
 @mixin single-main-content {
-    
     padding-top: 40px;
     padding-bottom: 60px;
 
@@ -160,26 +154,32 @@
 
     a {
         border-bottom: 1px solid $black;
-        &:hover  {
+        &:hover {
             border-bottom: 1px solid $grey-2;
         }
     }
 
-    p, ul, ol, li {
+    p,
+    ul,
+    ol,
+    li {
         @include font-style-serif;
         width: 70ch;
         margin-bottom: 20px;
         max-width: 90%;
         margin-right: auto;
-        margin-left: 40px;
+        margin-left: $main-margin;
     }
 
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
         @include font-style-serif;
         width: 70ch;
         max-width: 90%;
         margin-right: auto;
-        margin-left: 40px;
+        margin-left: $main-margin;
         padding-top: 20px;
         margin-bottom: 20px;
         font-weight: bold;
@@ -187,16 +187,16 @@
 
     li {
         margin-left: 0em;
-      }
+    }
 
     blockquote {
         p {
-	        font-size: 17px;
-	        line-height: 1.2em;
+            font-size: 17px;
+            line-height: 1.2em;
             padding-left: 30px;
             padding-right: 30px;
-	        margin-right: auto;
-	        margin-left: auto;
+            margin-right: auto;
+            margin-left: auto;
         }
     }
 }
@@ -216,13 +216,13 @@
 }
 
 @mixin single-main-related {
-    float:left;
+    float: left;
     width: calc(100% - 20px);
     color: black;
     // padding: 20px;
     // padding-top: 0;
 
-    @include screen-size('small') {
+    @include screen-size("small") {
         width: 100%;
     }
 
@@ -235,7 +235,7 @@
         margin-bottom: 10px;
 
         .icon {
-            position: relative; 
+            position: relative;
             height: 20px;
         }
     }

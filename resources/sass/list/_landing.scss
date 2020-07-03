@@ -1,11 +1,17 @@
 .landing {
     width: calc(100% - 40px);
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: $main-margin;
+    margin-left: $main-margin;
     display: flex;
     flex-wrap: wrap;
     margin-top: 60px;
     padding-bottom: 20px;
+
+    @include screen-size("small") {
+        width: calc(100% - 40px);
+        margin-right: $phone-margin;
+        margin-left: $phone-margin;
+    }
 
     .item {
         &.third {
@@ -152,14 +158,21 @@
                 padding: 20px;
                 border: 1px solid $grey-2;
 
+                @include screen-size("small") {
+                    margin-right: 0;
+                    margin-left: 0;
+                }
+
                 &:hover {
                     background: $grey-1;
                 }
             }
 
             @include screen-size("small") {
-                margin: 15px;
-                width: calc(100% - 30px);
+                margin: $phone-margin;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 0;
                 width: 100%;
             }
 
@@ -184,10 +197,19 @@
             &:hover {
                 background: none;
             }
+
+            @include screen-size("small") {
+                margin-top: 0;
+                width: 100%;
+            }
         }
 
         &.spaced {
             margin-right: 9px;
+
+            @include screen-size("small") {
+                margin-right: 0;
+            }
         }
 
         &.about {
@@ -217,9 +239,9 @@
 
             @include screen-size("small") {
                 height: auto;
-                margin-right: 15px;
-                margin-left: 15px;
-                width: calc(100% - 30px);
+                margin-right: 0;
+                margin-left: 0;
+                width: 100%;
             }
 
             p {
@@ -243,6 +265,48 @@
                 &:hover {
                     background: white;
                 }
+            }
+        }
+
+        &.announcements-order {
+            order: 1;
+            @include screen-size("small") {
+                order: 1;
+            }
+        }
+
+        &.blog-order {
+            order: 2;
+            @include screen-size("small") {
+                order: 3;
+            }
+        }
+
+        &.feed-order {
+            order: 3;
+            @include screen-size("small") {
+                order: 5;
+            }
+        }
+
+        &.more-announcements-order {
+            order: 4;
+            @include screen-size("small") {
+                order: 2;
+            }
+        }
+
+        &.more-blog-order {
+            order: 5;
+            @include screen-size("small") {
+                order: 4;
+            }
+        }
+
+        &.more-feed-order {
+            order: 6;
+            @include screen-size("small") {
+                order: 6;
             }
         }
     }
