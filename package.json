@@ -16,6 +16,6 @@
     "build": "node-sass resources/sass -o dist/css --output-style compressed"
   },
   "dependencies": {
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   }
 }
